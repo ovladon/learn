@@ -5,6 +5,7 @@ const tracks = window.LEARN_TRACKS || [];
 const enBtn = document.getElementById('choose-en');
 const roBtn = document.getElementById('choose-ro');
 const search = document.getElementById('search');
+const backToTop = document.getElementById('back-to-top');
 let language = 'en';
 let filter = 'all';
 function esc(s){return String(s).replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));}
@@ -41,6 +42,8 @@ function setLang(lang){
   enBtn.classList.toggle('active',lang==='en');roBtn.classList.toggle('active',lang==='ro');
   enBtn.setAttribute('aria-pressed',lang==='en');roBtn.setAttribute('aria-pressed',lang==='ro');
   document.querySelectorAll('[data-en][data-ro]').forEach(el=>{el.innerHTML=el.dataset[lang];});
+  backToTop.setAttribute('aria-label',lang==='en'?'Back to top':'Înapoi sus');
+  backToTop.title=lang==='en'?'Back to top':'Înapoi sus';
   search.placeholder=lang==='en'?'Search a topic…':'Caută o temă…';render();
 }
 function followLink(){
@@ -49,10 +52,18 @@ function followLink(){
   search.value='';filter='all';render();
   requestAnimationFrame(()=>document.getElementById(id)?.scrollIntoView({block:'center'}));
 }
+function updateBackToTop(){
+  backToTop.hidden = window.scrollY < 420;
+}
+backToTop.addEventListener('click',()=>{
+  window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+});
+window.addEventListener('scroll',updateBackToTop,{passive:true});
+window.addEventListener('resize',updateBackToTop);
 enBtn.addEventListener('click',()=>setLang('en'));
 roBtn.addEventListener('click',()=>setLang('ro'));
 search.addEventListener('input',render);
 window.addEventListener('hashchange',followLink);
 setLang((navigator.language||'').toLowerCase().startsWith('ro')?'ro':'en');
-setTimeout(followLink,100);
+setTimeout(()=>{followLink();updateBackToTop();},100);
 })();
