@@ -1,0 +1,3 @@
+# Personal teaching library: only the repository owner is the designated code owner.
+# CODEOWNERS is advisory unless a repository branch rule requires code-owner approval.
+* @ovladon

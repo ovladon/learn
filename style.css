@@ -7,3 +7,10 @@
 .back-to-top:focus-visible{outline:3px solid #eead35;outline-offset:4px}
 @media(max-width:480px){.back-to-top{right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));min-height:49px;padding:9px 14px 9px 10px}}
 @media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
+
+/* LEARN: personal authorship and free-download notice */
+.author-line{margin:18px 0 0;color:#bcd4df;font-size:12px;line-height:1.7;max-width:600px}
+.author-line strong{color:#b5f2cf;white-space:nowrap;font-weight:800}
+.author-dot{margin:0 6px;color:#6cbcb0}
+.personal-site-note{padding-left:14px;border-left:3px solid #188d7b;color:#36566c!important}
+@media(max-width:720px){.author-line{font-size:11px}.footer-flex{align-items:flex-start}}

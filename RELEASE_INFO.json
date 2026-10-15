@@ -9,5 +9,9 @@
     "ro"
   ],
   "initial_release": "2026-10-15",
-  "privacy": "PUBLIC SITE: no student personal data"
+  "privacy": "PUBLIC SITE: no student personal data",
+  "publisher": "Vlad Belciug (@ovladon)",
+  "reading_policy": "Public viewing and free individual-study download",
+  "publishing_policy": "Owner-only; no external submissions",
+  "copyright": "© 2026 Vlad Belciug. All rights reserved except as noted in USAGE.md"
 }

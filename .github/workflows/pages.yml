@@ -16,6 +16,8 @@ concurrency:
 
 jobs:
   deploy:
+    # Only repository owner-initiated publishing is permitted.
+    if: github.repository == 'ovladon/learn' && github.actor == 'ovladon'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
