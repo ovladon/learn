@@ -56,3 +56,7 @@ Instructor-only notes, student information, grades, passwords, unpublished resea
 The third teaching track explains data-center hardware, request flow, power, cooling, networks, workload scheduling, security, AI training/inference, and real-life uses of queues, priority heaps, hash maps, caches, sets, tree indexes, append-only logs, graphs, and vector retrieval. Every sheet stands alone in English and Romanian and has a permanent scannable QR code.
 
 The Computing Foundations series was audited for first-use acronyms and corrected while retaining the original lesson IDs and QR destinations.
+
+## Accessing new lessons
+
+The third track, **Data centers & AI infrastructure**, is available directly at [Data Centers (first lesson)](https://ovladon.github.io/learn/?v=20261015-dc-39-v2#dc-01). The public homepage version-tags its JavaScript and stylesheet so students do not accidentally keep a stale two-track catalog in their browser cache. The page also includes an explicit Data Centers navigation link and a homepage shortcut. Lesson hash identifiers are stable.

@@ -6,8 +6,8 @@
     "Data centers and AI infrastructure"
   ],
   "topics": 39,
-  "individual_pdf": 52,
-  "pages_per_language": 26,
+  "individual_pdf": 78,
+  "pages_per_language": 39,
   "files": [
     {
       "id": "fund-00",
@@ -112,6 +112,58 @@
     {
       "id": "ai-13",
       "url": "https://ovladon.github.io/learn/#ai-13"
+    },
+    {
+      "id": "dc-01",
+      "url": "https://ovladon.github.io/learn/#dc-01"
+    },
+    {
+      "id": "dc-02",
+      "url": "https://ovladon.github.io/learn/#dc-02"
+    },
+    {
+      "id": "dc-03",
+      "url": "https://ovladon.github.io/learn/#dc-03"
+    },
+    {
+      "id": "dc-04",
+      "url": "https://ovladon.github.io/learn/#dc-04"
+    },
+    {
+      "id": "dc-05",
+      "url": "https://ovladon.github.io/learn/#dc-05"
+    },
+    {
+      "id": "dc-06",
+      "url": "https://ovladon.github.io/learn/#dc-06"
+    },
+    {
+      "id": "dc-07",
+      "url": "https://ovladon.github.io/learn/#dc-07"
+    },
+    {
+      "id": "dc-08",
+      "url": "https://ovladon.github.io/learn/#dc-08"
+    },
+    {
+      "id": "dc-09",
+      "url": "https://ovladon.github.io/learn/#dc-09"
+    },
+    {
+      "id": "dc-10",
+      "url": "https://ovladon.github.io/learn/#dc-10"
+    },
+    {
+      "id": "dc-11",
+      "url": "https://ovladon.github.io/learn/#dc-11"
+    },
+    {
+      "id": "dc-12",
+      "url": "https://ovladon.github.io/learn/#dc-12"
+    },
+    {
+      "id": "dc-13",
+      "url": "https://ovladon.github.io/learn/#dc-13"
     }
   ],
   "author": "Vlad Belciug",
@@ -121,5 +173,6 @@
   "individual_student_pdfs": 78,
   "site_url": "https://ovladon.github.io/learn/",
   "current_release": "2026-10-15 foundations acronym fix and data center collection",
-  "publisher": "Vlad Belciug (@ovladon)"
+  "publisher": "Vlad Belciug (@ovladon)",
+  "cache_revision": "20261015-dc-39-v2"
 }

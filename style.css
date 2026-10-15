@@ -14,3 +14,6 @@
 .author-dot{margin:0 6px;color:#6cbcb0}
 .personal-site-note{padding-left:14px;border-left:3px solid #188d7b;color:#36566c!important}
 @media(max-width:720px){.author-line{font-size:11px}.footer-flex{align-items:flex-start}}
+
+/* Discover the third learning track visibly from the homepage. */
+.btn.datacenters{background:#d4d7ff;color:#171d51;border:1px solid #aeb5fa}.btn.datacenters:hover{background:#eeeaff}.btn.datacenters:focus-visible{outline:3px solid #ffcb68;outline-offset:3px}
