@@ -22,35 +22,34 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Reassemble student-only library
+      - name: Build static site from directly accessible files
         shell: bash
         run: |
           set -euo pipefail
-          cat .site_payload/part-*.bin > /tmp/learn-library.zip
-          echo '834abaab20845415be54d5a49c5281c6b7b9376247325a21c1c1621633220b3f  /tmp/learn-library.zip' | sha256sum -c -
           mkdir -p _site
+          for f in index.html app.js catalog.js style.css favicon.svg robots.txt .nojekyll SECURITY.md SITE_MANIFEST.json RELEASE_INFO.json; do
+            test -f "$f"
+            cp "$f" _site/
+          done
+          for d in assets previews materials collections; do
+            test -d "$d"
+            cp -a "$d" _site/
+          done
           python3 - <<'PY'
-          import pathlib,stat,zipfile
-          p=pathlib.Path('/tmp/learn-library.zip')
-          root=pathlib.Path('_site').resolve()
-          with zipfile.ZipFile(p) as a:
-              items=a.infolist()
-              if len(items)>200 or sum(i.file_size for i in items)>120_000_000:
-                  raise SystemExit('Unexpected payload size')
-              for item in items:
-                  dst=(root/item.filename).resolve()
-                  if not dst.is_relative_to(root) or stat.S_ISLNK(item.external_attr >> 16):
-                      raise SystemExit('Unsafe archive entry')
-              a.extractall(root)
-          for f in ('index.html','catalog.js','app.js','style.css','.nojekyll'):
-              assert (root/f).is_file(), f
-          assert len(list((root/'materials').rglob('*.pdf')))==52
-          assert len(list((root/'collections').glob('big-o-*.pdf')))==4
-          print('Validated LEARN: 52 lessons, 4 Big-O standalone sheets')
+          import pathlib,re
+          root=pathlib.Path('_site')
+          files={p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file()}
+          assert len(list((root/'materials').rglob('*.pdf')))==52,'Expected 52 student PDFs'
+          assert len(list((root/'collections').glob('big-o-*.pdf')))==4,'Expected four Big-O PDFs'
+          catalog=(root/'catalog.js').read_text(encoding='utf8')
+          refs=re.findall(r"""['"]((?:materials|collections|previews|assets)/[^'"]+)['"]""",catalog)
+          missing=[r for r in refs if r not in files]
+          assert not missing, 'Missing linked files: '+str(missing)
+          print('LEARN validation passed: 52 sheets, four standalone Big-O sheets, '+str(len(refs))+' valid catalog references.')
           PY
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-      - name: Upload static library
+      - name: Upload static site
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
