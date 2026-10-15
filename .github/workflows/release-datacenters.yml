@@ -31,6 +31,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          sudo install -d -o "$(id -un)" -g "$(id -gn)" /mnt/data
           mkdir -p /mnt/data/_learn_work/site
           mkdir -p /mnt/data/LEARN_OWNER_LIBRARY_BACKUP_2026-10-15/website
           rsync -a --exclude='.git' ./ /mnt/data/_learn_work/site/
