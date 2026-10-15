@@ -26,3 +26,7 @@ If the first deployment says "Pages is not enabled", open **Settings → Pages �
 | **Quick reference** | [Open PDF](https://ovladon.github.io/learn/collections/big-o-quick-reference-en.pdf) | [Deschide PDF](https://ovladon.github.io/learn/collections/big-o-quick-reference-ro.pdf) |
 
 The site is statically generated and does not require student accounts. GitHub, as a hosting platform, may maintain technical access logs.
+
+## Publication diagnostics
+
+The repository stores the student site as a verified release archive under `.site_payload/`; individual PDFs appear at `https://ovladon.github.io/learn/...` **only after** the Pages deployment succeeds. The `.site_payload/` directory is not itself a browsable educational library. If students encounter HTTP 404 responses, first check [Actions → Deploy LEARN to GitHub Pages](https://github.com/ovladon/learn/actions/workflows/pages.yml) for a completed successful run and ensure [Settings → Pages](https://github.com/ovladon/learn/settings/pages) is set to **Source: GitHub Actions**.
