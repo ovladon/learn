@@ -13,12 +13,11 @@ A permanent, free, open-access collection of visual explanations about computing
 - The website itself: `index.html`, `style.css`, `app.js`, `catalog.js`.
 - Thumbnails: `previews/`.
 
-## Big-O printable cheat sheets
+## Big-O is part of the normal lesson library
 
-| Format | English | Romanian |
-|---|---|---|
-| From zero | [PDF](https://ovladon.github.io/learn/collections/big-o-from-zero-en.pdf) | [PDF](https://ovladon.github.io/learn/collections/big-o-from-zero-ro.pdf) |
-| Quick reference | [PDF](https://ovladon.github.io/learn/collections/big-o-quick-reference-en.pdf) | [PDF](https://ovladon.github.io/learn/collections/big-o-quick-reference-ro.pdf) |
+The two Big-O lessons, **From absolute zero** and **Quick reference**, appear alongside all other topics in Computing Foundations (`fund-11` and `fund-12`). Both have English and Romanian A4 PDF downloads and permanent QR links. Historical `collections/big-o-...` file links remain accessible to preserve older printouts, but are not separate tracks or promoted sections.
+
+The responsive library also offers a bilingual **↑ Back to top / ↑ Sus** button when you scroll down.
 
 ## Updating LEARN
 
