@@ -1,0 +1,113 @@
+{
+  "home": "https://ovladon.github.io/learn/",
+  "subjects": 2,
+  "topics": 26,
+  "individual_pdf": 52,
+  "pages_per_language": 26,
+  "files": [
+    {
+      "id": "fund-00",
+      "url": "https://ovladon.github.io/learn/#fund-00"
+    },
+    {
+      "id": "fund-01",
+      "url": "https://ovladon.github.io/learn/#fund-01"
+    },
+    {
+      "id": "fund-02",
+      "url": "https://ovladon.github.io/learn/#fund-02"
+    },
+    {
+      "id": "fund-03",
+      "url": "https://ovladon.github.io/learn/#fund-03"
+    },
+    {
+      "id": "fund-04",
+      "url": "https://ovladon.github.io/learn/#fund-04"
+    },
+    {
+      "id": "fund-05",
+      "url": "https://ovladon.github.io/learn/#fund-05"
+    },
+    {
+      "id": "fund-06",
+      "url": "https://ovladon.github.io/learn/#fund-06"
+    },
+    {
+      "id": "fund-07",
+      "url": "https://ovladon.github.io/learn/#fund-07"
+    },
+    {
+      "id": "fund-08",
+      "url": "https://ovladon.github.io/learn/#fund-08"
+    },
+    {
+      "id": "fund-09",
+      "url": "https://ovladon.github.io/learn/#fund-09"
+    },
+    {
+      "id": "fund-10",
+      "url": "https://ovladon.github.io/learn/#fund-10"
+    },
+    {
+      "id": "fund-11",
+      "url": "https://ovladon.github.io/learn/#fund-11"
+    },
+    {
+      "id": "fund-12",
+      "url": "https://ovladon.github.io/learn/#fund-12"
+    },
+    {
+      "id": "ai-01",
+      "url": "https://ovladon.github.io/learn/#ai-01"
+    },
+    {
+      "id": "ai-02",
+      "url": "https://ovladon.github.io/learn/#ai-02"
+    },
+    {
+      "id": "ai-03",
+      "url": "https://ovladon.github.io/learn/#ai-03"
+    },
+    {
+      "id": "ai-04",
+      "url": "https://ovladon.github.io/learn/#ai-04"
+    },
+    {
+      "id": "ai-05",
+      "url": "https://ovladon.github.io/learn/#ai-05"
+    },
+    {
+      "id": "ai-06",
+      "url": "https://ovladon.github.io/learn/#ai-06"
+    },
+    {
+      "id": "ai-07",
+      "url": "https://ovladon.github.io/learn/#ai-07"
+    },
+    {
+      "id": "ai-08",
+      "url": "https://ovladon.github.io/learn/#ai-08"
+    },
+    {
+      "id": "ai-09",
+      "url": "https://ovladon.github.io/learn/#ai-09"
+    },
+    {
+      "id": "ai-10",
+      "url": "https://ovladon.github.io/learn/#ai-10"
+    },
+    {
+      "id": "ai-11",
+      "url": "https://ovladon.github.io/learn/#ai-11"
+    },
+    {
+      "id": "ai-12",
+      "url": "https://ovladon.github.io/learn/#ai-12"
+    },
+    {
+      "id": "ai-13",
+      "url": "https://ovladon.github.io/learn/#ai-13"
+    }
+  ]
+}

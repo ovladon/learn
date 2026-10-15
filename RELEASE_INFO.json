@@ -1,0 +1,13 @@
+{
+  "name": "LEARN",
+  "site": "https://ovladon.github.io/learn/",
+  "student_pdf_sheets": 52,
+  "big_o_standalone_versions": 4,
+  "topics": 26,
+  "languages": [
+    "en",
+    "ro"
+  ],
+  "initial_release": "2026-10-15",
+  "privacy": "PUBLIC SITE: no student personal data"
+}
