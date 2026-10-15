@@ -1,7 +1,11 @@
 {
   "home": "https://ovladon.github.io/learn/",
-  "subjects": 2,
-  "topics": 26,
+  "subjects": [
+    "Computing Foundations",
+    "AI and agentic systems",
+    "Data centers and AI infrastructure"
+  ],
+  "topics": 39,
   "individual_pdf": 52,
   "pages_per_language": 26,
   "files": [
@@ -113,5 +117,9 @@
   "author": "Vlad Belciug",
   "maintainer": "ovladon",
   "external_contributions": false,
-  "student_uploads": false
+  "student_uploads": false,
+  "individual_student_pdfs": 78,
+  "site_url": "https://ovladon.github.io/learn/",
+  "current_release": "2026-10-15 foundations acronym fix and data center collection",
+  "publisher": "Vlad Belciug (@ovladon)"
 }

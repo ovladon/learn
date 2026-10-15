@@ -20,7 +20,8 @@ Currently available:
 | --- | ---: | ---: |
 | Computing Foundations, including Data Structures and both Big-O sheets | 13 | 26 |
 | Artificial Intelligence and Agentic Systems | 13 | 26 |
-| **Total** | **26** | **52** |
+| Data centers, AI infrastructure and real-world data structures | 13 | 26 |
+| **Total** | **39** | **78** |
 
 The [collections folder](collections/) also has complete booklets, four standalone Big-O PDF links retained for compatibility, and the classroom QR poster. The Big-O lessons are **ordinary Computing Foundations lessons**, not a separate subject. New subjects can be added over time without changing existing QR destinations.
 
@@ -49,3 +50,9 @@ As the owner, I may add more subjects and teaching materials to `main`. The [Pag
 Instructor-only notes, student information, grades, passwords, unpublished research and any other confidential material are **never** part of this public repository.
 
 © 2026 Vlad Belciug. All rights reserved, except for the limited individual-study permissions described in [USAGE.md](USAGE.md).
+
+## Data centers & AI infrastructure
+
+The third teaching track explains data-center hardware, request flow, power, cooling, networks, workload scheduling, security, AI training/inference, and real-life uses of queues, priority heaps, hash maps, caches, sets, tree indexes, append-only logs, graphs, and vector retrieval. Every sheet stands alone in English and Romanian and has a permanent scannable QR code.
+
+The Computing Foundations series was audited for first-use acronyms and corrected while retaining the original lesson IDs and QR destinations.

@@ -1,4 +1,4 @@
-// Published lesson catalog. Add a new entry to extend the library.
+/* LEARN teaching library: author-published content only. */
 window.LEARN_TRACKS = [
   {
     "id": "fund",
@@ -19,6 +19,16 @@ window.LEARN_TRACKS = [
     "number": "02",
     "booklet_en": "collections/ai-en.pdf",
     "booklet_ro": "collections/ai-ro.pdf"
+  },
+  {
+    "id": "dc",
+    "title_en": "Data centers & AI infrastructure",
+    "title_ro": "Centre de date și infrastructură AI",
+    "label_en": "LEARNING TRACK / 03",
+    "label_ro": "TRASEU DE ÎNVĂȚARE / 03",
+    "number": "03",
+    "booklet_en": "collections/datacenters-en.pdf",
+    "booklet_ro": "collections/datacenters-ro.pdf"
   }
 ];
 window.LEARN_CATALOG = [
@@ -333,5 +343,161 @@ window.LEARN_CATALOG = [
     "pdf_ro": "materials/ai/ai-13-ro.pdf",
     "preview": "previews/ai-13.webp",
     "keywords": "data structures behind ai structurile de date din spatele ia classic computing ideas are still essential. ideile clasice din informatică sunt încă esențiale."
+  },
+  {
+    "id": "dc-01",
+    "category": "dc",
+    "title_en": "Inside A Data Center",
+    "title_ro": "În Interiorul Unui Centru De Date",
+    "desc_en": "A building that coordinates power, computers, storage, networking and people.",
+    "desc_ro": "O clădire care coordonează electricitatea, calculatoarele, stocarea, rețeaua și oamenii.",
+    "pdf_en": "materials/datacenters/dc-01-en.pdf",
+    "pdf_ro": "materials/datacenters/dc-01-ro.pdf",
+    "preview": "previews/dc-01.webp",
+    "keywords": "inside a data center în interiorul unui centru de date a building that coordinates power, computers, storage, networking and people. o clădire care coordonează electricitatea, calculatoarele, stocarea, rețeaua și oamenii. data center ai infrastructure distributed systems queue heap hash map cache index b-tree log graph vector gpu"
+  },
+  {
+    "id": "dc-02",
+    "category": "dc",
+    "title_en": "One Click, Many Machines",
+    "title_ro": "Un Clic, Mai Multe Calculatoare",
+    "desc_en": "Follow a request from phone to data center and back.",
+    "desc_ro": "Urmărește o cerere de la telefon la centrul de date și înapoi.",
+    "pdf_en": "materials/datacenters/dc-02-en.pdf",
+    "pdf_ro": "materials/datacenters/dc-02-ro.pdf",
+    "preview": "previews/dc-02.webp",
+    "keywords": "one click, many machines un clic, mai multe calculatoare follow a request from phone to data center and back. urmărește o cerere de la telefon la centrul de date și înapoi. data center ai infrastructure distributed systems queue heap hash map cache index b-tree log graph vector gpu"
+  },
+  {
+    "id": "dc-03",
+    "category": "dc",
+    "title_en": "CPUs, GPUs & Batches",
+    "title_ro": "Procesoare, GPU-Uri Și Grupuri De Cereri",
+    "desc_en": "Different workers, different tasks. Faster hardware is not enough on its own.",
+    "desc_ro": "Lucrători diferiți, sarcini diferite. Hardware-ul rapid nu este suficient.",
+    "pdf_en": "materials/datacenters/dc-03-en.pdf",
+    "pdf_ro": "materials/datacenters/dc-03-ro.pdf",
+    "preview": "previews/dc-03.webp",
+    "keywords": "cpus, gpus & batches procesoare, gpu-uri și grupuri de cereri different workers, different tasks. faster hardware is not enough on its own. lucrători diferiți, sarcini diferite. hardware-ul rapid nu este suficient. data center ai infrastructure distributed systems queue heap hash map cache index b-tree log graph vector gpu"
+  },
+  {
+    "id": "dc-04",
+    "category": "dc",
+    "title_en": "Memory Is Not Storage",
+    "title_ro": "Memoria De Lucru Nu Este Stocare",
+    "desc_en": "Where are active calculations, saved files and backups?",
+    "desc_ro": "Unde sunt calculele active, fișierele salvate și copiile de siguranță?",
+    "pdf_en": "materials/datacenters/dc-04-en.pdf",
+    "pdf_ro": "materials/datacenters/dc-04-ro.pdf",
+    "preview": "previews/dc-04.webp",
+    "keywords": "memory is not storage memoria de lucru nu este stocare where are active calculations, saved files and backups? unde sunt calculele active, fișierele salvate și copiile de siguranță? data center ai infrastructure distributed systems queue heap hash map cache index b-tree log graph vector gpu"
+  },
+  {
+    "id": "dc-05",
+    "category": "dc",
+    "title_en": "Networks: The Hallways",
+    "title_ro": "Rețele: Coridoarele Digitale",
+    "desc_en": "Data centers are as much about movement as they are about computing.",
+    "desc_ro": "Centrele de date înseamnă și deplasarea informației, nu doar calcul.",
+    "pdf_en": "materials/datacenters/dc-05-en.pdf",
+    "pdf_ro": "materials/datacenters/dc-05-ro.pdf",
+    "preview": "previews/dc-05.webp",
+    "keywords": "networks: the hallways rețele: coridoarele digitale data centers are as much about movement as they are about computing. centrele de date înseamnă și deplasarea informației, nu doar calcul. data center ai infrastructure distributed systems queue heap hash map cache index b-tree log graph vector gpu"
+  },
+  {
+    "id": "dc-06",
+    "category": "dc",
+    "title_en": "Power & Cooling",
+    "title_ro": "Energie Și Răcire",
+    "desc_en": "Every computation becomes heat. Reliability begins before the code runs.",
+    "desc_ro": "Fiecare calcul produce căldură. Fiabilitatea începe înainte de cod.",
+    "pdf_en": "materials/datacenters/dc-06-en.pdf",
+    "pdf_ro": "materials/datacenters/dc-06-ro.pdf",
+    "preview": "previews/dc-06.webp",
+    "keywords": "power & cooling energie și răcire every computation becomes heat. reliability begins before the code runs. fiecare calcul produce căldură. fiabilitatea începe înainte de cod. data center ai infrastructure distributed systems queue heap hash map cache index b-tree log graph vector gpu"
+  },
+  {
+    "id": "dc-07",
+    "category": "dc",
+    "title_en": "Who Gets A Server?",
+    "title_ro": "Cine Primește Un Server?",
+    "desc_en": "The scheduler coordinates requests for finite resources.",
+    "desc_ro": "Planificatorul distribuie cererile între resurse limitate.",
+    "pdf_en": "materials/datacenters/dc-07-en.pdf",
+    "pdf_ro": "materials/datacenters/dc-07-ro.pdf",
+    "preview": "previews/dc-07.webp",
+    "keywords": "who gets a server? cine primește un server? the scheduler coordinates requests for finite resources. planificatorul distribuie cererile între resurse limitate. data center ai infrastructure distributed systems queue heap hash map cache index b-tree log graph vector gpu"
+  },
+  {
+    "id": "dc-08",
+    "category": "dc",
+    "title_en": "Security & Failures",
+    "title_ro": "Securitate Și Defecțiuni",
+    "desc_en": "Keeping a service working is different from keeping its information safe.",
+    "desc_ro": "A menține serviciul activ nu este același lucru cu a proteja datele.",
+    "pdf_en": "materials/datacenters/dc-08-en.pdf",
+    "pdf_ro": "materials/datacenters/dc-08-ro.pdf",
+    "preview": "previews/dc-08.webp",
+    "keywords": "security & failures securitate și defecțiuni keeping a service working is different from keeping its information safe. a menține serviciul activ nu este același lucru cu a proteja datele. data center ai infrastructure distributed systems queue heap hash map cache index b-tree log graph vector gpu"
+  },
+  {
+    "id": "dc-09",
+    "category": "dc",
+    "title_en": "How AI Clusters Work",
+    "title_ro": "Cum Funcționează Clusterele AI",
+    "desc_en": "Training changes model parameters; inference uses a trained model to answer.",
+    "desc_ro": "Antrenarea schimbă parametrii modelului; inferența produce răspunsuri.",
+    "pdf_en": "materials/datacenters/dc-09-en.pdf",
+    "pdf_ro": "materials/datacenters/dc-09-ro.pdf",
+    "preview": "previews/dc-09.webp",
+    "keywords": "how ai clusters work cum funcționează clusterele ai training changes model parameters; inference uses a trained model to answer. antrenarea schimbă parametrii modelului; inferența produce răspunsuri. data center ai infrastructure distributed systems queue heap hash map cache index b-tree log graph vector gpu"
+  },
+  {
+    "id": "dc-10",
+    "category": "dc",
+    "title_en": "Queues & Priority Heaps",
+    "title_ro": "Cozi Și Heap-Uri De Priorități",
+    "desc_en": "A structure for waiting can determine who receives expensive hardware next.",
+    "desc_ro": "Structura de așteptare poate decide cine primește hardware-ul scump.",
+    "pdf_en": "materials/datacenters/dc-10-en.pdf",
+    "pdf_ro": "materials/datacenters/dc-10-ro.pdf",
+    "preview": "previews/dc-10.webp",
+    "keywords": "queues & priority heaps cozi și heap-uri de priorități a structure for waiting can determine who receives expensive hardware next. structura de așteptare poate decide cine primește hardware-ul scump. data center ai infrastructure distributed systems queue heap hash map cache index b-tree log graph vector gpu"
+  },
+  {
+    "id": "dc-11",
+    "category": "dc",
+    "title_en": "Hash Maps, Caches & Sets",
+    "title_ro": "Dicționare, Cache Și Mulțimi",
+    "desc_en": "Avoid searching every computer or recalculating the same answer.",
+    "desc_ro": "Nu căuta fiecare calculator și nu recalcula mereu același rezultat.",
+    "pdf_en": "materials/datacenters/dc-11-en.pdf",
+    "pdf_ro": "materials/datacenters/dc-11-ro.pdf",
+    "preview": "previews/dc-11.webp",
+    "keywords": "hash maps, caches & sets dicționare, cache și mulțimi avoid searching every computer or recalculating the same answer. nu căuta fiecare calculator și nu recalcula mereu același rezultat. data center ai infrastructure distributed systems queue heap hash map cache index b-tree log graph vector gpu"
+  },
+  {
+    "id": "dc-12",
+    "category": "dc",
+    "title_en": "Trees, Indexes & Event Logs",
+    "title_ro": "Arbori, Indexuri Și Jurnale",
+    "desc_en": "Finding saved data and remembering changes are different operations.",
+    "desc_ro": "Căutarea datelor și păstrarea istoricului sunt operații diferite.",
+    "pdf_en": "materials/datacenters/dc-12-en.pdf",
+    "pdf_ro": "materials/datacenters/dc-12-ro.pdf",
+    "preview": "previews/dc-12.webp",
+    "keywords": "trees, indexes & event logs arbori, indexuri și jurnale finding saved data and remembering changes are different operations. căutarea datelor și păstrarea istoricului sunt operații diferite. data center ai infrastructure distributed systems queue heap hash map cache index b-tree log graph vector gpu"
+  },
+  {
+    "id": "dc-13",
+    "category": "dc",
+    "title_en": "Graphs, Vectors & AI Search",
+    "title_ro": "Grafuri, Vectori Și Căutare AI",
+    "desc_en": "The data structure changes how an AI center finds relevant information.",
+    "desc_ro": "Structura de date influențează cum găsește un sistem AI informația relevantă.",
+    "pdf_en": "materials/datacenters/dc-13-en.pdf",
+    "pdf_ro": "materials/datacenters/dc-13-ro.pdf",
+    "preview": "previews/dc-13.webp",
+    "keywords": "graphs, vectors & ai search grafuri, vectori și căutare ai the data structure changes how an ai center finds relevant information. structura de date influențează cum găsește un sistem ai informația relevantă. data center ai infrastructure distributed systems queue heap hash map cache index b-tree log graph vector gpu"
   }
 ];
