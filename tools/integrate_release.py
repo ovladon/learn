@@ -32,6 +32,8 @@ assert "if: github.repository == 'ovladon/learn' && github.actor == 'ovladon'" i
 base=base.replace("==52,'Expected 52 student PDFs'","==78,'Expected 78 student PDFs'")
 base=base.replace("assert len(list((root/'collections').glob('big-o-*.pdf')))==4,'Expected four Big-O PDFs'","assert len(list((root/'collections').glob('big-o-*.pdf')))==4,'Expected four Big-O PDFs'\n          assert len(list((root/'materials/datacenters').glob('dc-*.pdf')))==26,'Expected 26 data center PDFs'")
 base=base.replace('52 sheets, four standalone Big-O sheets','78 sheets, four standalone Big-O sheets')
+base=base.replace(")==52", ")==78")
+assert "==78" in base, "Workflow must validate 78 PDFs"
 yml.write_text(base)
 # Source repository can stay in owner's offline backup only; included teaching source under teacher-only dir.
 teach=ROOT/'teacher_only';teach.mkdir(exist_ok=True)
