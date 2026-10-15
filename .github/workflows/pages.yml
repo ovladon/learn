@@ -1,0 +1,59 @@
+name: Deploy LEARN to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: learn-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reassemble student-only library
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .site_payload/part-*.bin > /tmp/learn-library.zip
+          echo '834abaab20845415be54d5a49c5281c6b7b9376247325a21c1c1621633220b3f  /tmp/learn-library.zip' | sha256sum -c -
+          mkdir -p _site
+          python3 - <<'PY'
+          import pathlib,stat,zipfile
+          p=pathlib.Path('/tmp/learn-library.zip')
+          root=pathlib.Path('_site').resolve()
+          with zipfile.ZipFile(p) as a:
+              items=a.infolist()
+              if len(items)>200 or sum(i.file_size for i in items)>120_000_000:
+                  raise SystemExit('Unexpected payload size')
+              for item in items:
+                  dst=(root/item.filename).resolve()
+                  if not dst.is_relative_to(root) or stat.S_ISLNK(item.external_attr >> 16):
+                      raise SystemExit('Unsafe archive entry')
+              a.extractall(root)
+          for f in ('index.html','catalog.js','app.js','style.css','.nojekyll'):
+              assert (root/f).is_file(), f
+          assert len(list((root/'materials').rglob('*.pdf')))==52
+          assert len(list((root/'collections').glob('big-o-*.pdf')))==4
+          print('Validated LEARN: 52 lessons, 4 Big-O standalone sheets')
+          PY
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload static library
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v4
