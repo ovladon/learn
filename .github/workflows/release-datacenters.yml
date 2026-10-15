@@ -1,0 +1,79 @@
+name: One-time owner release - Foundations and Data Centers
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/release-datacenters.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    if: github.repository == 'ovladon/learn' && github.actor == 'ovladon'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install the reproducible PDF toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install --quiet --break-system-packages reportlab pymupdf pillow qrcode || python3 -m pip install --quiet reportlab pymupdf pillow qrcode
+          if [ ! -f /usr/share/fonts/truetype/lato/Lato-Regular.ttf ]; then
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq fonts-lato
+          fi
+      - name: Rebuild corrected and new bilingual educational content
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /mnt/data/_learn_work/site
+          mkdir -p /mnt/data/LEARN_OWNER_LIBRARY_BACKUP_2026-10-15/website
+          rsync -a --exclude='.git' ./ /mnt/data/_learn_work/site/
+          rsync -a --exclude='.git' ./ /mnt/data/LEARN_OWNER_LIBRARY_BACKUP_2026-10-15/website/
+          cp tools/build_datacenter.py /mnt/data/_learn_work/build_datacenter.py
+          cp tools/fix_foundations.py /mnt/data/_learn_work/fix_foundations.py
+          cp tools/integrate_release.py /mnt/data/_learn_work/integrate_release.py
+          python3 /mnt/data/_learn_work/build_datacenter.py
+          python3 /mnt/data/_learn_work/fix_foundations.py
+          python3 /mnt/data/_learn_work/integrate_release.py
+          python3 - <<'PY'
+          import pathlib,fitz,re
+          p=pathlib.Path('/mnt/data/_learn_work/site')
+          assert len(list((p/'materials').rglob('*.pdf')))==78
+          assert len(list((p/'materials/datacenters').glob('dc-*.pdf')))==26
+          for pdf in (p/'materials').rglob('*.pdf'):
+              d=fitz.open(pdf)
+              assert len(d)==1, pdf
+              assert round(d[0].rect.width)==595 and round(d[0].rect.height)==842, pdf
+              assert d[0].get_links(), pdf
+          cat=(p/'catalog.js').read_text()
+          assert cat.count('"id": "dc-')==13
+          print('PASSED: 78 single-sheet PDFs, 26 data center PDFs and 13 catalog topics.')
+          PY
+          rsync -a /mnt/data/_learn_work/site/materials/ materials/
+          rsync -a /mnt/data/_learn_work/site/previews/ previews/
+          rsync -a /mnt/data/_learn_work/site/collections/ collections/
+          cp /mnt/data/_learn_work/site/catalog.js catalog.js
+          cp /mnt/data/_learn_work/site/index.html index.html
+          cp /mnt/data/_learn_work/site/README.md README.md
+          cp /mnt/data/_learn_work/site/SITE_MANIFEST.json SITE_MANIFEST.json
+          cp /mnt/data/_learn_work/site/RELEASE_INFO.json RELEASE_INFO.json
+          cp /mnt/data/_learn_work/site/.github/workflows/pages.yml .github/workflows/pages.yml
+      - name: Commit completed library update
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add materials previews collections catalog.js index.html README.md SITE_MANIFEST.json RELEASE_INFO.json .github/workflows/pages.yml
+          if git diff --cached --quiet; then
+            echo 'No differences detected.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Publish data centers and AI structures; fix Foundations acronyms'
+          git push origin HEAD:main
