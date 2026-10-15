@@ -64,12 +64,11 @@ jobs:
           cp /mnt/data/_learn_work/site/README.md README.md
           cp /mnt/data/_learn_work/site/SITE_MANIFEST.json SITE_MANIFEST.json
           cp /mnt/data/_learn_work/site/RELEASE_INFO.json RELEASE_INFO.json
-          cp /mnt/data/_learn_work/site/.github/workflows/pages.yml .github/workflows/pages.yml
       - name: Commit completed library update
         shell: bash
         run: |
           set -euo pipefail
-          git add materials previews collections catalog.js index.html README.md SITE_MANIFEST.json RELEASE_INFO.json .github/workflows/pages.yml
+          git add materials previews collections catalog.js index.html README.md SITE_MANIFEST.json RELEASE_INFO.json
           if git diff --cached --quiet; then
             echo 'No differences detected.'
             exit 0
