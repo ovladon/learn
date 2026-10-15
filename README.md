@@ -1,32 +1,39 @@
 # LEARN — See it. Understand it. Remember it.
 
-**Student library:** https://ovladon.github.io/learn/
+**Live bilingual learning library:** https://ovladon.github.io/learn/
 
-Permanent, publicly accessible bilingual (English and Romanian) learning materials for Computer Science, Data Structures, AI and more.
+A permanent, free, open-access collection of visual explanations about computing, algorithms, data structures, artificial intelligence and agentic systems, designed for learners starting from zero.
 
-- 26 learning topics, 52 separate A4 QR-coded PDF sheets.
-- **Both Big-O formats (from zero and quick reference), in English and Romanian**, included and directly linked.
-- Four full curriculum booklets and a classroom QR poster.
-- One stable QR link per topic, to `#fund-00`–`#fund-12` and `#ai-01`–`#ai-13`.
-- Read-only students, no signup, no trackers or external scripts.
+## Contents
 
-## How it is deployed
+- **26 topics, 52 individual A4 infographic PDFs** (English and Romanian), all containing QR codes to their permanent topic links.
+- Computing Foundations: `materials/foundations/` (26 files).
+- AI & Agentic AI: `materials/ai/` (26 files).
+- Full collection booklets, four standalone Big-O sheets and classroom QR poster: `collections/`.
+- The website itself: `index.html`, `style.css`, `app.js`, `catalog.js`.
+- Thumbnails: `previews/`.
 
-The public website is safely bundled in nine binary parts under `.site_payload/`. The GitHub Actions workflow in `.github/workflows/pages.yml` recombines and verifies the archive and publishes it to **GitHub Pages** after a push to `main`.
+## Big-O printable cheat sheets
 
-If the first deployment says "Pages is not enabled", open **Settings → Pages → Build and deployment → Source: GitHub Actions**, then rerun the deployment using **Actions → Deploy LEARN to GitHub Pages → Run workflow**.
-
-**Never put teacher-only files or personal information into this repository.** All files are public. For updates, rebuild the site archive and split into the nine parts using the publishing script in the offline laptop backup. Preserve the domain and lesson IDs so printed QR codes continue to work.
-
-## Big-O cheat sheets
-
-| Version | English | Romanian |
+| Format | English | Romanian |
 |---|---|---|
-| **From zero** | [Open PDF](https://ovladon.github.io/learn/collections/big-o-from-zero-en.pdf) | [Deschide PDF](https://ovladon.github.io/learn/collections/big-o-from-zero-ro.pdf) |
-| **Quick reference** | [Open PDF](https://ovladon.github.io/learn/collections/big-o-quick-reference-en.pdf) | [Deschide PDF](https://ovladon.github.io/learn/collections/big-o-quick-reference-ro.pdf) |
+| From zero | [PDF](https://ovladon.github.io/learn/collections/big-o-from-zero-en.pdf) | [PDF](https://ovladon.github.io/learn/collections/big-o-from-zero-ro.pdf) |
+| Quick reference | [PDF](https://ovladon.github.io/learn/collections/big-o-quick-reference-en.pdf) | [PDF](https://ovladon.github.io/learn/collections/big-o-quick-reference-ro.pdf) |
 
-The site is statically generated and does not require student accounts. GitHub, as a hosting platform, may maintain technical access logs.
+## Updating LEARN
 
-## Publication diagnostics
+This is a **normal static site**. All student files are directly browsable in this repository. Changes committed to `main` automatically publish through [GitHub Actions](https://github.com/ovladon/learn/actions/workflows/pages.yml). The workflow checks that all catalog-referenced files exist and that all 52 initial infographic PDFs and four standalone Big-O sheets are present.
 
-The repository stores the student site as a verified release archive under `.site_payload/`; individual PDFs appear at `https://ovladon.github.io/learn/...` **only after** the Pages deployment succeeds. The `.site_payload/` directory is not itself a browsable educational library. If students encounter HTTP 404 responses, first check [Actions → Deploy LEARN to GitHub Pages](https://github.com/ovladon/learn/actions/workflows/pages.yml) for a completed successful run and ensure [Settings → Pages](https://github.com/ovladon/learn/settings/pages) is set to **Source: GitHub Actions**.
+For a new lesson:
+1. Upload English and Romanian PDFs to the relevant folder below `materials/`, or create a new subject folder.
+2. Add catalog records to `catalog.js`. Generate QR codes pointing at the permanent lesson URL `https://ovladon.github.io/learn/#YOUR-LESSON-ID`.
+3. Upload a preview image under `previews/` and commit the changes.
+4. Check [the deployment workflow](https://github.com/ovladon/learn/actions/workflows/pages.yml) for success.
+
+**Keep existing lesson IDs and the site address unchanged**: printed classroom QR codes rely on them.
+
+## Security and privacy
+
+The website and all repository contents are **public**. Never upload student data, grades, attendance, passwords, secrets, confidential research, instructor-only notes, or files not approved for public distribution. No student login, form, external analytics, or third-party JavaScript is used. Hosting provider GitHub may process technical access information.
+
+[Site](https://ovladon.github.io/learn/) · [Workflow](https://github.com/ovladon/learn/actions/workflows/pages.yml)
