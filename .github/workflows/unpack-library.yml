@@ -1,0 +1,54 @@
+name: Publish unpacked LEARN materials into repository
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/unpack-library.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Extract verified student-only website
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .site_payload/part-*.bin > /tmp/learn-library.zip
+          echo '834abaab20845415be54d5a49c5281c6b7b9376247325a21c1c1621633220b3f  /tmp/learn-library.zip' | sha256sum -c -
+          python3 - <<'PY'
+          import zipfile,pathlib,stat
+          root=pathlib.Path('_site').resolve()
+          root.mkdir(exist_ok=True)
+          with zipfile.ZipFile('/tmp/learn-library.zip') as z:
+              items=z.infolist()
+              assert len(items)<=200 and sum(i.file_size for i in items)<120_000_000
+              for x in items:
+                  p=(root/x.filename).resolve()
+                  assert p.is_relative_to(root) and not stat.S_ISLNK(x.external_attr >> 16)
+              z.extractall(root)
+          assert (root/'index.html').exists()
+          assert len(list((root/'materials').rglob('*.pdf')))==52
+          assert len(list((root/'collections').glob('big-o-*.pdf')))==4
+          PY
+          cp -a _site/. .
+          rm -rf _site
+      - name: Commit visible HTML and PDF files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -A -- index.html app.js catalog.js style.css favicon.svg robots.txt .nojekyll SECURITY.md SITE_MANIFEST.json RELEASE_INFO.json assets/ previews/ materials/ collections/
+          if git diff --cached --quiet; then
+            echo 'LEARN source files are already in sync.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Make LEARN website and PDF materials directly browsable'
+          git push origin HEAD:main
