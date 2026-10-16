@@ -37,19 +37,19 @@ jobs:
             test -d "$d"
             cp -a "$d" _site/
           done
-          python3 - <<'PY'
+          python3 - <<'PYVALIDATE'
           import pathlib,re
           root=pathlib.Path('_site')
           files={p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file()}
-          assert len(list((root/'materials').rglob('*.pdf')))==78,'Expected 78 student PDFs'
-          assert len(list((root/'collections').glob('big-o-*.pdf')))==4,'Expected four Big-O PDFs'
-          assert len(list((root/'materials/datacenters').glob('dc-*.pdf')))==26,'Expected 26 data-center PDFs'
-          catalog=(root/'catalog.js').read_text(encoding='utf8')
+          assert len(list((root/'materials').rglob('*.pdf')))==102
+          assert len(list((root/'collections').glob('big-o-*.pdf')))==4
+          assert len(list((root/'materials/datacenters').glob('dc-*.pdf')))==26
+          assert len(list((root/'materials/frontier').glob('front-*.pdf')))==24,'Expected 24 Frontier PDFs'
+          assert (root/'collections/frontier-en.pdf').exists() and (root/'collections/frontier-ro.pdf').exists()
+          catalog=(root/'catalog.js').read_text(encoding='utf-8')
           refs=re.findall(r"""['"]((?:materials|collections|previews|assets)/[^'"]+)['"]""",catalog)
-          missing=[r for r in refs if r not in files]
-          assert not missing, 'Missing linked files: '+str(missing)
-          print('LEARN validation passed: 78 sheets, four standalone Big-O sheets, '+str(len(refs))+' valid catalog references.')
-          PY
+          assert not [r for r in refs if r not in files]
+          PYVALIDATE
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload static site

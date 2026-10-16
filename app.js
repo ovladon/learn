@@ -31,7 +31,7 @@ function render(){
     const visible=catalog.filter(d=>d.category===t.id && (!query||[d.title_en,d.title_ro,d.desc_en,d.desc_ro,d.keywords].join(' ').toLocaleLowerCase().includes(query)));
     if(!visible.length)continue; count+=visible.length;
     const books=['en','ro'].filter(lang=>t['booklet_'+lang]).map(lang=>`<a class="booklink" href="${esc(t['booklet_'+lang])}">${esc(language==='en'?'Full booklet':'Broșură completă')} ${lang.toUpperCase()} ↗</a>`).join('');
-    out+=`<section class="topic-group"><div class="group-heading"><span class="group-icon ${t.id==='ai'?'violet':''}">${esc(t.number||'•')}</span><div><div class="kicker">${esc(label(t.label_en||'LEARNING TRACK',t.label_ro||'TRASEU DE ÎNVĂȚARE'))}</div><h3>${esc(label(t.title_en,t.title_ro))}</h3></div>${books}</div><div class="cards">${visible.map(cardHtml).join('')}</div></section>`;
+    out+=`<section class="topic-group"><div class="group-heading"><span class="group-icon ${t.id==='ai'?'violet':t.id==='front'?'front':''}">${esc(t.number||'•')}</span><div><div class="kicker">${esc(label(t.label_en||'LEARNING TRACK',t.label_ro||'TRASEU DE ÎNVĂȚARE'))}</div><h3>${esc(label(t.title_en,t.title_ro))}</h3></div>${books}</div><div class="cards">${visible.map(cardHtml).join('')}</div></section>`;
   }
   document.getElementById('tracks').innerHTML=out;
   document.getElementById('count').textContent=String(count);

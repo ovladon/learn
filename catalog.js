@@ -1,4 +1,4 @@
-/* LEARN teaching library: author-published content only. */
+/* LEARN: author-published bilingual visual teaching library. */
 window.LEARN_TRACKS = [
   {
     "id": "fund",
@@ -29,6 +29,16 @@ window.LEARN_TRACKS = [
     "number": "03",
     "booklet_en": "collections/datacenters-en.pdf",
     "booklet_ro": "collections/datacenters-ro.pdf"
+  },
+  {
+    "id": "front",
+    "title_en": "Modern computing & AI — from zero to the frontier",
+    "title_ro": "Informatica modernă și AI — de la zero la frontieră",
+    "label_en": "LEARNING TRACK / 04",
+    "label_ro": "TRASEU DE ÎNVĂȚARE / 04",
+    "number": "04",
+    "booklet_en": "collections/frontier-en.pdf",
+    "booklet_ro": "collections/frontier-ro.pdf"
   }
 ];
 window.LEARN_CATALOG = [
@@ -499,5 +509,149 @@ window.LEARN_CATALOG = [
     "pdf_ro": "materials/datacenters/dc-13-ro.pdf",
     "preview": "previews/dc-13.webp",
     "keywords": "graphs, vectors & ai search grafuri, vectori și căutare ai the data structure changes how an ai center finds relevant information. structura de date influențează cum găsește un sistem ai informația relevantă. data center ai infrastructure distributed systems queue heap hash map cache index b-tree log graph vector gpu"
+  },
+  {
+    "id": "front-01",
+    "category": "front",
+    "title_en": "Inside a Language Model",
+    "title_ro": "În interiorul unui model lingvistic",
+    "desc_en": "How a language model produces text. A language model predicts useful next pieces of text from patterns it learned; fluent output is not proof of truth.",
+    "desc_ro": "Cum produce text un model lingvistic. Un model lingvistic prezice fragmente de text din tipare învățate; un răspuns fluent nu este dovadă că este adevărat.",
+    "pdf_en": "materials/frontier/front-01-en.pdf",
+    "pdf_ro": "materials/frontier/front-01-ro.pdf",
+    "preview": "previews/front-01.webp",
+    "keywords": "Inside a Language Model În interiorul unui model lingvistic A language model predicts useful next pieces of text from patterns it learned; fluent output is not proof of truth. Un model lingvistic prezice fragmente de text din tipare învățate; un răspuns fluent nu este dovadă că este adevărat. models attention inference load balancing orchestration concurrency security verification generative systems frontier autonomy"
+  },
+  {
+    "id": "front-02",
+    "category": "front",
+    "title_en": "Attention Is Not Memory",
+    "title_ro": "Atenția nu este memorie",
+    "desc_en": "How context changes interpretation. Attention helps relate parts of the current context. It is not the same as remembering a fact after the conversation ends.",
+    "desc_ro": "Cum schimbă contextul interpretarea. Mecanismul de atenție corelează părțile contextului disponibil. Nu înseamnă că un fapt rămâne memorat după conversație.",
+    "pdf_en": "materials/frontier/front-02-en.pdf",
+    "pdf_ro": "materials/frontier/front-02-ro.pdf",
+    "preview": "previews/front-02.webp",
+    "keywords": "Attention Is Not Memory Atenția nu este memorie Attention helps relate parts of the current context. It is not the same as remembering a fact after the conversation ends. Mecanismul de atenție corelează părțile contextului disponibil. Nu înseamnă că un fapt rămâne memorat după conversație. models attention inference load balancing orchestration concurrency security verification generative systems frontier autonomy"
+  },
+  {
+    "id": "front-03",
+    "category": "front",
+    "title_en": "Training vs. Inference",
+    "title_ro": "Antrenare versus inferență",
+    "desc_en": "Learning parameters versus using them. Training adjusts model parameters using examples and feedback. Inference uses the resulting parameters to answer a new request.",
+    "desc_ro": "Învățarea parametrilor versus folosirea lor. Antrenarea ajustează parametrii unui model folosind exemple și feedback. Inferența folosește acei parametri la o cerere nouă.",
+    "pdf_en": "materials/frontier/front-03-en.pdf",
+    "pdf_ro": "materials/frontier/front-03-ro.pdf",
+    "preview": "previews/front-03.webp",
+    "keywords": "Training vs. Inference Antrenare versus inferență Training adjusts model parameters using examples and feedback. Inference uses the resulting parameters to answer a new request. Antrenarea ajustează parametrii unui model folosind exemple și feedback. Inferența folosește acei parametri la o cerere nouă. models attention inference load balancing orchestration concurrency security verification generative systems frontier autonomy"
+  },
+  {
+    "id": "front-04",
+    "category": "front",
+    "title_en": "One Million Users, One Service",
+    "title_ro": "Un milion de utilizatori, un serviciu",
+    "desc_en": "Why large services use many machines. A popular service is usually a coordinated fleet, not one magical server. Traffic distribution prevents overload, but capacity is finite.",
+    "desc_ro": "De ce serviciile mari folosesc multe calculatoare. Un serviciu popular este, de regulă, o flotă coordonată, nu un server miraculos. Cererile se distribuie, dar capacitatea rămâne limitată.",
+    "pdf_en": "materials/frontier/front-04-en.pdf",
+    "pdf_ro": "materials/frontier/front-04-ro.pdf",
+    "preview": "previews/front-04.webp",
+    "keywords": "One Million Users, One Service Un milion de utilizatori, un serviciu A popular service is usually a coordinated fleet, not one magical server. Traffic distribution prevents overload, but capacity is finite. Un serviciu popular este, de regulă, o flotă coordonată, nu un server miraculos. Cererile se distribuie, dar capacitatea rămâne limitată. models attention inference load balancing orchestration concurrency security verification generative systems frontier autonomy"
+  },
+  {
+    "id": "front-05",
+    "category": "front",
+    "title_en": "From Your Phone to an AI Answer",
+    "title_ro": "De la telefon la răspunsul AI",
+    "desc_en": "Follow one request through the system. An answer crosses multiple systems: your device, networks, application servers, model workers and back again.",
+    "desc_ro": "Urmărește o singură cerere prin sistem. Un răspuns trece prin mai multe sisteme: dispozitiv, rețele, servere ale aplicației, calculul modelului și înapoi.",
+    "pdf_en": "materials/frontier/front-05-en.pdf",
+    "pdf_ro": "materials/frontier/front-05-ro.pdf",
+    "preview": "previews/front-05.webp",
+    "keywords": "From Your Phone to an AI Answer De la telefon la răspunsul AI An answer crosses multiple systems: your device, networks, application servers, model workers and back again. Un răspuns trece prin mai multe sisteme: dispozitiv, rețele, servere ale aplicației, calculul modelului și înapoi. models attention inference load balancing orchestration concurrency security verification generative systems frontier autonomy"
+  },
+  {
+    "id": "front-06",
+    "category": "front",
+    "title_en": "The Agent Orchestra",
+    "title_ro": "Orchestra agenților",
+    "desc_en": "Multiple agents need coordination. Specialized agents can divide work, but a coordinator must define tasks, combine results and check the final answer.",
+    "desc_ro": "Mai mulți agenți au nevoie de coordonare. Agenții specializați pot împărți munca, dar cineva trebuie să definească sarcini, să unească rezultatele și să le verifice.",
+    "pdf_en": "materials/frontier/front-06-en.pdf",
+    "pdf_ro": "materials/frontier/front-06-ro.pdf",
+    "preview": "previews/front-06.webp",
+    "keywords": "The Agent Orchestra Orchestra agenților Specialized agents can divide work, but a coordinator must define tasks, combine results and check the final answer. Agenții specializați pot împărți munca, dar cineva trebuie să definească sarcini, să unească rezultatele și să le verifice. models attention inference load balancing orchestration concurrency security verification generative systems frontier autonomy"
+  },
+  {
+    "id": "front-07",
+    "category": "front",
+    "title_en": "How Agents Use Tools",
+    "title_ro": "Cum folosesc agenții instrumente",
+    "desc_en": "From a decision to an authorized action. A tool lets an agent affect a system beyond its text response. Tool access needs permissions, input checks and review.",
+    "desc_ro": "De la decizie la acțiune autorizată. Un instrument permite unui agent să acționeze dincolo de text. Accesul cere permisiuni, validarea intrărilor și control.",
+    "pdf_en": "materials/frontier/front-07-en.pdf",
+    "pdf_ro": "materials/frontier/front-07-ro.pdf",
+    "preview": "previews/front-07.webp",
+    "keywords": "How Agents Use Tools Cum folosesc agenții instrumente A tool lets an agent affect a system beyond its text response. Tool access needs permissions, input checks and review. Un instrument permite unui agent să acționeze dincolo de text. Accesul cere permisiuni, validarea intrărilor și control. models attention inference load balancing orchestration concurrency security verification generative systems frontier autonomy"
+  },
+  {
+    "id": "front-08",
+    "category": "front",
+    "title_en": "Two Programs, One Shared Record",
+    "title_ro": "Două programe, aceeași înregistrare",
+    "desc_en": "Concurrency and the race condition. When two operations touch the same data, their order can change the result. Synchronization protects shared state.",
+    "desc_ro": "Concurență și conflicte între operații. Când două operații folosesc aceleași date, ordinea poate schimba rezultatul. Sincronizarea protejează starea comună.",
+    "pdf_en": "materials/frontier/front-08-en.pdf",
+    "pdf_ro": "materials/frontier/front-08-ro.pdf",
+    "preview": "previews/front-08.webp",
+    "keywords": "Two Programs, One Shared Record Două programe, aceeași înregistrare When two operations touch the same data, their order can change the result. Synchronization protects shared state. Când două operații folosesc aceleași date, ordinea poate schimba rezultatul. Sincronizarea protejează starea comună. models attention inference load balancing orchestration concurrency security verification generative systems frontier autonomy"
+  },
+  {
+    "id": "front-09",
+    "category": "front",
+    "title_en": "Why AI Answers Have Different Costs",
+    "title_ro": "De ce costă diferit răspunsurile AI",
+    "desc_en": "Tokens, computation, waiting and reuse. AI costs depend on the amount of work performed—not merely on the number of questions. Good routing avoids needless work.",
+    "desc_ro": "Tokenuri, calcul, așteptare și reutilizare. Costurile AI depind de munca efectuată, nu doar de numărul întrebărilor. Alegerea potrivită evită calculul inutil.",
+    "pdf_en": "materials/frontier/front-09-en.pdf",
+    "pdf_ro": "materials/frontier/front-09-ro.pdf",
+    "preview": "previews/front-09.webp",
+    "keywords": "Why AI Answers Have Different Costs De ce costă diferit răspunsurile AI AI costs depend on the amount of work performed—not merely on the number of questions. Good routing avoids needless work. Costurile AI depind de munca efectuată, nu doar de numărul întrebărilor. Alegerea potrivită evită calculul inutil. models attention inference load balancing orchestration concurrency security verification generative systems frontier autonomy"
+  },
+  {
+    "id": "front-10",
+    "category": "front",
+    "title_en": "Can We Trust This AI System?",
+    "title_ro": "Putem avea încredere în acest AI?",
+    "desc_en": "Evaluation is more than a good demo. A strong system succeeds on representative tasks, repeatedly and safely—not just once on a polished example.",
+    "desc_ro": "Evaluarea înseamnă mai mult decât o demonstrație. Un sistem bun reușește pe sarcini reprezentative, repetat și în siguranță, nu doar o dată într-un exemplu ales.",
+    "pdf_en": "materials/frontier/front-10-en.pdf",
+    "pdf_ro": "materials/frontier/front-10-ro.pdf",
+    "preview": "previews/front-10.webp",
+    "keywords": "Can We Trust This AI System? Putem avea încredere în acest AI? A strong system succeeds on representative tasks, repeatedly and safely—not just once on a polished example. Un sistem bun reușește pe sarcini reprezentative, repetat și în siguranță, nu doar o dată într-un exemplu ales. models attention inference load balancing orchestration concurrency security verification generative systems frontier autonomy"
+  },
+  {
+    "id": "front-11",
+    "category": "front",
+    "title_en": "AI Can Be Tricked by Documents",
+    "title_ro": "Documentele pot păcăli agenții AI",
+    "desc_en": "Prompt injection: data is not authority. A document or website may contain commands for an AI agent. Those words are untrusted data, not permission to act.",
+    "desc_ro": "Injectarea de instrucțiuni: datele nu sunt autoritate. Un document sau site poate conține ordine pentru un agent AI. Aceste cuvinte sunt date neîncredere, nu permisiuni de acțiune.",
+    "pdf_en": "materials/frontier/front-11-en.pdf",
+    "pdf_ro": "materials/frontier/front-11-ro.pdf",
+    "preview": "previews/front-11.webp",
+    "keywords": "AI Can Be Tricked by Documents Documentele pot păcăli agenții AI A document or website may contain commands for an AI agent. Those words are untrusted data, not permission to act. Un document sau site poate conține ordine pentru un agent AI. Aceste cuvinte sunt date neîncredere, nu permisiuni de acțiune. models attention inference load balancing orchestration concurrency security verification generative systems frontier autonomy"
+  },
+  {
+    "id": "front-12",
+    "category": "front",
+    "title_en": "The Programmer of 2030",
+    "title_ro": "Programatorul anului 2030",
+    "desc_en": "Engineering judgment in an AI-assisted world. AI can draft code, but reliable systems still need people to define the problem, verify behavior and own the consequences.",
+    "desc_ro": "Judecata inginerească într-o lume asistată de AI. AI poate propune cod, dar oamenii trebuie încă să definească problema, să verifice sistemele și să răspundă pentru efecte.",
+    "pdf_en": "materials/frontier/front-12-en.pdf",
+    "pdf_ro": "materials/frontier/front-12-ro.pdf",
+    "preview": "previews/front-12.webp",
+    "keywords": "The Programmer of 2030 Programatorul anului 2030 AI can draft code, but reliable systems still need people to define the problem, verify behavior and own the consequences. AI poate propune cod, dar oamenii trebuie încă să definească problema, să verifice sistemele și să răspundă pentru efecte. models attention inference load balancing orchestration concurrency security verification generative systems frontier autonomy"
   }
 ];

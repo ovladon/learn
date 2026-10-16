@@ -1,62 +1,41 @@
 # LEARN — See it. Understand it. Remember it.
 
-**Free teaching materials created and taught by Vlad Belciug.**
+**Free teaching materials created and taught by Vlad Belciug (@ovladon).**  
+**Website:** https://ovladon.github.io/learn/  
+**Languages:** English and Romanian  
+**Maintenance:** Personal, author-managed repository. No outside submissions or uploads.
 
-**Student website:** https://ovladon.github.io/learn/  
-**Publisher and sole maintainer:** [Vlad Belciug (@ovladon)](https://github.com/ovladon)  
-**Languages:** English and Romanian
+LEARN is my permanent, free-to-read visual teaching library. I write, select and publish these materials to help students understand contemporary computing, data structures, artificial intelligence and real-world infrastructure. Anyone can view or download the published files for individual study; this repository is **not** a collaborative project or student assignment upload portal.
 
-LEARN is my **personal, author-maintained teaching library**: a growing collection of visual explanations, printable infographics and course resources that I create and use in my teaching. It is not a community-upload site, collaborative textbook or student-submission system. I decide what is added, revised and published.
+## The four teaching chapters
 
-Anyone can **view and download** the published materials for personal study, free of charge. No registration is required.
+| Chapter | Individual topics | A4 PDFs |
+|---|---:|---:|
+| 01 Computing foundations (including both Big-O lessons) | 13 | 26 |
+| 02 AI and agentic systems | 13 | 26 |
+| 03 Data centers and AI infrastructure | 13 | 26 |
+| **04 Modern computing & AI — from zero to the frontier** | **12** | **24** |
+| **Total** | **51** | **102** |
 
-## Start learning
+Chapter 04 has 12 visual lessons, two complete 12-page PDF booklets, bilingual previews and a permanent QR link on each stand-alone PDF. Students can optionally explore each idea alone; classroom participation is not required. Every standalone lesson defines AI as Artificial Intelligence (English) or Inteligență Artificială (Romanian), and does not assume earlier lessons have been read.
 
-Open the [LEARN website](https://ovladon.github.io/learn/), choose a subject, then read or download the lesson PDF in English or Romanian. A QR code on each A4 infographic links to its permanent lesson card; students can scan it from a classroom screen.
+**[Begin chapter 04](https://ovladon.github.io/learn/#front-01)** · [English booklet](https://ovladon.github.io/learn/collections/frontier-en.pdf) · [Broșură în română](https://ovladon.github.io/learn/collections/frontier-ro.pdf)
 
-Currently available:
+Topics: inside a language model; attention versus memory; training versus inference; scaling services to many users; request flow from phone to model; multiple agents; tool use and permissions; concurrency; costs; evaluation; prompt injection; the programmer of 2030.
 
-| Teaching collection | Topics | Individual PDFs |
-| --- | ---: | ---: |
-| Computing Foundations, including Data Structures and both Big-O sheets | 13 | 26 |
-| Artificial Intelligence and Agentic Systems | 13 | 26 |
-| Data centers, AI infrastructure and real-world data structures | 13 | 26 |
-| **Total** | **39** | **78** |
+## Learning materials and permanent links
 
-The [collections folder](collections/) also has complete booklets, four standalone Big-O PDF links retained for compatibility, and the classroom QR poster. The Big-O lessons are **ordinary Computing Foundations lessons**, not a separate subject. New subjects can be added over time without changing existing QR destinations.
+- Browse all subject tracks on the [LEARN website](https://ovladon.github.io/learn/). The website contains search, subject filtering, bilingual labels, PDFs and a back-to-top button.
+- The individual files are kept in `materials/<chapter>/`, previews in `previews/`, collected booklets in `collections/` and the searchable index in `catalog.js`.
+- Students can scan the QR in the top-right corner of each A4 PDF. Please preserve all `#fund-XX`, `#ai-XX`, `#dc-XX`, and `#front-XX` links permanently, including when replacing posters.
+- A static GitHub Pages action publishes checked-in files after updates. It has `contents: read` and a publisher guard for GitHub owner `@ovladon`.
 
-## Read/download only — no external contributions
+## Ownership and usage
 
-- **Only I publish or change the teaching materials.** Visitors have no upload form or write access through the website.
-- The repository is public for reading and downloading, **not for public contributions**. I do **not** accept externally submitted files, pull requests, or other user-generated teaching content.
-- GitHub may still let people **fork** a public repository or propose a pull request. That does **not** grant permission to modify this repository or publish on the LEARN website.
-- Adding collaborators, deploy keys or write-capable GitHub Apps could grant others write access. These must remain tightly controlled by the repository owner.
-- GitHub Actions deploys the static site from `main`; its `contents` permission is **read-only**, and deployment is restricted to runs initiated by `@ovladon`. These deployment checks supplement—not replace—GitHub repository access controls.
+I am the sole editor, publisher and maintainer. **Outside material, pull requests, translations and uploads are not accepted.** The site has no student registration or file-upload mechanism. Viewing and downloading are free; permission to republish, sell or adapt the authored materials is **not** automatically granted. See [USAGE.md](USAGE.md), [CONTRIBUTING.md](CONTRIBUTING.md), and [SECURITY.md](SECURITY.md).
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) (no outside contributions) and [SECURITY.md](SECURITY.md) (account and hosting safeguards).
+© 2026 Vlad Belciug. Rights retained except as stated in USAGE.md.
 
-## Free access does not mean public-domain content
+## Further reading and accuracy
 
-The repository has **no open-source or open-content license**. My educational materials are free to view, download and print for **personal study**. The original author retains copyright and other rights. Free access does not automatically permit republishing, resale, modifying and distributing adaptations, or using these materials as someone else's work.
-
-See [USAGE.md](USAGE.md) for a concise permission statement. If you want rights beyond individual study, please obtain permission from the author.
-
-## How I update the library
-
-This is a straightforward static HTML/CSS/JavaScript site. The lesson PDFs live in `materials/`, previews in `previews/`, and the website's searchable lesson index in `catalog.js`.
-
-As the owner, I may add more subjects and teaching materials to `main`. The [Pages workflow](.github/workflows/pages.yml) validates existing PDF references and publishes the website automatically. Permanent lesson IDs and PDF URLs should remain stable so printed QR codes keep working.
-
-Instructor-only notes, student information, grades, passwords, unpublished research and any other confidential material are **never** part of this public repository.
-
-© 2026 Vlad Belciug. All rights reserved, except for the limited individual-study permissions described in [USAGE.md](USAGE.md).
-
-## Data centers & AI infrastructure
-
-The third teaching track explains data-center hardware, request flow, power, cooling, networks, workload scheduling, security, AI training/inference, and real-life uses of queues, priority heaps, hash maps, caches, sets, tree indexes, append-only logs, graphs, and vector retrieval. Every sheet stands alone in English and Romanian and has a permanent scannable QR code.
-
-The Computing Foundations series was audited for first-use acronyms and corrected while retaining the original lesson IDs and QR destinations.
-
-## Accessing new lessons
-
-The third track, **Data centers & AI infrastructure**, is available directly at [Data Centers (first lesson)](https://ovladon.github.io/learn/?v=20261015-dc-39-v2#dc-01). The public homepage version-tags its JavaScript and stylesheet so students do not accidentally keep a stale two-track catalog in their browser cache. The page also includes an explicit Data Centers navigation link and a homepage shortcut. Lesson hash identifiers are stable.
+This chapter teaches durable computing mechanisms, not predictions of a particular future product. Recommended background references: [Google Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/), [Cloud Load Balancing](https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview), [Google Cloud reliability](https://docs.cloud.google.com/architecture/infra-reliability-guide/traffic-load), and [NIST AI Agent Standards Initiative](https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative). Schematics are conceptual; actual implementations vary.

@@ -1,9 +1,9 @@
 {
   "name": "LEARN",
   "site": "https://ovladon.github.io/learn/",
-  "student_pdf_sheets": 52,
+  "student_pdf_sheets": 102,
   "big_o_standalone_versions": 4,
-  "topics": 39,
+  "topics": 51,
   "languages": [
     "en",
     "ro"
@@ -14,12 +14,15 @@
   "reading_policy": "Public viewing and free individual-study download",
   "publishing_policy": "Owner-only; no external submissions",
   "copyright": "© 2026 Vlad Belciug. All rights reserved except as noted in USAGE.md",
-  "individual_student_pdfs": 78,
+  "individual_student_pdfs": 102,
   "subjects": [
     "Computing Foundations",
     "AI and agentic systems",
     "Data centers and AI infrastructure"
   ],
   "site_url": "https://ovladon.github.io/learn/",
-  "current_release": "2026-10-15 foundations acronym fix and data center collection"
+  "current_release": "2026-10-16 modern computing and AI: 12 bilingual topics",
+  "subject_tracks": 4,
+  "chapter_four_pdfs": 24,
+  "chapter_four_booklets": 2
 }

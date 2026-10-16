@@ -3,11 +3,12 @@
   "subjects": [
     "Computing Foundations",
     "AI and agentic systems",
-    "Data centers and AI infrastructure"
+    "Data centers and AI infrastructure",
+    "Modern computing and AI — from zero to the frontier"
   ],
-  "topics": 39,
-  "individual_pdf": 78,
-  "pages_per_language": 39,
+  "topics": 51,
+  "individual_pdf": 102,
+  "pages_per_language": 51,
   "files": [
     {
       "id": "fund-00",
@@ -164,15 +165,63 @@
     {
       "id": "dc-13",
       "url": "https://ovladon.github.io/learn/#dc-13"
+    },
+    {
+      "id": "front-01",
+      "url": "https://ovladon.github.io/learn/#front-01"
+    },
+    {
+      "id": "front-02",
+      "url": "https://ovladon.github.io/learn/#front-02"
+    },
+    {
+      "id": "front-03",
+      "url": "https://ovladon.github.io/learn/#front-03"
+    },
+    {
+      "id": "front-04",
+      "url": "https://ovladon.github.io/learn/#front-04"
+    },
+    {
+      "id": "front-05",
+      "url": "https://ovladon.github.io/learn/#front-05"
+    },
+    {
+      "id": "front-06",
+      "url": "https://ovladon.github.io/learn/#front-06"
+    },
+    {
+      "id": "front-07",
+      "url": "https://ovladon.github.io/learn/#front-07"
+    },
+    {
+      "id": "front-08",
+      "url": "https://ovladon.github.io/learn/#front-08"
+    },
+    {
+      "id": "front-09",
+      "url": "https://ovladon.github.io/learn/#front-09"
+    },
+    {
+      "id": "front-10",
+      "url": "https://ovladon.github.io/learn/#front-10"
+    },
+    {
+      "id": "front-11",
+      "url": "https://ovladon.github.io/learn/#front-11"
+    },
+    {
+      "id": "front-12",
+      "url": "https://ovladon.github.io/learn/#front-12"
     }
   ],
   "author": "Vlad Belciug",
   "maintainer": "ovladon",
   "external_contributions": false,
   "student_uploads": false,
-  "individual_student_pdfs": 78,
+  "individual_student_pdfs": 102,
   "site_url": "https://ovladon.github.io/learn/",
-  "current_release": "2026-10-15 foundations acronym fix and data center collection",
+  "current_release": "2026-10-16 frontier chapter 04, 12 topics bilingual",
   "publisher": "Vlad Belciug (@ovladon)",
-  "cache_revision": "20261015-dc-39-v2"
+  "cache_revision": "20261016-frontier-51-v1"
 }
