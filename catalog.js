@@ -1,4 +1,4 @@
-/* LEARN: author-published bilingual visual teaching library. */
+/* LEARN personal bilingual teaching library; only @ovladon publishes content. */
 window.LEARN_TRACKS = [
   {
     "id": "fund",
@@ -39,6 +39,16 @@ window.LEARN_TRACKS = [
     "number": "04",
     "booklet_en": "collections/frontier-en.pdf",
     "booklet_ro": "collections/frontier-ro.pdf"
+  },
+  {
+    "id": "invis",
+    "title_en": "The Invisible Systems — how the internet really works",
+    "title_ro": "Sistemele invizibile — cum funcționează internetul",
+    "label_en": "LEARNING TRACK / 05",
+    "label_ro": "TRASEU DE ÎNVĂȚARE / 05",
+    "number": "05",
+    "booklet_en": "collections/invisible-en.pdf",
+    "booklet_ro": "collections/invisible-ro.pdf"
   }
 ];
 window.LEARN_CATALOG = [
@@ -653,5 +663,149 @@ window.LEARN_CATALOG = [
     "pdf_ro": "materials/frontier/front-12-ro.pdf",
     "preview": "previews/front-12.webp",
     "keywords": "The Programmer of 2030 Programatorul anului 2030 AI can draft code, but reliable systems still need people to define the problem, verify behavior and own the consequences. AI poate propune cod, dar oamenii trebuie încă să definească problema, să verifice sistemele și să răspundă pentru efecte. models attention inference load balancing orchestration concurrency security verification generative systems frontier autonomy"
+  },
+  {
+    "id": "invis-01",
+    "category": "invis",
+    "title_en": "One Service, Many Computers",
+    "title_ro": "Un serviciu, multe calculatoare",
+    "desc_en": "Distributed systems: cooperation across machines. A distributed system is a group of computers that cooperate over a network to provide one service. Coordination is useful, but messages can be late or lost.",
+    "desc_ro": "Sisteme distribuite: colaborare între calculatoare. Un sistem distribuit este format din calculatoare care colaborează prin rețea pentru a oferi un serviciu. Mesajele pot întârzia sau se pot pierde.",
+    "pdf_en": "materials/invisible/invis-01-en.pdf",
+    "pdf_ro": "materials/invisible/invis-01-ro.pdf",
+    "preview": "previews/invis-01.webp",
+    "keywords": "One Service, Many Computers Un serviciu, multe calculatoare Distributed systems: cooperation across machines Sisteme distribuite: colaborare între calculatoare A distributed system is a group of computers that cooperate over a network to provide one service. Coordination is useful, but messages can be late or lost. Un sistem distribuit este format din calculatoare care colaborează prin rețea pentru a oferi un serviciu. Mesajele pot întârzia sau se pot pierde. distributed systems reliability replication consistency race condition transaction load balancing containers Kubernetes caching latency observability cloud cost scheduling systems"
+  },
+  {
+    "id": "invis-02",
+    "category": "invis",
+    "title_en": "What If a Server Disappears?",
+    "title_ro": "Ce se întâmplă când cade un server?",
+    "desc_en": "Failures, replicas and recovery. Failures are normal: hardware stops, networks split, software crashes. A resilient service detects trouble and may move requests to a healthy copy.",
+    "desc_ro": "Defecțiuni, replici și recuperare. Defecțiunile sunt normale: componentele se strică, rețelele se întrerup, programele se blochează. Un serviciu rezilient detectează și ocolește problemele.",
+    "pdf_en": "materials/invisible/invis-02-en.pdf",
+    "pdf_ro": "materials/invisible/invis-02-ro.pdf",
+    "preview": "previews/invis-02.webp",
+    "keywords": "What If a Server Disappears? Ce se întâmplă când cade un server? Failures, replicas and recovery Defecțiuni, replici și recuperare Failures are normal: hardware stops, networks split, software crashes. A resilient service detects trouble and may move requests to a healthy copy. Defecțiunile sunt normale: componentele se strică, rețelele se întrerup, programele se blochează. Un serviciu rezilient detectează și ocolește problemele. distributed systems reliability replication consistency race condition transaction load balancing containers Kubernetes caching latency observability cloud cost scheduling systems"
+  },
+  {
+    "id": "invis-03",
+    "category": "invis",
+    "title_en": "Three Copies, Which Is Right?",
+    "title_ro": "Trei copii: care este corectă?",
+    "desc_en": "Replication and consistency. Replication stores copies of data in different places. Copies may temporarily disagree, so the system needs rules for updates, reads and conflicts.",
+    "desc_ro": "Replicare și consistența datelor. Replicarea păstrează copii ale datelor în locuri diferite. Uneori copiile nu coincid temporar; sistemul are nevoie de reguli pentru actualizări și conflicte.",
+    "pdf_en": "materials/invisible/invis-03-en.pdf",
+    "pdf_ro": "materials/invisible/invis-03-ro.pdf",
+    "preview": "previews/invis-03.webp",
+    "keywords": "Three Copies, Which Is Right? Trei copii: care este corectă? Replication and consistency Replicare și consistența datelor Replication stores copies of data in different places. Copies may temporarily disagree, so the system needs rules for updates, reads and conflicts. Replicarea păstrează copii ale datelor în locuri diferite. Uneori copiile nu coincid temporar; sistemul are nevoie de reguli pentru actualizări și conflicte. distributed systems reliability replication consistency race condition transaction load balancing containers Kubernetes caching latency observability cloud cost scheduling systems"
+  },
+  {
+    "id": "invis-04",
+    "category": "invis",
+    "title_en": "Two Programs, One Number",
+    "title_ro": "Două programe, un singur număr",
+    "desc_en": "Race conditions and shared state. A race condition appears when the result depends on which operation happens first. Without coordination, two valid updates can overwrite each other.",
+    "desc_ro": "Condiții de cursă și date partajate. O condiție de cursă apare când rezultatul depinde de ordinea operațiilor. Fără coordonare, două actualizări corecte separat se pot suprascrie.",
+    "pdf_en": "materials/invisible/invis-04-en.pdf",
+    "pdf_ro": "materials/invisible/invis-04-ro.pdf",
+    "preview": "previews/invis-04.webp",
+    "keywords": "Two Programs, One Number Două programe, un singur număr Race conditions and shared state Condiții de cursă și date partajate A race condition appears when the result depends on which operation happens first. Without coordination, two valid updates can overwrite each other. O condiție de cursă apare când rezultatul depinde de ordinea operațiilor. Fără coordonare, două actualizări corecte separat se pot suprascrie. distributed systems reliability replication consistency race condition transaction load balancing containers Kubernetes caching latency observability cloud cost scheduling systems"
+  },
+  {
+    "id": "invis-05",
+    "category": "invis",
+    "title_en": "A Transaction: All or Nothing",
+    "title_ro": "Tranzacția: totul sau nimic",
+    "desc_en": "Safely combining database changes. A database transaction groups related changes into one unit. If a required step fails, the system can undo the unfinished unit instead of leaving half a result.",
+    "desc_ro": "Modificări sigure ale bazei de date. O tranzacție grupează modificări legate într-o singură unitate. Dacă un pas obligatoriu eșuează, operația neterminată poate fi anulată.",
+    "pdf_en": "materials/invisible/invis-05-en.pdf",
+    "pdf_ro": "materials/invisible/invis-05-ro.pdf",
+    "preview": "previews/invis-05.webp",
+    "keywords": "A Transaction: All or Nothing Tranzacția: totul sau nimic Safely combining database changes Modificări sigure ale bazei de date A database transaction groups related changes into one unit. If a required step fails, the system can undo the unfinished unit instead of leaving half a result. O tranzacție grupează modificări legate într-o singură unitate. Dacă un pas obligatoriu eșuează, operația neterminată poate fi anulată. distributed systems reliability replication consistency race condition transaction load balancing containers Kubernetes caching latency observability cloud cost scheduling systems"
+  },
+  {
+    "id": "invis-06",
+    "category": "invis",
+    "title_en": "The Traffic Director",
+    "title_ro": "Dirijorul traficului",
+    "desc_en": "Load balancing and bottlenecks. A load balancer distributes incoming requests among healthy workers. It can reduce overload but cannot invent unlimited capacity.",
+    "desc_ro": "Distribuirea cererilor și blocajele. Un distribuitor de trafic direcționează cererile spre servere funcționale. Poate reduce supraîncărcarea, dar nu creează capacitate nelimitată.",
+    "pdf_en": "materials/invisible/invis-06-en.pdf",
+    "pdf_ro": "materials/invisible/invis-06-ro.pdf",
+    "preview": "previews/invis-06.webp",
+    "keywords": "The Traffic Director Dirijorul traficului Load balancing and bottlenecks Distribuirea cererilor și blocajele A load balancer distributes incoming requests among healthy workers. It can reduce overload but cannot invent unlimited capacity. Un distribuitor de trafic direcționează cererile spre servere funcționale. Poate reduce supraîncărcarea, dar nu creează capacitate nelimitată. distributed systems reliability replication consistency race condition transaction load balancing containers Kubernetes caching latency observability cloud cost scheduling systems"
+  },
+  {
+    "id": "invis-07",
+    "category": "invis",
+    "title_en": "A Program in a Container",
+    "title_ro": "Un program într-un container",
+    "desc_en": "Packaging software for predictable runs. A container packages an application with its runtime dependencies. Containers share the host operating-system kernel; they are not automatically separate virtual machines.",
+    "desc_ro": "Ambalarea software-ului pentru rulare predictibilă. Un container împachetează aplicația și dependențele ei. Containerele folosesc în comun nucleul sistemului gazdă; nu sunt automat mașini virtuale separate.",
+    "pdf_en": "materials/invisible/invis-07-en.pdf",
+    "pdf_ro": "materials/invisible/invis-07-ro.pdf",
+    "preview": "previews/invis-07.webp",
+    "keywords": "A Program in a Container Un program într-un container Packaging software for predictable runs Ambalarea software-ului pentru rulare predictibilă A container packages an application with its runtime dependencies. Containers share the host operating-system kernel; they are not automatically separate virtual machines. Un container împachetează aplicația și dependențele ei. Containerele folosesc în comun nucleul sistemului gazdă; nu sunt automat mașini virtuale separate. distributed systems reliability replication consistency race condition transaction load balancing containers Kubernetes caching latency observability cloud cost scheduling systems"
+  },
+  {
+    "id": "invis-08",
+    "category": "invis",
+    "title_en": "Who Runs All Those Containers?",
+    "title_ro": "Cine conduce toate containerele?",
+    "desc_en": "Kubernetes: orchestrating containers. Kubernetes is software that coordinates containers across computers. It observes the desired configuration and tries to keep actual running services close to it.",
+    "desc_ro": "Kubernetes: orchestrarea containerelor. Kubernetes coordonează containere distribuite între calculatoare. Observă configurația dorită și încearcă să păstreze serviciile reale aproape de ea.",
+    "pdf_en": "materials/invisible/invis-08-en.pdf",
+    "pdf_ro": "materials/invisible/invis-08-ro.pdf",
+    "preview": "previews/invis-08.webp",
+    "keywords": "Who Runs All Those Containers? Cine conduce toate containerele? Kubernetes: orchestrating containers Kubernetes: orchestrarea containerelor Kubernetes is software that coordinates containers across computers. It observes the desired configuration and tries to keep actual running services close to it. Kubernetes coordonează containere distribuite între calculatoare. Observă configurația dorită și încearcă să păstreze serviciile reale aproape de ea. distributed systems reliability replication consistency race condition transaction load balancing containers Kubernetes caching latency observability cloud cost scheduling systems"
+  },
+  {
+    "id": "invis-09",
+    "category": "invis",
+    "title_en": "A Cache Shared by Many Servers",
+    "title_ro": "Cache comun pentru multe servere",
+    "desc_en": "Distributed caching and stale data. A cache keeps reusable results close to where they are needed. A shared cache can help a server fleet, but old or incorrect entries can spread mistakes.",
+    "desc_ro": "Memorare temporară și date învechite. Un cache păstrează temporar rezultate reutilizabile. Un cache partajat ajută mai multe servere, dar informațiile vechi sau greșite pot propaga erori.",
+    "pdf_en": "materials/invisible/invis-09-en.pdf",
+    "pdf_ro": "materials/invisible/invis-09-ro.pdf",
+    "preview": "previews/invis-09.webp",
+    "keywords": "A Cache Shared by Many Servers Cache comun pentru multe servere Distributed caching and stale data Memorare temporară și date învechite A cache keeps reusable results close to where they are needed. A shared cache can help a server fleet, but old or incorrect entries can spread mistakes. Un cache păstrează temporar rezultate reutilizabile. Un cache partajat ajută mai multe servere, dar informațiile vechi sau greșite pot propaga erori. distributed systems reliability replication consistency race condition transaction load balancing containers Kubernetes caching latency observability cloud cost scheduling systems"
+  },
+  {
+    "id": "invis-10",
+    "category": "invis",
+    "title_en": "Why Is the Network Slow?",
+    "title_ro": "De ce este lentă rețeaua?",
+    "desc_en": "Latency, bandwidth and waiting. Latency is the delay before data arrives. Bandwidth is how much data can travel per second. More bandwidth does not remove every delay.",
+    "desc_ro": "Latență, lățime de bandă și așteptare. Latența este întârzierea până când ajung datele. Lățimea de bandă arată câtă informație poate circula într-o secundă. Mai multă bandă nu elimină orice așteptare.",
+    "pdf_en": "materials/invisible/invis-10-en.pdf",
+    "pdf_ro": "materials/invisible/invis-10-ro.pdf",
+    "preview": "previews/invis-10.webp",
+    "keywords": "Why Is the Network Slow? De ce este lentă rețeaua? Latency, bandwidth and waiting Latență, lățime de bandă și așteptare Latency is the delay before data arrives. Bandwidth is how much data can travel per second. More bandwidth does not remove every delay. Latența este întârzierea până când ajung datele. Lățimea de bandă arată câtă informație poate circula într-o secundă. Mai multă bandă nu elimină orice așteptare. distributed systems reliability replication consistency race condition transaction load balancing containers Kubernetes caching latency observability cloud cost scheduling systems"
+  },
+  {
+    "id": "invis-11",
+    "category": "invis",
+    "title_en": "How Do Engineers See the Invisible?",
+    "title_ro": "Cum văd inginerii invizibilul?",
+    "desc_en": "Logs, metrics and traces. Observability means learning what a system does from its signals. Logs record events, metrics show numbers over time, and traces follow a request through services.",
+    "desc_ro": "Jurnale, metrici și urmărirea cererilor. Observabilitatea înseamnă înțelegerea sistemului prin semnalele sale. Jurnalele notează evenimente, metricile arată valori în timp, iar traseele urmăresc cererile.",
+    "pdf_en": "materials/invisible/invis-11-en.pdf",
+    "pdf_ro": "materials/invisible/invis-11-ro.pdf",
+    "preview": "previews/invis-11.webp",
+    "keywords": "How Do Engineers See the Invisible? Cum văd inginerii invizibilul? Logs, metrics and traces Jurnale, metrici și urmărirea cererilor Observability means learning what a system does from its signals. Logs record events, metrics show numbers over time, and traces follow a request through services. Observabilitatea înseamnă înțelegerea sistemului prin semnalele sale. Jurnalele notează evenimente, metricile arată valori în timp, iar traseele urmăresc cererile. distributed systems reliability replication consistency race condition transaction load balancing containers Kubernetes caching latency observability cloud cost scheduling systems"
+  },
+  {
+    "id": "invis-12",
+    "category": "invis",
+    "title_en": "Faster, Cheaper, or Safer?",
+    "title_ro": "Mai rapid, mai ieftin sau mai sigur?",
+    "desc_en": "The engineering trade-off triangle. Every design trades cost, speed and reliability. Optimization starts with a measurable goal, then a test of both benefits and side effects.",
+    "desc_ro": "Compromisurile proiectării sistemelor. Orice proiect echilibrează costul, viteza și fiabilitatea. Optimizarea începe cu un obiectiv măsurabil, apoi verifică beneficiile și efectele secundare.",
+    "pdf_en": "materials/invisible/invis-12-en.pdf",
+    "pdf_ro": "materials/invisible/invis-12-ro.pdf",
+    "preview": "previews/invis-12.webp",
+    "keywords": "Faster, Cheaper, or Safer? Mai rapid, mai ieftin sau mai sigur? The engineering trade-off triangle Compromisurile proiectării sistemelor Every design trades cost, speed and reliability. Optimization starts with a measurable goal, then a test of both benefits and side effects. Orice proiect echilibrează costul, viteza și fiabilitatea. Optimizarea începe cu un obiectiv măsurabil, apoi verifică beneficiile și efectele secundare. distributed systems reliability replication consistency race condition transaction load balancing containers Kubernetes caching latency observability cloud cost scheduling systems"
   }
 ];

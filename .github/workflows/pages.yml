@@ -41,10 +41,15 @@ jobs:
           import pathlib,re
           root=pathlib.Path('_site')
           files={p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file()}
-          assert len(list((root/'materials').rglob('*.pdf')))==102
+          assert len(list((root/'materials').rglob('*.pdf')))==126
           assert len(list((root/'collections').glob('big-o-*.pdf')))==4
           assert len(list((root/'materials/datacenters').glob('dc-*.pdf')))==26
           assert len(list((root/'materials/frontier').glob('front-*.pdf')))==24,'Expected 24 Frontier PDFs'
+          assert len(list((root/'materials/invisible').glob('invis-*.pdf')))==24,'Expected 24 Invisible Systems PDFs'
+          assert len(list((root/'previews').glob('invis-*.webp')))==12,'Expected 12 new previews'
+          assert (root/'system-map.html').is_file()
+          assert all((root/'collections'/f'big-picture-a3-{l}.pdf').is_file() for l in ('en','ro'))
+          assert all((root/'collections'/f'invisible-{l}.pdf').is_file() for l in ('en','ro'))
           assert (root/'collections/frontier-en.pdf').exists() and (root/'collections/frontier-ro.pdf').exists()
           catalog=(root/'catalog.js').read_text(encoding='utf-8')
           refs=re.findall(r"""['"]((?:materials|collections|previews|assets)/[^'"]+)['"]""",catalog)

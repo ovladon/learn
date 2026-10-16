@@ -1,14 +1,15 @@
 {
   "home": "https://ovladon.github.io/learn/",
   "subjects": [
-    "Computing Foundations",
-    "AI and agentic systems",
-    "Data centers and AI infrastructure",
-    "Modern computing and AI — from zero to the frontier"
+    "Computing foundations",
+    "AI & agentic systems",
+    "Data centers & AI infrastructure",
+    "Modern computing & AI — from zero to the frontier",
+    "The Invisible Systems — how the internet really works"
   ],
-  "topics": 51,
-  "individual_pdf": 102,
-  "pages_per_language": 51,
+  "topics": 63,
+  "individual_pdf": 126,
+  "pages_per_language": 63,
   "files": [
     {
       "id": "fund-00",
@@ -213,15 +214,63 @@
     {
       "id": "front-12",
       "url": "https://ovladon.github.io/learn/#front-12"
+    },
+    {
+      "id": "invis-01",
+      "url": "https://ovladon.github.io/learn/#invis-01"
+    },
+    {
+      "id": "invis-02",
+      "url": "https://ovladon.github.io/learn/#invis-02"
+    },
+    {
+      "id": "invis-03",
+      "url": "https://ovladon.github.io/learn/#invis-03"
+    },
+    {
+      "id": "invis-04",
+      "url": "https://ovladon.github.io/learn/#invis-04"
+    },
+    {
+      "id": "invis-05",
+      "url": "https://ovladon.github.io/learn/#invis-05"
+    },
+    {
+      "id": "invis-06",
+      "url": "https://ovladon.github.io/learn/#invis-06"
+    },
+    {
+      "id": "invis-07",
+      "url": "https://ovladon.github.io/learn/#invis-07"
+    },
+    {
+      "id": "invis-08",
+      "url": "https://ovladon.github.io/learn/#invis-08"
+    },
+    {
+      "id": "invis-09",
+      "url": "https://ovladon.github.io/learn/#invis-09"
+    },
+    {
+      "id": "invis-10",
+      "url": "https://ovladon.github.io/learn/#invis-10"
+    },
+    {
+      "id": "invis-11",
+      "url": "https://ovladon.github.io/learn/#invis-11"
+    },
+    {
+      "id": "invis-12",
+      "url": "https://ovladon.github.io/learn/#invis-12"
     }
   ],
   "author": "Vlad Belciug",
   "maintainer": "ovladon",
   "external_contributions": false,
   "student_uploads": false,
-  "individual_student_pdfs": 102,
+  "individual_student_pdfs": 126,
   "site_url": "https://ovladon.github.io/learn/",
-  "current_release": "2026-10-16 frontier chapter 04, 12 topics bilingual",
+  "current_release": "2026-10-16 chapter 05, The Invisible Systems, plus interactive Big Picture map",
   "publisher": "Vlad Belciug (@ovladon)",
-  "cache_revision": "20261016-frontier-51-v1"
+  "cache_revision": "20261016-invisible-63-v1"
 }

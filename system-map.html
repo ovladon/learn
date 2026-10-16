@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Vlad Belciug"><meta name="description" content="An interactive visual map of modern computing, from a person to the internet, data centers and AI agents. Free bilingual teaching materials by Vlad Belciug.">
+<title>LEARN · The Big Picture of Modern Computing</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+:root{--ink:#12344a;--dark:#0b263d;--teal:#26b996;--muted:#5a7281}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f3f8fb;color:var(--ink);font:16px/1.52 system-ui,-apple-system,'Segoe UI',sans-serif}a{color:inherit}button{font:inherit;cursor:pointer}header{background:linear-gradient(135deg,#0b263d,#174460);color:white;padding:24px 24px 43px}header .wrap,main,.footer{max-width:1210px;margin:auto}nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}nav a{text-decoration:none;font-weight:800}nav .home{color:#b5f5d8}nav .back{margin-left:auto;font-size:13px;color:#cde1eb}.language{display:flex;gap:4px}.language button{color:#d1edf2;background:transparent;border:1px solid #63899a;border-radius:7px;padding:4px 10px;font-weight:800}.language button[aria-pressed="true"]{background:white;color:#17364c}.eyebrow{font-size:11px;font-weight:900;letter-spacing:.19em;margin-top:42px;color:#a6e7d4}h1{font-size:clamp(32px,5vw,59px);line-height:1.12;max-width:900px;letter-spacing:-.045em;margin:15px 0}.intro{max-width:850px;color:#c4dce8;margin:0}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}.actions a{display:inline-flex;background:#b8f2d4;color:#103b44;border-radius:12px;padding:12px 16px;text-decoration:none;font-size:13px;font-weight:850}.actions a.secondary{background:transparent;color:white;border:1px solid #89a8bb}main{padding:34px 24px 85px}.hint{background:#fff;border:1px solid #d7e5eb;border-radius:15px;padding:14px 17px;font-size:14px;color:#426070}.modes{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:26px 0}.modes .label{font-weight:800;margin-right:9px;font-size:13px}.modes button{border:1px solid #b5cddb;background:white;color:#2d5367;border-radius:100px;padding:9px 14px;font-size:12px;font-weight:850}.modes button[aria-pressed="true"]{background:#143d5a;color:white;border-color:#143d5a}.flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.station{display:flex;flex-direction:column;min-height:208px;border:1px solid #d5e6ee;border-radius:18px;background:white;padding:21px;box-shadow:0 9px 28px #163f5210;text-decoration:none;transition:opacity .2s,transform .2s,border-color .2s}.station:hover{transform:translateY(-4px);border-color:#29b899}.station:focus-visible{outline:3px solid orange;outline-offset:3px}.station.dim{opacity:.26}.station.active{border:2px solid #1b997d;background:#effcf6}.number{font-size:13px;font-weight:900;color:#1e9577}.station-title{font-size:19px;font-weight:900;letter-spacing:-.02em;margin:8px 0}.station-desc{font-size:14px;color:#365c70}.station-details{font-size:12px;color:#6b8693;margin:10px 0 20px}.lesson{margin-top:auto;font-size:11px;color:#177d71;font-weight:800}.controls{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.control{background:#e2f3f2;border-radius:13px;padding:17px}.control strong{display:block;font-size:13px;color:#126860}.control span{font-size:13px;color:#4a6d6d}.small{margin-top:24px;color:#506a78;font-size:13px}.footer{padding:22px 24px 35px;border-top:1px solid #d6e6eb;color:#607784;font-size:12px}.footer a{color:#176e70}@media(max-width:850px){.flow{grid-template-columns:repeat(2,1fr)}.controls{grid-template-columns:1fr}.station{min-height:190px}}@media(max-width:550px){.flow{grid-template-columns:1fr}.station{min-height:unset}.station-details{margin-bottom:10px}.eyebrow{margin-top:27px}header{padding-bottom:30px}}@media(prefers-reduced-motion:reduce){.station{transition:none}html{scroll-behavior:auto}}
+</style></head><body>
+<header><div class="wrap"><nav><a href="./" class="home">LEARN ↗</a><a href="./#library" class="back" data-en="Explore all lessons" data-ro="Explorează toate lecțiile">Explore all lessons</a><div class="language" aria-label="Language"><button id="en" aria-pressed="true">EN</button><button id="ro" aria-pressed="false">RO</button></div></nav>
+<div class="eyebrow" data-en="LEARN / THE SYSTEM MAP" data-ro="LEARN / HARTA SISTEMELOR">LEARN / THE SYSTEM MAP</div>
+<h1 data-en="The Big Picture of<br>Modern Computing" data-ro="Harta informaticii<br>moderne">The Big Picture of<br>Modern Computing</h1>
+<p class="intro" data-en="Follow a request from a human through networks and computing systems. Click any step to open the connected LEARN lesson." data-ro="Urmărește o cerere de la om, prin rețele și sisteme de calcul. Apasă un pas pentru lecția LEARN asociată.">Follow a request from a human through networks and computing systems. Click any step to open the connected LEARN lesson.</p>
+<div class="actions"><a href="collections/big-picture-a3-en.pdf" id="poster" data-en="Download A3 poster ↓" data-ro="Descarcă afișul A3 ↓">Download A3 poster ↓</a><a href="collections/big-picture-a4-en.pdf" id="a4" class="secondary" data-en="A4 printer version ↓" data-ro="Versiunea A4 ↓">A4 printer version ↓</a></div></div></header>
+<main><div class="hint" data-en="A conceptual map, not a required pipeline. Ordinary internet tasks may never use an AI model or agent. You can follow a simple route or an AI agent route below." data-ro="O hartă conceptuală, nu un lanț obligatoriu. Sarcinile obișnuite pot funcționa fără model sau agent AI. Alege traseul simplu ori pe cel cu agent.">A conceptual map, not a required pipeline. Ordinary internet tasks may never use an AI model or agent. You can follow a simple route or an AI agent route below.</div>
+<div class="modes" role="group" aria-label="Explore request routes"><span class="label" data-en="Explore a request:" data-ro="Explorează o cerere:">Explore a request:</span><button data-mode="all" aria-pressed="true" data-en="All components" data-ro="Toate componentele">All components</button><button data-mode="web" aria-pressed="false" data-en="Ordinary web request" data-ro="Cerere web obișnuită">Ordinary web request</button><button data-mode="agent" aria-pressed="false" data-en="AI agent task" data-ro="Sarcină agent AI">AI agent task</button></div>
+<div class="flow"><a class="station" id="step-1" data-step="1" href="./#fund-00">
+ <span class="number">01</span>
+ <span class="station-title" data-en="HUMAN" data-ro="OM">HUMAN</span>
+ <span class="station-desc" data-en="Has a goal: ask a question, search, book or buy." data-ro="Are un obiectiv: întreabă, caută, rezervă sau cumpără.">Has a goal: ask a question, search, book or buy.</span>
+ <span class="station-details" data-en="Start with intent, not technology." data-ro="Începem cu intenția, nu cu tehnologia.">Start with intent, not technology.</span>
+ <span class="lesson">LEARN ↗ #fund-00</span>
+ </a>
+<a class="station" id="step-2" data-step="2" href="./#fund-01">
+ <span class="number">02</span>
+ <span class="station-title" data-en="DEVICE" data-ro="DISPOZITIV">DEVICE</span>
+ <span class="station-desc" data-en="A phone or laptop turns actions into digital messages." data-ro="Telefonul sau laptopul transformă acțiunea în date.">A phone or laptop turns actions into digital messages.</span>
+ <span class="station-details" data-en="App · keyboard · network connection" data-ro="Aplicație · tastatură · conexiune">App · keyboard · network connection</span>
+ <span class="lesson">LEARN ↗ #fund-01</span>
+ </a>
+<a class="station" id="step-3" data-step="3" href="./#fund-02">
+ <span class="number">03</span>
+ <span class="station-title" data-en="INTERNET" data-ro="INTERNET">INTERNET</span>
+ <span class="station-desc" data-en="Routers move data between networks." data-ro="Routerele transportă date între rețele.">Routers move data between networks.</span>
+ <span class="station-details" data-en="Delay, routing and encryption matter." data-ro="Contează întârzierea, rutele și criptarea.">Delay, routing and encryption matter.</span>
+ <span class="lesson">LEARN ↗ #fund-02</span>
+ </a>
+<a class="station" id="step-4" data-step="4" href="./#front-05">
+ <span class="number">04</span>
+ <span class="station-title" data-en="APPLICATION" data-ro="APLICAȚIE">APPLICATION</span>
+ <span class="station-desc" data-en="A service authenticates users and processes requests." data-ro="Un serviciu verifică accesul și procesează cererea.">A service authenticates users and processes requests.</span>
+ <span class="station-details" data-en="API = Application Programming Interface." data-ro="API = Interfață de Programare a Aplicației.">API = Application Programming Interface.</span>
+ <span class="lesson">LEARN ↗ #front-05</span>
+ </a>
+<a class="station" id="step-5" data-step="5" href="./#dc-01">
+ <span class="number">05</span>
+ <span class="station-title" data-en="DATA CENTER" data-ro="CENTRU DE DATE">DATA CENTER</span>
+ <span class="station-desc" data-en="Servers, storage and networks provide compute capacity." data-ro="Servere, stocare și rețele oferă putere de calcul.">Servers, storage and networks provide compute capacity.</span>
+ <span class="station-details" data-en="Power, cooling, availability and cost." data-ro="Energie, răcire, fiabilitate și cost.">Power, cooling, availability and cost.</span>
+ <span class="lesson">LEARN ↗ #dc-01</span>
+ </a>
+<a class="station" id="step-6" data-step="6" href="./#front-01">
+ <span class="number">06</span>
+ <span class="station-title" data-en="AI MODEL" data-ro="MODEL AI">AI MODEL</span>
+ <span class="station-desc" data-en="When needed, a model computes a response from its inputs." data-ro="La nevoie, modelul calculează un răspuns.">When needed, a model computes a response from its inputs.</span>
+ <span class="station-details" data-en="AI = Artificial Intelligence; it may be wrong." data-ro="AI = Inteligență Artificială; poate greși.">AI = Artificial Intelligence; it may be wrong.</span>
+ <span class="lesson">LEARN ↗ #front-01</span>
+ </a>
+<a class="station" id="step-7" data-step="7" href="./#front-06">
+ <span class="number">07</span>
+ <span class="station-title" data-en="AI AGENT" data-ro="AGENT AI">AI AGENT</span>
+ <span class="station-desc" data-en="An agent can plan steps and decide to call tools." data-ro="Agentul poate planifica pași și apela instrumente.">An agent can plan steps and decide to call tools.</span>
+ <span class="station-details" data-en="Permissions, checks and stop rules matter." data-ro="Permisiunile și verificările sunt esențiale.">Permissions, checks and stop rules matter.</span>
+ <span class="lesson">LEARN ↗ #front-06</span>
+ </a>
+<a class="station" id="step-8" data-step="8" href="./#front-07">
+ <span class="number">08</span>
+ <span class="station-title" data-en="TOOLS" data-ro="INSTRUMENTE">TOOLS</span>
+ <span class="station-desc" data-en="Software services can search, calculate or change data." data-ro="Serviciile pot căuta, calcula sau modifica date.">Software services can search, calculate or change data.</span>
+ <span class="station-details" data-en="A tool call may affect real systems." data-ro="Unele acțiuni au efecte în lumea reală.">A tool call may affect real systems.</span>
+ <span class="lesson">LEARN ↗ #front-07</span>
+ </a>
+<a class="station" id="step-9" data-step="9" href="./#front-10">
+ <span class="number">09</span>
+ <span class="station-title" data-en="REAL WORLD" data-ro="LUMEA REALĂ">REAL WORLD</span>
+ <span class="station-desc" data-en="A result reaches people or changes external state." data-ro="Rezultatul ajunge la oameni sau schimbă ceva.">A result reaches people or changes external state.</span>
+ <span class="station-details" data-en="Verify the outcome, not just the text." data-ro="Verificăm rezultatul, nu doar răspunsul.">Verify the outcome, not just the text.</span>
+ <span class="lesson">LEARN ↗ #front-10</span>
+ </a></div>
+<div class="controls"><div class="control"><strong data-en="SECURITY" data-ro="SECURITATE">SECURITY</strong><span data-en="Who may read, write or call a tool?" data-ro="Cine poate citi, scrie sau folosi instrumente?">Who may read, write or call a tool?</span></div><div class="control"><strong data-en="RELIABILITY" data-ro="FIABILITATE">RELIABILITY</strong><span data-en="What happens if a machine or network fails?" data-ro="Ce se întâmplă când cade o mașină ori rețeaua?">What happens if a machine or network fails?</span></div><div class="control"><strong data-en="ECONOMICS" data-ro="COSTURI">ECONOMICS</strong><span data-en="Is the result worth the compute and energy?" data-ro="Merită rezultatul calculul și energia consumate?">Is the result worth the compute and energy?</span></div></div>
+<p class="small" data-en="Explore individually: click any box, read the lesson and try explaining what would fail if this component disappeared. Every component may have internal steps not shown here." data-ro="Explorare individuală: apasă o casetă, citește lecția și explică ce ar eșua fără acea componentă. Fiecare componentă are pași interni care nu apar în hartă.">Explore individually: click any box, read the lesson and try explaining what would fail if this component disappeared. Every component may have internal steps not shown here.</p></main>
+<div class="footer">© 2026 Vlad Belciug · <span data-en="Free personal study. No user uploads." data-ro="Gratuit pentru studiu individual. Fără încărcări de la vizitatori.">Free personal study. No user uploads.</span> · <a href="https://github.com/ovladon/learn/blob/main/USAGE.md" rel="noopener noreferrer" data-en="Usage and rights ↗" data-ro="Utilizare și drepturi ↗">Usage and rights ↗</a></div>
+<script>(function(){'use strict';const buttons=document.querySelectorAll('[data-mode]'),cards=document.querySelectorAll('[data-step]');let lang='en';function updateLanguage(x){lang=x;document.documentElement.lang=x;document.querySelectorAll('[data-en][data-ro]').forEach(el=>{el.innerHTML=el.dataset[x]});for(const l of ['en','ro'])document.getElementById(l).setAttribute('aria-pressed',l===x?'true':'false');document.getElementById('poster').href='collections/big-picture-a3-'+x+'.pdf';document.getElementById('a4').href='collections/big-picture-a4-'+x+'.pdf'}function mode(x){buttons.forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode===x?'true':'false'));const visible=x==='web'?[1,2,3,4,5,9]:[1,2,3,4,5,6,7,8,9];cards.forEach(c=>{c.classList.toggle('dim',x!=='all'&&!visible.includes(Number(c.dataset.step)));c.classList.toggle('active',x!=='all'&&visible.includes(Number(c.dataset.step)))})}buttons.forEach(b=>b.addEventListener('click',()=>mode(b.dataset.mode)));['en','ro'].forEach(l=>document.getElementById(l).addEventListener('click',()=>updateLanguage(l)));updateLanguage(navigator.language.toLowerCase().startsWith('ro')?'ro':'en');})();</script></body></html>
