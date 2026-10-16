@@ -272,5 +272,21 @@
   "site_url": "https://ovladon.github.io/learn/",
   "current_release": "2026-10-16 chapter 05, The Invisible Systems, plus interactive Big Picture map",
   "publisher": "Vlad Belciug (@ovladon)",
-  "cache_revision": "20261016-invisible-63-v1"
+  "cache_revision": "20261016-invisible-63-v1",
+  "interactive_lab": {
+    "url": "https://ovladon.github.io/learn/interactive-lab.html",
+    "simulations": 4,
+    "languages": [
+      "en",
+      "ro"
+    ],
+    "requires_account": false,
+    "collects_data": false,
+    "simulation_types": [
+      "queues",
+      "concurrency",
+      "cache",
+      "resource-allocation"
+    ]
+  }
 }

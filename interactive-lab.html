@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Vlad Belciug">
+<meta name="description" content="Free, bilingual interactive computing simulations: queues, concurrency, caches and resource allocation. An independent-learning companion to LEARN.">
+<meta name="theme-color" content="#081a2d">
+<title>Interactive LEARN · Explore how systems work</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="interactive-lab.css?v=20261016-1">
+</head>
+<body>
+<a class="skip" href="#simulations" data-i18n="skip">Skip to simulations</a>
+<header class="masthead"><div class="shell mastbar">
+  <a class="brand" href="./"><span class="brand-icon">L<span>.</span></span><span>LEARN<small>INTERACTIVE / LAB 01</small></span></a>
+  <a class="back-link" href="./#library" data-i18n="library">← Back to library</a>
+  <div class="locale-control" role="group" aria-label="Language"><button id="lang-en" class="selected" type="button" aria-pressed="true">EN</button><button id="lang-ro" type="button" aria-pressed="false">RO</button></div>
+</div></header>
+<main>
+<section class="hero"><div class="shell hero-grid"><div>
+  <div class="eyebrow" data-i18n="eyebrow">YOUR OWN SMALL COMPUTER LAB · NO INSTALLATION</div>
+  <h1 data-i18n="headline">Don't just read it.<br><em>Make it happen.</em></h1>
+  <p class="lede" data-i18n="lead">Four tiny simulations of real computing ideas. Change one thing, watch what happens, and understand why. No account, tracking or data uploads.</p>
+  <div class="hero-pills"><span data-i18n="p1">4 interactive models</span><span data-i18n="p2">English + Română</span><span data-i18n="p3">Runs in your browser</span></div>
+</div><div class="hero-diagram" aria-hidden="true"><span class="diagram-rim"></span><span class="diagram-node n1">01<small>QUEUE</small></span><span class="diagram-node n2">02<small>RACE</small></span><span class="diagram-node n3">03<small>CACHE</small></span><span class="diagram-node n4">04<small>GPU</small></span><span class="diagram-core">→</span></div></div></section>
+<section class="shell lab-wrap" id="simulations"><div class="intro"><p class="kicker" data-i18n="sectionLabel">CHOOSE A SIMULATION</p><h2 data-i18n="sectionTitle">What would you like to test?</h2><p data-i18n="sectionLead">All numbers here are simplified illustrations—not measurements of a production system. Experiments are for one person, at their own pace.</p></div>
+<div class="tabs" role="tablist" aria-label="Computing simulations">
+ <button type="button" class="tab active" id="tab-queue" role="tab" aria-controls="panel-queue" aria-selected="true" tabindex="0" data-target="queue"><span class="tab-index">01</span><span data-i18n="tabQueue">Processing queues</span></button>
+ <button type="button" class="tab" id="tab-race" role="tab" aria-controls="panel-race" aria-selected="false" tabindex="-1" data-target="race"><span class="tab-index">02</span><span data-i18n="tabRace">Concurrent programs</span></button>
+ <button type="button" class="tab" id="tab-cache" role="tab" aria-controls="panel-cache" aria-selected="false" tabindex="-1" data-target="cache"><span class="tab-index">03</span><span data-i18n="tabCache">Cache &amp; retrieval</span></button>
+ <button type="button" class="tab" id="tab-resources" role="tab" aria-controls="panel-resources" aria-selected="false" tabindex="-1" data-target="resources"><span class="tab-index">04</span><span data-i18n="tabResources">Resource allocation</span></button>
+</div>
+<section class="sim-panel" role="tabpanel" id="panel-queue" aria-labelledby="tab-queue" tabindex="0">
+ <div class="sim-head"><div><div class="sim-id">01 / DATA CENTERS</div><h3 data-i18n="qTitle">Who gets the next server?</h3><p data-i18n="qIntro">Requests wait in a queue when all workers are busy. Try first-in, first-out (FIFO), then priority-based ordering.</p></div><a class="lesson-link" href="./#dc-07" data-i18n="qLesson">Related lesson ↗</a></div>
+ <div class="control-row"><label for="q-mode" data-i18n="order">Scheduling rule</label><select id="q-mode"><option value="fifo" data-i18n="fifo">First-in, first-out</option><option value="priority" data-i18n="priority">Priority first</option></select><label for="q-workers" data-i18n="workers">Workers</label><select id="q-workers"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option></select></div>
+ <div class="control-row actions"><button class="action" id="q-short" data-i18n="short">+ Short job (2 ticks)</button><button class="action" id="q-long" data-i18n="long">+ Long job (5 ticks)</button><button class="action amber" id="q-urgent" data-i18n="urgent">+ Urgent job</button></div>
+ <div class="control-row actions"><button class="primary" id="q-next" data-i18n="nextTick">Advance 1 tick →</button><button id="q-auto" data-i18n="play">Auto-play</button><button id="q-reset" data-i18n="reset">Reset</button></div>
+ <div class="stats" id="q-stats" aria-live="polite"></div><div class="viz-grid"><div class="viz-box"><h4 data-i18n="workersNow">Active workers</h4><div id="q-active" class="worker-grid"></div></div><div class="viz-box"><h4 data-i18n="waitQueue">Waiting queue (left = next)</h4><div id="q-waiting" class="token-row"></div></div></div>
+ <div class="note"><b data-i18n="experiment">TRY IT YOURSELF</b><span data-i18n="qChallenge">Add a long job and then an urgent job. Does switching to priority help the urgent one if the worker is already busy?</span></div><p class="fineprint" data-i18n="qReality">Simplification: jobs run to completion here; priority does not interrupt a job already running. Real schedulers can implement more policies and preemption.</p>
+</section>
+<section class="sim-panel" role="tabpanel" id="panel-race" aria-labelledby="tab-race" tabindex="0" hidden>
+ <div class="sim-head"><div><div class="sim-id">02 / CONCURRENCY</div><h3 data-i18n="rTitle">How can 1 + 1 become 1?</h3><p data-i18n="rIntro">Two programs read, add one, and write back to the same shared number. Follow their operations step by step.</p></div><a class="lesson-link" href="./#invis-04" data-i18n="rLesson">Related lesson ↗</a></div>
+ <div class="control-row actions"><label class="switch-row"><input id="r-lock" type="checkbox"><span data-i18n="lock">Use a lock (one writer at a time)</span></label><button class="primary" id="r-next" data-i18n="nextStep">Next operation →</button><button id="r-reset" data-i18n="reset">Reset</button></div>
+ <div class="stats" id="r-stats" aria-live="polite"></div><div class="viz-grid"><div class="viz-box"><h4 data-i18n="rA">Program A</h4><div id="r-a" class="program-trace"></div></div><div class="viz-box"><h4 data-i18n="rB">Program B</h4><div id="r-b" class="program-trace"></div></div></div><div class="tracebox"><h4 data-i18n="trace">What just happened?</h4><ol id="r-trace" aria-live="polite"></ol></div>
+ <div class="note"><b data-i18n="experiment">TRY IT YOURSELF</b><span data-i18n="rChallenge">Run without a lock, then enable the lock and run again. Why do two increments sometimes produce just one?</span></div><p class="fineprint" data-i18n="rReality">Simplification: a fixed interleaving illustrates a lost update. Real program threads can interleave unpredictably; databases may use transactions or atomic operations instead.</p>
+</section>
+<section class="sim-panel" role="tabpanel" id="panel-cache" aria-labelledby="tab-cache" tabindex="0" hidden>
+ <div class="sim-head"><div><div class="sim-id">03 / CACHING</div><h3 data-i18n="cTitle">Remember or recalculate?</h3><p data-i18n="cIntro">A small cache holds three results. Repeating a request can be cheaper, but an old cached answer can become stale.</p></div><a class="lesson-link" href="./#dc-11" data-i18n="cLesson">Related lesson ↗</a></div>
+ <div class="control-row actions"><span class="row-caption" data-i18n="requestKey">Request record:</span><button class="action" data-key="A">A</button><button class="action" data-key="B">B</button><button class="action" data-key="C">C</button><button class="action" data-key="D">D</button></div>
+ <div class="control-row actions"><button id="c-change" data-i18n="changeOrigin">Update record A at origin</button><button id="c-invalidate" data-i18n="invalidate">Invalidate cached A</button><button id="c-reset" data-i18n="reset">Reset</button></div>
+ <div class="stats" id="c-stats" aria-live="polite"></div><div class="viz-grid"><div class="viz-box"><h4 data-i18n="cached">Cache (3 slots · LRU)</h4><div id="c-cache" class="cache-list"></div></div><div class="viz-box"><h4 data-i18n="origin">Original records</h4><div id="c-origin" class="cache-list"></div></div></div><div id="c-message" class="feedback" aria-live="polite"></div>
+ <div class="note"><b data-i18n="experiment">TRY IT YOURSELF</b><span data-i18n="cChallenge">Request A twice. Then update A at the origin and request it again. Is the cheaper cached response still correct?</span></div><p class="fineprint" data-i18n="cReality">Simplification: cache hit = 1 cost unit, origin fetch = 7 cost units. These are teaching numbers, not real pricing. LRU means 'least recently used'; correctness also needs invalidation or expiration.</p>
+</section>
+<section class="sim-panel" role="tabpanel" id="panel-resources" aria-labelledby="tab-resources" tabindex="0" hidden>
+ <div class="sim-head"><div><div class="sim-id">04 / AI INFRASTRUCTURE</div><h3 data-i18n="gTitle">Who gets the hardware?</h3><p data-i18n="gIntro">A small cluster has limited CPU, memory and GPU capacity. Each job needs a combination of resources before it can run.</p></div><a class="lesson-link" href="./#dc-10" data-i18n="gLesson">Related lesson ↗</a></div>
+ <div class="control-row"><label for="g-job" data-i18n="jobType">Add job</label><select id="g-job"><option value="web" data-i18n="gWeb">Web service · CPU 2 / RAM 2 / GPU 0</option><option value="infer" data-i18n="gInfer">AI inference · CPU 3 / RAM 4 / GPU 1</option><option value="train" data-i18n="gTrain">Model training · CPU 6 / RAM 8 / GPU 2</option><option value="index" data-i18n="gIndex">Data indexing · CPU 2 / RAM 3 / GPU 0</option></select><button class="action" id="g-add" data-i18n="addToQueue">+ Add to queue</button></div>
+ <div class="control-row"><label for="g-rule" data-i18n="gRule">Allocation rule</label><select id="g-rule"><option value="fifo" data-i18n="gStrict">Strict FIFO (wait for first job)</option><option value="fit" data-i18n="gFit">First job that fits (may skip)</option></select><button class="primary" id="g-schedule" data-i18n="schedule">Schedule one job →</button><button id="g-reset" data-i18n="reset">Reset</button></div>
+ <div class="stats" id="g-stats" aria-live="polite"></div><div class="capacity-bars" id="g-bars"></div><div class="viz-grid"><div class="viz-box"><h4 data-i18n="running">Running jobs (click Finish to release)</h4><div id="g-running" class="resource-list"></div></div><div class="viz-box"><h4 data-i18n="gWaiting">Jobs waiting (left = oldest)</h4><div id="g-waiting" class="resource-list"></div></div></div>
+ <div class="note"><b data-i18n="experiment">TRY IT YOURSELF</b><span data-i18n="gChallenge">Start a GPU job, then queue a big training job and a small web job. Compare strict FIFO with 'first that fits'. Which job waits?</span></div><p class="fineprint" data-i18n="gReality">Simplification: CPU/RAM/GPU tokens are invented capacities, not actual hardware quotas. Skipping a large job can improve short-term use but may cause starvation.</p>
+</section>
+<div class="next-learning"><h3 data-i18n="connect">Connect the simulation to the bigger picture</h3><p data-i18n="connectText">A queue is a data structure. A lock protects shared state. A cache trades freshness for speed. A scheduler distributes limited resources. See where these ideas appear in the full system.</p><a href="system-map.html" class="map-btn" data-i18n="map">Explore the system map ↗</a></div>
+</section>
+</main>
+<footer><div class="shell foot"><span>LEARN · <span data-i18n="credit">Educational simulations by Vlad Belciug</span></span><span data-i18n="privacy">Local, illustrative models · no data collected</span><a href="./#library" data-i18n="allLessons">All lessons ↗</a></div></footer>
+<script src="interactive-lab.js?v=20261016-1" defer></script>
+</body>
+</html>

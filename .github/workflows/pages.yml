@@ -29,7 +29,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site
-          for f in index.html system-map.html app.js catalog.js style.css favicon.svg robots.txt .nojekyll SECURITY.md SITE_MANIFEST.json RELEASE_INFO.json; do
+          for f in index.html system-map.html interactive-lab.html interactive-lab.css interactive-lab.js app.js catalog.js style.css favicon.svg robots.txt .nojekyll SECURITY.md SITE_MANIFEST.json RELEASE_INFO.json; do
             test -f "$f"
             cp "$f" _site/
           done
@@ -48,6 +48,10 @@ jobs:
           assert len(list((root/'materials/invisible').glob('invis-*.pdf')))==24,'Expected 24 Invisible Systems PDFs'
           assert len(list((root/'previews').glob('invis-*.webp')))==12,'Expected 12 new previews'
           assert (root/'system-map.html').is_file()
+          for f in ('interactive-lab.html','interactive-lab.css','interactive-lab.js'):
+              assert (root/f).is_file()
+          interactive=(root/'interactive-lab.html').read_text(encoding='utf-8')
+          assert all(x in interactive for x in ('panel-queue','panel-race','panel-cache','panel-resources'))
           assert all((root/'collections'/f'big-picture-a3-{l}.pdf').is_file() for l in ('en','ro'))
           assert all((root/'collections'/f'invisible-{l}.pdf').is_file() for l in ('en','ro'))
           assert (root/'collections/frontier-en.pdf').exists() and (root/'collections/frontier-ro.pdf').exists()

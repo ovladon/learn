@@ -21,11 +21,13 @@
     "Data centers and AI infrastructure"
   ],
   "site_url": "https://ovladon.github.io/learn/",
-  "current_release": "2026-10-16 invisible systems chapter 05 and interactive big-picture map",
+  "current_release": "2026-10-16 Interactive LEARN simulations (4), 5 chapters and 63 lessons preserved",
   "subject_tracks": 5,
   "chapter_four_pdfs": 24,
   "chapter_four_booklets": 2,
   "chapter_five_pdfs": 24,
   "chapter_five_booklets": 2,
-  "printable_maps": 4
+  "printable_maps": 4,
+  "interactive_lab_simulations": 4,
+  "interactive_lab_available": true
 }

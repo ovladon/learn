@@ -56,3 +56,18 @@ The conceptual nine-stage map connects user intent, devices, internet routing, a
 **Updated total: 5 subject chapters, 63 topics, 126 individual A4 infographics, plus four printable A3/A4 system-map posters.** Older QR URLs remain unchanged.
 
 Editorial policy: one concept per sheet; acronyms explained; accurate limits, risks and uses; optional individual exercise; English/Romanian; QR links; no external uploads or collaborations. The materials are freely available for individual study, rights retained by Vlad Belciug. See USAGE.md.
+
+## Interactive LEARN — individual browser simulations
+
+**[Open the Interactive Lab](https://ovladon.github.io/learn/interactive-lab.html)** · [View the source](interactive-lab.html)
+
+A self-contained, free, bilingual (EN/RO) companion to the infographics, authored and maintained by Vlad Belciug. Four simulations run **entirely in the student's own browser**:
+
+1. **Processing queues:** FIFO versus priority, capacity of workers, completion and waiting times.
+2. **Concurrent programs:** an illustrated lost update without a lock, versus serialized access.
+3. **Caching:** a three-slot least-recently-used cache, hits, misses, cost and stale results.
+4. **CPU/RAM/GPU allocation:** jobs compete for limited tokens; compare strict FIFO and a policy that can skip a large waiting job.
+
+No account, server calls, telemetry, uploaded data, cookies or third-party assets are required to use these simulations. The numeric units are **pedagogical**, not real infrastructure benchmarks or cost estimates. Students can use them alone; no classroom group experiment is assumed. The existing five teaching chapters (63 topics, 126 individual PDF lessons) and all permanent QR links remain unchanged.
+
+Implementation: `interactive-lab.html`, `interactive-lab.css`, `interactive-lab.js`. The GitHub Pages deployment validates their presence and publishes them alongside the booklets and [system map](system-map.html). Contributions remain owner-only; visiting students have no ability to publish or upload materials.
