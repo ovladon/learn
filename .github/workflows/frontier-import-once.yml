@@ -1,0 +1,56 @@
+name: One-time owner-authorized import of LEARN chapter 04
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/frontier-import-once.yml'
+permissions:
+  contents: write
+jobs:
+  install:
+    if: github.repository == 'ovladon/learn' && github.actor == 'ovladon'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Verify and extract chapter four materials
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .frontier_transfer/part-*.bin > /tmp/learn-chapter04.zip
+          echo 'ed3d2571a07dc7920415a0fbbc1e96d89a4dc1f4f7327b825e32d6560b789ba6  /tmp/learn-chapter04.zip' | sha256sum -c -
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile,stat
+          root=Path('.').resolve()
+          with zipfile.ZipFile('/tmp/learn-chapter04.zip') as z:
+              items=z.infolist()
+              assert len(items)==38 and sum(x.file_size for x in items)<30_000_000
+              paths=[x.filename for x in items]
+              assert len(paths)==len(set(paths))
+              for x in items:
+                  dest=(root/x.filename).resolve()
+                  assert dest.is_relative_to(root)
+                  assert not stat.S_ISLNK(x.external_attr>>16)
+                  assert x.filename.startswith(('materials/frontier/','previews/front-','collections/frontier-'))
+              z.extractall(root)
+          assert len(list(Path('materials/frontier').glob('front-*.pdf')))==24
+          assert len(list(Path('previews').glob('front-*.webp')))==12
+          assert Path('collections/frontier-en.pdf').exists()
+          assert Path('collections/frontier-ro.pdf').exists()
+          print('Chapter 04: validated 24 PDFs, 12 previews and two booklets')
+          PY
+      - name: Commit only reviewed lesson assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add materials/frontier/ previews/front-*.webp collections/frontier-*.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --cached --quiet; then
+            echo "The assets were already installed"
+            exit 0
+          fi
+          git commit -m "Install chapter 04: 12 bilingual Modern Computing and AI lessons"
+          git push origin HEAD:main
