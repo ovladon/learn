@@ -49,6 +49,16 @@ window.LEARN_TRACKS = [
     "number": "05",
     "booklet_en": "collections/invisible-en.pdf",
     "booklet_ro": "collections/invisible-ro.pdf"
+  },
+  {
+    "id": "lang",
+    "title_en": "Programming languages: how they think",
+    "title_ro": "Limbaje de programare: cum gândesc",
+    "label_en": "LEARNING TRACK / 06",
+    "label_ro": "TRASEU DE ÎNVĂȚARE / 06",
+    "number": "06",
+    "booklet_en": "collections/languages-en.pdf",
+    "booklet_ro": "collections/languages-ro.pdf"
   }
 ];
 window.LEARN_CATALOG = [
@@ -807,5 +817,185 @@ window.LEARN_CATALOG = [
     "pdf_ro": "materials/invisible/invis-12-ro.pdf",
     "preview": "previews/invis-12.webp",
     "keywords": "Faster, Cheaper, or Safer? Mai rapid, mai ieftin sau mai sigur? The engineering trade-off triangle Compromisurile proiectării sistemelor Every design trades cost, speed and reliability. Optimization starts with a measurable goal, then a test of both benefits and side effects. Orice proiect echilibrează costul, viteza și fiabilitatea. Optimizarea începe cu un obiectiv măsurabil, apoi verifică beneficiile și efectele secundare. distributed systems reliability replication consistency race condition transaction load balancing containers Kubernetes caching latency observability cloud cost scheduling systems"
+  },
+  {
+    "id": "lang-01",
+    "category": "lang",
+    "title_en": "Python",
+    "title_ro": "Python",
+    "desc_en": "Readable steps over ceremony. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "Pași lizibili, fără formalități. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-01-en.pdf",
+    "pdf_ro": "materials/languages/lang-01-ro.pdf",
+    "preview": "previews/lang-01.webp",
+    "keywords": "Python Readable steps over ceremony Pași lizibili, fără formalități Automation, prototypes, data analysis, artificial intelligence (AI). Automatizare, prototipuri, date, inteligență artificială (IA). programming languages limbaje programare syntax comenzi beginners începători"
+  },
+  {
+    "id": "lang-02",
+    "category": "lang",
+    "title_en": "JavaScript",
+    "title_ro": "JavaScript",
+    "desc_en": "The behavior layer of the web. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "Comportamentul paginilor web. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-02-en.pdf",
+    "pdf_ro": "materials/languages/lang-02-ro.pdf",
+    "preview": "previews/lang-02.webp",
+    "keywords": "JavaScript The behavior layer of the web Comportamentul paginilor web Interactive websites, browser tools, server applications. Site-uri interactive, instrumente web și aplicații de server. programming languages limbaje programare syntax comenzi beginners începători"
+  },
+  {
+    "id": "lang-03",
+    "category": "lang",
+    "title_en": "TypeScript",
+    "title_ro": "TypeScript",
+    "desc_en": "JavaScript with type checking before running. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "JavaScript cu verificarea tipurilor înainte de rulare. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-03-en.pdf",
+    "pdf_ro": "materials/languages/lang-03-ro.pdf",
+    "preview": "previews/lang-03.webp",
+    "keywords": "TypeScript JavaScript with type checking before running JavaScript cu verificarea tipurilor înainte de rulare Large web applications, shared codebases, editor assistance. Aplicații web mari, cod comun în echipă, asistență în editor. programming languages limbaje programare syntax comenzi beginners începători"
+  },
+  {
+    "id": "lang-04",
+    "category": "lang",
+    "title_en": "C",
+    "title_ro": "C",
+    "desc_en": "Meet memory and the machine. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "Înțelege memoria și calculatorul. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-04-en.pdf",
+    "pdf_ro": "materials/languages/lang-04-ro.pdf",
+    "preview": "previews/lang-04.webp",
+    "keywords": "C Meet memory and the machine Înțelege memoria și calculatorul Firmware, operating-system components, hardware-adjacent code. Firmware, componente de sistem, programe apropiate de hardware. programming languages limbaje programare syntax comenzi beginners începători"
+  },
+  {
+    "id": "lang-05",
+    "category": "lang",
+    "title_en": "C++",
+    "title_ro": "C++",
+    "desc_en": "Build abstractions without giving up control. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "Abstracții puternice și controlul resurselor. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-05-en.pdf",
+    "pdf_ro": "materials/languages/lang-05-ro.pdf",
+    "preview": "previews/lang-05.webp",
+    "keywords": "C++ Build abstractions without giving up control Abstracții puternice și controlul resurselor Game engines, graphics, performance-critical tools and libraries. Motoare de joc, grafică, unelte și biblioteci de performanță. programming languages limbaje programare syntax comenzi beginners începători"
+  },
+  {
+    "id": "lang-06",
+    "category": "lang",
+    "title_en": "Java",
+    "title_ro": "Java",
+    "desc_en": "Portable applications with classes and a managed runtime. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "Aplicații portabile, clase și mediu de rulare gestionat. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-06-en.pdf",
+    "pdf_ro": "materials/languages/lang-06-ro.pdf",
+    "preview": "previews/lang-06.webp",
+    "keywords": "Java Portable applications with classes and a managed runtime Aplicații portabile, clase și mediu de rulare gestionat Enterprise systems, backend services, Android legacy ecosystems. Sisteme enterprise, servicii backend, ecosisteme Android existente. programming languages limbaje programare syntax comenzi beginners începători"
+  },
+  {
+    "id": "lang-07",
+    "category": "lang",
+    "title_en": "C#",
+    "title_ro": "C#",
+    "desc_en": "Expressive applications on the .NET platform. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "Aplicații expresive pe platforma .NET. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-07-en.pdf",
+    "pdf_ro": "materials/languages/lang-07-ro.pdf",
+    "preview": "previews/lang-07.webp",
+    "keywords": "C# Expressive applications on the .NET platform Aplicații expresive pe platforma .NET Business services, cross-platform apps, games with Unity. Servicii de business, aplicații multiplatformă, jocuri Unity. programming languages limbaje programare syntax comenzi beginners începători"
+  },
+  {
+    "id": "lang-08",
+    "category": "lang",
+    "title_en": "Go",
+    "title_ro": "Go",
+    "desc_en": "Small building blocks for concurrent services. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "Componente simple pentru servicii concurente. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-08-en.pdf",
+    "pdf_ro": "materials/languages/lang-08-ro.pdf",
+    "preview": "previews/lang-08.webp",
+    "keywords": "Go Small building blocks for concurrent services Componente simple pentru servicii concurente Network servers, command-line tools, cloud infrastructure. Servere de rețea, instrumente de terminal, infrastructură cloud. programming languages limbaje programare syntax comenzi beginners începători"
+  },
+  {
+    "id": "lang-09",
+    "category": "lang",
+    "title_en": "Rust",
+    "title_ro": "Rust",
+    "desc_en": "Memory safety enforced through ownership. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "Siguranța memoriei prin reguli de proprietate. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-09-en.pdf",
+    "pdf_ro": "materials/languages/lang-09-ro.pdf",
+    "preview": "previews/lang-09.webp",
+    "keywords": "Rust Memory safety enforced through ownership Siguranța memoriei prin reguli de proprietate Systems components, secure services, high-performance tools. Componente de sistem, servicii sigure, unelte performante. programming languages limbaje programare syntax comenzi beginners începători"
+  },
+  {
+    "id": "lang-10",
+    "category": "lang",
+    "title_en": "SQL",
+    "title_ro": "SQL",
+    "desc_en": "Ask for data, not the procedure to find it. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "Ceri datele, nu pașii de căutare. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-10-en.pdf",
+    "pdf_ro": "materials/languages/lang-10-ro.pdf",
+    "preview": "previews/lang-10.webp",
+    "keywords": "SQL Ask for data, not the procedure to find it Ceri datele, nu pașii de căutare Querying relational databases, reporting, data transformations. Interogări în baze relaționale, rapoarte, transformarea datelor. programming languages limbaje programare syntax comenzi beginners începători"
+  },
+  {
+    "id": "lang-11",
+    "category": "lang",
+    "title_en": "Bash",
+    "title_ro": "Bash",
+    "desc_en": "Connect programs in a command-line workflow. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "Conectezi programe într-un flux de comenzi. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-11-en.pdf",
+    "pdf_ro": "materials/languages/lang-11-ro.pdf",
+    "preview": "previews/lang-11.webp",
+    "keywords": "Bash Connect programs in a command-line workflow Conectezi programe într-un flux de comenzi Automation, developer workflows, server maintenance (with care). Automatizare, lucru în terminal, administrare atentă a serverelor. programming languages limbaje programare syntax comenzi beginners începători"
+  },
+  {
+    "id": "lang-12",
+    "category": "lang",
+    "title_en": "Kotlin",
+    "title_ro": "Kotlin",
+    "desc_en": "Safer concise code for applications. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "Cod concis și verificări utile pentru aplicații. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-12-en.pdf",
+    "pdf_ro": "materials/languages/lang-12-ro.pdf",
+    "preview": "previews/lang-12.webp",
+    "keywords": "Kotlin Safer concise code for applications Cod concis și verificări utile pentru aplicații Android applications, backend software, cross-platform projects. Aplicații Android, software backend, proiecte multiplatformă. programming languages limbaje programare syntax comenzi beginners începători"
+  },
+  {
+    "id": "lang-13",
+    "category": "lang",
+    "title_en": "Swift",
+    "title_ro": "Swift",
+    "desc_en": "Expressive programs with explicit optional values. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "Programe expresive cu valori opționale explicite. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-13-en.pdf",
+    "pdf_ro": "materials/languages/lang-13-ro.pdf",
+    "preview": "previews/lang-13.webp",
+    "keywords": "Swift Expressive programs with explicit optional values Programe expresive cu valori opționale explicite Apple applications, mobile interfaces, native platform features. Aplicații Apple, interfețe mobile, funcții native ale platformei. programming languages limbaje programare syntax comenzi beginners începători"
+  },
+  {
+    "id": "lang-14",
+    "category": "lang",
+    "title_en": "PHP",
+    "title_ro": "PHP",
+    "desc_en": "Server-side pages made from data. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "Pagini construite pe server din date. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-14-en.pdf",
+    "pdf_ro": "materials/languages/lang-14-ro.pdf",
+    "preview": "previews/lang-14.webp",
+    "keywords": "PHP Server-side pages made from data Pagini construite pe server din date Web backends, content-managed websites, server-generated pages. Servicii web, site-uri cu conținut administrat, pagini generate pe server. programming languages limbaje programare syntax comenzi beginners începători"
+  },
+  {
+    "id": "lang-15",
+    "category": "lang",
+    "title_en": "R",
+    "title_ro": "R",
+    "desc_en": "Think in columns, vectors and statistical models. Real code, essential commands, use cases and trade-offs.",
+    "desc_ro": "Gândește în vectori, coloane și modele statistice. Cod real, comenzi esențiale, utilizări și compromisuri.",
+    "pdf_en": "materials/languages/lang-15-en.pdf",
+    "pdf_ro": "materials/languages/lang-15-ro.pdf",
+    "preview": "previews/lang-15.webp",
+    "keywords": "R Think in columns, vectors and statistical models Gândește în vectori, coloane și modele statistice Statistics, research, exploratory data analysis, reporting. Statistică, cercetare, analiză exploratorie, rapoarte. programming languages limbaje programare syntax comenzi beginners începători"
   }
 ];

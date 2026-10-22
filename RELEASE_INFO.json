@@ -1,9 +1,9 @@
 {
   "name": "LEARN",
   "site": "https://ovladon.github.io/learn/",
-  "student_pdf_sheets": 126,
+  "student_pdf_sheets": 156,
   "big_o_standalone_versions": 4,
-  "topics": 63,
+  "topics": 78,
   "languages": [
     "en",
     "ro"
@@ -14,20 +14,25 @@
   "reading_policy": "Public viewing and free individual-study download",
   "publishing_policy": "Owner-only; no external submissions",
   "copyright": "© 2026 Vlad Belciug. All rights reserved except as noted in USAGE.md",
-  "individual_student_pdfs": 126,
+  "individual_student_pdfs": 156,
   "subjects": [
-    "Computing Foundations",
-    "AI and agentic systems",
-    "Data centers and AI infrastructure"
+    "Computing foundations",
+    "AI & agentic systems",
+    "Data centers & AI infrastructure",
+    "Modern computing & AI — from zero to the frontier",
+    "The Invisible Systems — how the internet really works",
+    "Programming languages: how they think"
   ],
   "site_url": "https://ovladon.github.io/learn/",
-  "current_release": "2026-10-16 Interactive LEARN simulations (4), 5 chapters and 63 lessons preserved",
-  "subject_tracks": 5,
+  "current_release": "2026-10-22 programming languages chapter 06",
+  "subject_tracks": 6,
   "chapter_four_pdfs": 24,
   "chapter_four_booklets": 2,
   "chapter_five_pdfs": 24,
   "chapter_five_booklets": 2,
   "printable_maps": 4,
   "interactive_lab_simulations": 4,
-  "interactive_lab_available": true
+  "interactive_lab_available": true,
+  "chapter_six_pdfs": 30,
+  "chapter_six_booklets": 2
 }

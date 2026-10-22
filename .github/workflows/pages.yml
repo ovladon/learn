@@ -41,12 +41,16 @@ jobs:
           import pathlib,re
           root=pathlib.Path('_site')
           files={p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file()}
-          assert len(list((root/'materials').rglob('*.pdf')))==126
+          assert len(list((root/'materials').rglob('*.pdf')))==156
           assert len(list((root/'collections').glob('big-o-*.pdf')))==4
           assert len(list((root/'materials/datacenters').glob('dc-*.pdf')))==26
           assert len(list((root/'materials/frontier').glob('front-*.pdf')))==24,'Expected 24 Frontier PDFs'
           assert len(list((root/'materials/invisible').glob('invis-*.pdf')))==24,'Expected 24 Invisible Systems PDFs'
           assert len(list((root/'previews').glob('invis-*.webp')))==12,'Expected 12 new previews'
+          assert len(list((root/'materials/languages').glob('lang-*.pdf')))==30,'Expected 30 language PDFs'
+          assert len(list((root/'previews').glob('lang-*.webp')))==15,'Expected 15 language previews'
+          assert all((root/'collections'/f'languages-{l}.pdf').is_file() for l in ('en','ro'))
+          assert all((root/'collections'/f'language-map-a3-{l}.pdf').is_file() for l in ('en','ro'))
           assert (root/'system-map.html').is_file()
           for f in ('interactive-lab.html','interactive-lab.css','interactive-lab.js'):
               assert (root/f).is_file()

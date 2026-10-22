@@ -5,11 +5,12 @@
     "AI & agentic systems",
     "Data centers & AI infrastructure",
     "Modern computing & AI — from zero to the frontier",
-    "The Invisible Systems — how the internet really works"
+    "The Invisible Systems — how the internet really works",
+    "Programming languages: how they think"
   ],
-  "topics": 63,
-  "individual_pdf": 126,
-  "pages_per_language": 63,
+  "topics": 78,
+  "individual_pdf": 156,
+  "pages_per_language": 78,
   "files": [
     {
       "id": "fund-00",
@@ -262,15 +263,75 @@
     {
       "id": "invis-12",
       "url": "https://ovladon.github.io/learn/#invis-12"
+    },
+    {
+      "id": "lang-01",
+      "url": "https://ovladon.github.io/learn/#lang-01"
+    },
+    {
+      "id": "lang-02",
+      "url": "https://ovladon.github.io/learn/#lang-02"
+    },
+    {
+      "id": "lang-03",
+      "url": "https://ovladon.github.io/learn/#lang-03"
+    },
+    {
+      "id": "lang-04",
+      "url": "https://ovladon.github.io/learn/#lang-04"
+    },
+    {
+      "id": "lang-05",
+      "url": "https://ovladon.github.io/learn/#lang-05"
+    },
+    {
+      "id": "lang-06",
+      "url": "https://ovladon.github.io/learn/#lang-06"
+    },
+    {
+      "id": "lang-07",
+      "url": "https://ovladon.github.io/learn/#lang-07"
+    },
+    {
+      "id": "lang-08",
+      "url": "https://ovladon.github.io/learn/#lang-08"
+    },
+    {
+      "id": "lang-09",
+      "url": "https://ovladon.github.io/learn/#lang-09"
+    },
+    {
+      "id": "lang-10",
+      "url": "https://ovladon.github.io/learn/#lang-10"
+    },
+    {
+      "id": "lang-11",
+      "url": "https://ovladon.github.io/learn/#lang-11"
+    },
+    {
+      "id": "lang-12",
+      "url": "https://ovladon.github.io/learn/#lang-12"
+    },
+    {
+      "id": "lang-13",
+      "url": "https://ovladon.github.io/learn/#lang-13"
+    },
+    {
+      "id": "lang-14",
+      "url": "https://ovladon.github.io/learn/#lang-14"
+    },
+    {
+      "id": "lang-15",
+      "url": "https://ovladon.github.io/learn/#lang-15"
     }
   ],
   "author": "Vlad Belciug",
   "maintainer": "ovladon",
   "external_contributions": false,
   "student_uploads": false,
-  "individual_student_pdfs": 126,
+  "individual_student_pdfs": 156,
   "site_url": "https://ovladon.github.io/learn/",
-  "current_release": "2026-10-16 chapter 05, The Invisible Systems, plus interactive Big Picture map",
+  "current_release": "2026-10-22 programming languages chapter 06",
   "publisher": "Vlad Belciug (@ovladon)",
   "cache_revision": "20261016-invisible-63-v1",
   "interactive_lab": {
@@ -288,5 +349,10 @@
       "cache",
       "resource-allocation"
     ]
-  }
+  },
+  "subject_tracks": 6,
+  "chapter_six_pdfs": 30,
+  "chapter_six_booklets": 2,
+  "programming_languages_covered": 15,
+  "current_revision": "20261022-lang-78-v1"
 }

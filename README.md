@@ -16,7 +16,8 @@ LEARN is my permanent, free-to-read visual teaching library. I write, select and
 | 03 Data centers and AI infrastructure | 13 | 26 |
 | **04 Modern computing & AI — from zero to the frontier** | **12** | **24** |
 | 05 The Invisible Systems | 12 | 24 |
-| **Total** | **63** | **126** |
+| **06 Programming Languages: how they think** | **15** | **30** |
+| **Total** | **78** | **156** |
 
 Chapter 04 has 12 visual lessons, two complete 12-page PDF booklets, bilingual previews and a permanent QR link on each stand-alone PDF. Students can optionally explore each idea alone; classroom participation is not required. Every standalone lesson defines AI as Artificial Intelligence (English) or Inteligență Artificială (Romanian), and does not assume earlier lessons have been read.
 
@@ -71,3 +72,13 @@ A self-contained, free, bilingual (EN/RO) companion to the infographics, authore
 No account, server calls, telemetry, uploaded data, cookies or third-party assets are required to use these simulations. The numeric units are **pedagogical**, not real infrastructure benchmarks or cost estimates. Students can use them alone; no classroom group experiment is assumed. The existing five teaching chapters (63 topics, 126 individual PDF lessons) and all permanent QR links remain unchanged.
 
 Implementation: `interactive-lab.html`, `interactive-lab.css`, `interactive-lab.js`. The GitHub Pages deployment validates their presence and publishes them alongside the booklets and [system map](system-map.html). Contributions remain owner-only; visiting students have no ability to publish or upload materials.
+
+## Chapter 06 — Programming Languages
+
+Fifteen languages, one visual sheet per language in English and Romanian: **Python, JavaScript, TypeScript, C, C++, Java, C#, Go, Rust, SQL (Structured Query Language), Bash (Bourne Again Shell), Kotlin, Swift, PHP (PHP: Hypertext Preprocessor), R**. Each self-contained infographic explains a mental model, short authentic code with line-by-line clues, distinguishing behavior and trade-offs, use cases, pitfalls, and an optional safe solo exploration. Students do not need to install software.
+
+SQL is declarative query language; Bash is a shell scripting language. HTML (HyperText Markup Language) describes document structure and CSS (Cascading Style Sheets) describes styling. These roles are shown on the map, not conflated with general-purpose programming.
+
+[Programming Languages](https://ovladon.github.io/learn/#lang-01) · [English booklet](https://ovladon.github.io/learn/collections/languages-en.pdf) · [Broșură română](https://ovladon.github.io/learn/collections/languages-ro.pdf) · [English A3 map](https://ovladon.github.io/learn/collections/language-map-a3-en.pdf) · [Harta A3 română](https://ovladon.github.io/learn/collections/language-map-a3-ro.pdf).
+
+The author alone publishes this free teaching library. Visitors can read and download; there are no external uploads. See [USAGE.md](USAGE.md) and [CONTRIBUTING.md](CONTRIBUTING.md).
