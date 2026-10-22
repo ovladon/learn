@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createGateway, ORIGIN } from './server.mjs';
 const secret = 'a'.repeat(48);
-const sample={schema:1,topic_id:'lang-01',language:'ro',correct:[true,false,true],confusion:'diagram',variant:'original'};
+const sample={schema:1,topic_id:'data-01',language:'ro',correct:[true,false,true],confusion:'diagram',variant:'original'};
 async function withGateway(fake, fn, opts={}) {
   let calls=[];
   let server=createGateway({upstream:'https://neon.example.test/',secret,fetchImpl:async(u, args)=>{
