@@ -1,5 +1,13 @@
 name: Netcup LEARN Gateway
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'backend/netcup/server.mjs'
+      - 'backend/netcup/server.test.mjs'
+      - 'backend/netcup/compose.yaml'
+      - 'backend/netcup/Dockerfile'
+      - '.github/workflows/netcup-learn-gateway.yml'
   workflow_dispatch:
     inputs:
       operation:
@@ -26,7 +34,7 @@ jobs:
         env:
           LEARN_SSH_KEY: ${{ secrets.LEARN_NETCUP_SSH_KEY }}
           LEARN_KNOWN_HOSTS: ${{ secrets.LEARN_NETCUP_KNOWN_HOSTS }}
-          REQUESTED_OP: ${{ inputs.operation }}
+          REQUESTED_OP: ${{ github.event_name == 'push' && 'deploy' || inputs.operation }}
         shell: bash
         run: |
           set -Eeuo pipefail
