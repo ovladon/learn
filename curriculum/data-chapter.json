@@ -1,0 +1,753 @@
+{
+  "chapter": 7,
+  "slug": "data",
+  "version": "2026-10-22-v1",
+  "intro": {
+    "en": "Data from zero: values → types → structures → databases → reliable AI.",
+    "ro": "Date de la zero: valori → tipuri → structuri → baze de date → AI responsabilă."
+  },
+  "lessons": [
+    {
+      "id": "data-00",
+      "en": {
+        "title": "Data, information and metadata",
+        "plain": "Data are recorded values; information is what we learn after giving those values context. Metadata describes the data itself.",
+        "example": "A list of temperatures becomes useful information when you compare it with yesterday; the measurement time is metadata.",
+        "steps": [
+          "Collect values",
+          "Add context",
+          "Explain what they mean"
+        ],
+        "terms": [
+          [
+            "Data",
+            "Recorded values, even before interpretation"
+          ],
+          [
+            "Information",
+            "Meaning drawn from data and context"
+          ],
+          [
+            "Metadata",
+            "Information describing other data"
+          ]
+        ],
+        "myth": "Does a number explain itself? No: 24 could mean degrees, a score or an age."
+      },
+      "ro": {
+        "title": "Date, informații și metadate",
+        "plain": "Datele sunt valori înregistrate; informația este sensul obținut după ce le punem în context. Metadatele descriu datele.",
+        "example": "O listă de temperaturi devine informație utilă când o compari cu ieri; ora măsurării este metadată.",
+        "steps": [
+          "Înregistrezi valori",
+          "Adaugi context",
+          "Înțelegi semnificația"
+        ],
+        "terms": [
+          [
+            "Date",
+            "Valori înregistrate, chiar înainte de interpretare"
+          ],
+          [
+            "Informație",
+            "Sensul obținut din date și context"
+          ],
+          [
+            "Metadate",
+            "Informații care descriu alte date"
+          ]
+        ],
+        "myth": "Un număr se explică singur? Nu: 24 poate fi o temperatură, un scor sau o vârstă."
+      }
+    },
+    {
+      "id": "data-01",
+      "en": {
+        "title": "Bits, bytes and text encoding",
+        "plain": "Computers store patterns of bits (zeros and ones). Bytes group eight bits; an encoding tells us how bit patterns represent characters.",
+        "example": "The letter A and the emoji 😊 are text, but they can occupy different numbers of bytes in UTF-8.",
+        "steps": [
+          "Store 0/1 states",
+          "Group bits into bytes",
+          "Decode bytes using a shared rule"
+        ],
+        "terms": [
+          [
+            "Bit",
+            "One binary digit: 0 or 1"
+          ],
+          [
+            "Byte",
+            "Eight bits grouped together"
+          ],
+          [
+            "UTF-8",
+            "A widely used character encoding based on Unicode"
+          ]
+        ],
+        "myth": "One character always uses one byte? False: UTF-8 characters can use one to four bytes."
+      },
+      "ro": {
+        "title": "Biți, octeți și codificarea textului",
+        "plain": "Calculatoarele stochează modele de biți (zero și unu). Un octet grupează opt biți; o codificare stabilește cum reprezintă aceste modele caractere.",
+        "example": "Litera A și emojiul 😊 sunt text, dar pot ocupa un număr diferit de octeți în UTF-8.",
+        "steps": [
+          "Stochezi stări 0/1",
+          "Grupezi biții în octeți",
+          "Decodezi octeții după aceeași regulă"
+        ],
+        "terms": [
+          [
+            "Bit",
+            "O cifră binară: 0 sau 1"
+          ],
+          [
+            "Octet (byte)",
+            "Un grup de opt biți"
+          ],
+          [
+            "UTF-8",
+            "Codificare răspândită a caracterelor Unicode"
+          ]
+        ],
+        "myth": "Un caracter ocupă întotdeauna un octet? Fals: în UTF-8 poate ocupa între unu și patru."
+      }
+    },
+    {
+      "id": "data-02",
+      "en": {
+        "title": "Data types, precision and missing values",
+        "plain": "A type says which operations make sense for a value. Integers, decimals, Boolean values and text behave differently; missing is not the same as zero.",
+        "example": "For a price use decimal arithmetic when exact cents matter; a missing price is not a free item.",
+        "steps": [
+          "Recognise the type",
+          "Choose valid operations",
+          "Represent missing explicitly"
+        ],
+        "terms": [
+          [
+            "Integer",
+            "A whole number without a fractional part"
+          ],
+          [
+            "Boolean",
+            "A true-or-false value"
+          ],
+          [
+            "Null",
+            "An explicit marker that no value is present"
+          ]
+        ],
+        "myth": "A floating-point decimal is always exact? False: many fractions cannot be represented exactly in binary."
+      },
+      "ro": {
+        "title": "Tipuri de date, precizie și valori lipsă",
+        "plain": "Tipul arată ce operații au sens pentru o valoare. Întregii, zecimalele, valorile logice și textul se comportă diferit; lipsa unei valori nu înseamnă zero.",
+        "example": "Pentru prețuri alegi calcule zecimale exacte când contează banii; un preț lipsă nu înseamnă gratuit.",
+        "steps": [
+          "Identifici tipul",
+          "Alegi operațiile potrivite",
+          "Marchezi clar lipsa valorii"
+        ],
+        "terms": [
+          [
+            "Întreg",
+            "Număr fără parte fracționară"
+          ],
+          [
+            "Boolean (logic)",
+            "Valoare adevărat sau fals"
+          ],
+          [
+            "Null (lipsă)",
+            "Marcaj explicit pentru absența unei valori"
+          ]
+        ],
+        "myth": "Un număr zecimal în virgulă mobilă este mereu exact? Fals: multe fracții nu pot fi reprezentate exact în binar."
+      }
+    },
+    {
+      "id": "data-03",
+      "en": {
+        "title": "Rows, tables, CSV and JSON",
+        "plain": "Structured data follows a regular shape, such as rows with named columns. CSV represents a table; JSON represents nested objects and lists.",
+        "example": "A class register fits a table; a shipment with many packages may be easier to represent as nested JSON.",
+        "steps": [
+          "Choose fields",
+          "Pick the right format",
+          "Validate before sharing"
+        ],
+        "terms": [
+          [
+            "CSV",
+            "Comma-Separated Values: a text format for table-like rows"
+          ],
+          [
+            "JSON",
+            "JavaScript Object Notation: text for nested values and lists"
+          ],
+          [
+            "Schema",
+            "Rules describing allowed fields and types"
+          ]
+        ],
+        "myth": "Is JSON always better than a table? No: the right format depends on the shape and operations."
+      },
+      "ro": {
+        "title": "Rânduri, tabele, CSV și JSON",
+        "plain": "Datele structurate urmează o formă regulată, precum rânduri cu coloane numite. CSV descrie tabele; JSON poate descrie obiecte și liste imbricate.",
+        "example": "Catalogul unei clase încape într-un tabel; o expediție cu mai multe colete poate fi mai ușor redată ca JSON imbricat.",
+        "steps": [
+          "Stabilești câmpurile",
+          "Alegi formatul potrivit",
+          "Validezi înainte de schimb"
+        ],
+        "terms": [
+          [
+            "CSV",
+            "Valori separate prin virgulă: format text pentru rânduri de tabel"
+          ],
+          [
+            "JSON",
+            "JavaScript Object Notation: format text pentru valori și liste imbricate"
+          ],
+          [
+            "Schemă",
+            "Reguli despre câmpurile și tipurile acceptate"
+          ]
+        ],
+        "myth": "Este JSON întotdeauna mai bun decât un tabel? Nu: depinde de forma datelor și de operații."
+      }
+    },
+    {
+      "id": "data-04",
+      "en": {
+        "title": "Arrays, lists and linked lists",
+        "plain": "An array keeps items in numbered positions. A linked list connects items through references; they make different trade-offs when accessing or inserting elements.",
+        "example": "Finding the fifth seat in numbered row is direct; following a paper chain requires passing each link.",
+        "steps": [
+          "Locate a position",
+          "Read or change an item",
+          "Consider insertions and memory"
+        ],
+        "terms": [
+          [
+            "Index",
+            "A numbered position, often starting at zero"
+          ],
+          [
+            "Array",
+            "A sequence with direct indexed access"
+          ],
+          [
+            "Linked list",
+            "Nodes that point to the next node"
+          ]
+        ],
+        "myth": "Can a linked list jump to item 100 as directly as an array? Usually no: it follows links."
+      },
+      "ro": {
+        "title": "Vectori, liste și liste înlănțuite",
+        "plain": "Un vector (array) ține elemente în poziții numerotate. O listă înlănțuită le conectează prin referințe; accesul și inserarea au costuri diferite.",
+        "example": "Într-un rând numerotat găsești direct al cincilea scaun; într-un lanț de bilețele urmărești fiecare legătură.",
+        "steps": [
+          "Găsești poziția",
+          "Citești sau modifici elementul",
+          "Compari inserarea și memoria"
+        ],
+        "terms": [
+          [
+            "Index",
+            "Poziție numerotată, deseori pornind de la zero"
+          ],
+          [
+            "Vector (array)",
+            "Secvență cu acces direct prin index"
+          ],
+          [
+            "Listă înlănțuită",
+            "Noduri ce indică spre nodul următor"
+          ]
+        ],
+        "myth": "Poate o listă înlănțuită să sară direct la elementul 100 ca un vector? De obicei nu: urmează legăturile."
+      }
+    },
+    {
+      "id": "data-05",
+      "en": {
+        "title": "Stacks, queues and deques",
+        "plain": "A stack removes the last item added; a queue removes the first. A deque allows adding and removing at both ends.",
+        "example": "Undo in a drawing app resembles a stack; serving tickets in arrival order resembles a queue.",
+        "steps": [
+          "Choose removal order",
+          "Add an item",
+          "Remove the correct end"
+        ],
+        "terms": [
+          [
+            "Stack",
+            "Last In, First Out (LIFO): newest item leaves first"
+          ],
+          [
+            "Queue",
+            "First In, First Out (FIFO): oldest item leaves first"
+          ],
+          [
+            "Deque",
+            "Double-ended queue: both ends can be used"
+          ]
+        ],
+        "myth": "Is a stack suitable for first-come-first-served service? No: it reverses arrival order."
+      },
+      "ro": {
+        "title": "Stive, cozi și cozi cu două capete",
+        "plain": "Stiva scoate ultimul element adăugat; coada scoate primul. O coadă cu două capete permite adăugări și eliminări la ambele capete.",
+        "example": "Anularea ultimei acțiuni seamănă cu o stivă; servirea bonurilor în ordinea sosirii seamănă cu o coadă.",
+        "steps": [
+          "Alegi ordinea scoaterii",
+          "Adaugi elementul",
+          "Scoți din capătul corect"
+        ],
+        "terms": [
+          [
+            "Stivă (stack)",
+            "Ultimul intrat, primul ieșit (LIFO)"
+          ],
+          [
+            "Coadă (queue)",
+            "Primul intrat, primul ieșit (FIFO)"
+          ],
+          [
+            "Deque",
+            "Coadă cu două capete: folosește ambele extremități"
+          ]
+        ],
+        "myth": "Este stiva bună pentru servire în ordinea sosirii? Nu: inversează ordinea."
+      }
+    },
+    {
+      "id": "data-06",
+      "en": {
+        "title": "Sets, maps and hash tables",
+        "plain": "A set keeps unique elements. A map associates keys with values; a hash table often makes lookups fast on average, but collisions must be handled.",
+        "example": "A set tracks distinct student IDs; a map connects each ID to its assigned locker.",
+        "steps": [
+          "Choose a unique key",
+          "Locate the entry",
+          "Handle duplicates and collisions"
+        ],
+        "terms": [
+          [
+            "Set",
+            "A collection without duplicate elements"
+          ],
+          [
+            "Map",
+            "A collection of key–value pairs"
+          ],
+          [
+            "Hash collision",
+            "Different keys mapping to the same table slot"
+          ]
+        ],
+        "myth": "Does a hash table guarantee constant lookup time for every possible input? No: worst cases exist."
+      },
+      "ro": {
+        "title": "Mulțimi, dicționare și tabele hash",
+        "plain": "Mulțimea păstrează elemente unice. Dicționarul asociază chei cu valori; tabelul hash caută adesea rapid, în medie, dar trebuie să gestioneze coliziunile.",
+        "example": "O mulțime ține codurile distincte ale studenților; un dicționar leagă fiecare cod de dulapul repartizat.",
+        "steps": [
+          "Alegi o cheie unică",
+          "Găsești înregistrarea",
+          "Gestionezi duplicate și coliziuni"
+        ],
+        "terms": [
+          [
+            "Mulțime (set)",
+            "Colecție fără elemente duplicate"
+          ],
+          [
+            "Dicționar (map)",
+            "Colecție de perechi cheie–valoare"
+          ],
+          [
+            "Coliziune hash",
+            "Chei diferite ajung în aceeași poziție"
+          ]
+        ],
+        "myth": "Garantează tabelul hash că orice căutare are timp constant? Nu: există cazuri nefavorabile."
+      }
+    },
+    {
+      "id": "data-07",
+      "en": {
+        "title": "Trees, heaps and hierarchies",
+        "plain": "A tree has parent–child relationships and no cycles. A heap is a tree-shaped structure that keeps a chosen priority at the top.",
+        "example": "Folders form a hierarchy; a priority queue can use a heap to retrieve the most urgent task.",
+        "steps": [
+          "Find the root",
+          "Follow branches",
+          "Use heap priority when needed"
+        ],
+        "terms": [
+          [
+            "Root",
+            "The top node of a tree"
+          ],
+          [
+            "Tree",
+            "A connected hierarchy without cycles"
+          ],
+          [
+            "Heap",
+            "A tree-based structure preserving parent–child priority order"
+          ]
+        ],
+        "myth": "Is every tree a binary search tree? No: searching rules apply only to some trees."
+      },
+      "ro": {
+        "title": "Arbori, heap-uri și ierarhii",
+        "plain": "Arborele organizează relații părinte–copil fără cicluri. Un heap este o structură de tip arbore care păstrează prioritatea cea mai mare sau mai mică în vârf.",
+        "example": "Dosarele formează o ierarhie; o coadă cu priorități poate folosi un heap pentru sarcina cea mai urgentă.",
+        "steps": [
+          "Identifici rădăcina",
+          "Urmezi ramurile",
+          "Folosești prioritatea când e cazul"
+        ],
+        "terms": [
+          [
+            "Rădăcină",
+            "Nodul de pornire al arborelui"
+          ],
+          [
+            "Arbore",
+            "Ierarhie conectată fără cicluri"
+          ],
+          [
+            "Heap",
+            "Structură de tip arbore ce respectă o ordine de prioritate"
+          ]
+        ],
+        "myth": "Este orice arbore și arbore binar de căutare? Nu: doar unii respectă regulile de căutare."
+      }
+    },
+    {
+      "id": "data-08",
+      "en": {
+        "title": "Graphs and connected systems",
+        "plain": "A graph models entities as nodes and relationships as edges. Unlike a tree, a graph may contain cycles and multiple possible paths.",
+        "example": "A city transport map is a graph: stations are nodes, routes are edges, and there may be several ways to travel.",
+        "steps": [
+          "Identify nodes",
+          "Connect them with edges",
+          "Search for a path"
+        ],
+        "terms": [
+          [
+            "Node",
+            "An entity represented in a graph"
+          ],
+          [
+            "Edge",
+            "A connection between two nodes"
+          ],
+          [
+            "Path",
+            "A sequence of edges connecting nodes"
+          ]
+        ],
+        "myth": "Must a graph be arranged as a family tree? No: graphs may contain cycles and many routes."
+      },
+      "ro": {
+        "title": "Grafuri și sisteme conectate",
+        "plain": "Graful reprezintă entități ca noduri și relații ca muchii. Spre deosebire de arbore, poate avea cicluri și mai multe drumuri.",
+        "example": "Harta transportului urban este un graf: stațiile sunt noduri, traseele sunt muchii și pot exista mai multe drumuri.",
+        "steps": [
+          "Identifici nodurile",
+          "Le conectezi prin muchii",
+          "Cauți un drum"
+        ],
+        "terms": [
+          [
+            "Nod",
+            "Entitate reprezentată în graf"
+          ],
+          [
+            "Muchie",
+            "Legătură dintre două noduri"
+          ],
+          [
+            "Drum",
+            "Succesiune de muchii ce leagă noduri"
+          ]
+        ],
+        "myth": "Trebuie un graf să arate ca un arbore genealogic? Nu: poate conține cicluri și trasee multiple."
+      }
+    },
+    {
+      "id": "data-09",
+      "en": {
+        "title": "Search, sort and algorithm growth",
+        "plain": "Searching finds an item; sorting orders many items. Big-O describes how required work grows with input size, not an exact stopwatch time.",
+        "example": "Binary search can halve a sorted phone book at each step; without sorting, it cannot use that guarantee.",
+        "steps": [
+          "Check preconditions",
+          "Choose an algorithm",
+          "Estimate growth as data grows"
+        ],
+        "terms": [
+          [
+            "Linear search",
+            "Inspect elements one by one"
+          ],
+          [
+            "Binary search",
+            "Repeatedly halve a sorted search space"
+          ],
+          [
+            "Big-O",
+            "A way to express how resource use grows"
+          ]
+        ],
+        "myth": "Does binary search work reliably on unsorted values? No: the sorted order is essential."
+      },
+      "ro": {
+        "title": "Căutare, sortare și creșterea costului",
+        "plain": "Căutarea găsește un element; sortarea pune multe elemente în ordine. Big-O arată cum crește munca odată cu datele, nu timpul exact de pe ceas.",
+        "example": "Căutarea binară poate înjumătăți la fiecare pas un catalog sortat; fără sortare, nu mai are această garanție.",
+        "steps": [
+          "Verifici condițiile",
+          "Alegi algoritmul",
+          "Estimezi creșterea costului"
+        ],
+        "terms": [
+          [
+            "Căutare liniară",
+            "Examinezi elementele unul câte unul"
+          ],
+          [
+            "Căutare binară",
+            "Înjumătățești repetat un spațiu sortat"
+          ],
+          [
+            "Big-O",
+            "Descriere a modului în care cresc resursele necesare"
+          ]
+        ],
+        "myth": "Funcționează garantat căutarea binară pe date nesortate? Nu: ordinea sortată este esențială."
+      }
+    },
+    {
+      "id": "data-10",
+      "en": {
+        "title": "Databases, keys, SQL and transactions",
+        "plain": "A database stores data so it can be queried and updated. Relational tables connect through keys; a transaction keeps a group of changes consistent.",
+        "example": "A bank transfer needs both account changes to succeed together, rather than withdrawing money and stopping halfway.",
+        "steps": [
+          "Identify table keys",
+          "Query with SQL",
+          "Commit or roll back as one transaction"
+        ],
+        "terms": [
+          [
+            "Primary key",
+            "A value that uniquely identifies a row"
+          ],
+          [
+            "SQL",
+            "Structured Query Language for querying relational data"
+          ],
+          [
+            "Transaction",
+            "A unit of work committed or rolled back together"
+          ]
+        ],
+        "myth": "Is it safe to update half a bank transfer? No: changes should be atomic."
+      },
+      "ro": {
+        "title": "Baze de date, chei, SQL și tranzacții",
+        "plain": "Baza de date păstrează informații care pot fi căutate și actualizate. Tabelele relaționale se leagă prin chei; tranzacția menține coerente schimbările făcute împreună.",
+        "example": "La transferul bancar, ambele conturi trebuie actualizate împreună; nu doar retragerea banilor.",
+        "steps": [
+          "Identifici cheile",
+          "Interoghezi prin SQL",
+          "Confirmi sau anulezi întreaga tranzacție"
+        ],
+        "terms": [
+          [
+            "Cheie primară",
+            "Valoare ce identifică unic un rând"
+          ],
+          [
+            "SQL",
+            "Structured Query Language: limbaj de interogare a datelor"
+          ],
+          [
+            "Tranzacție",
+            "Grup de operații confirmate sau anulate împreună"
+          ]
+        ],
+        "myth": "Este sigur să actualizezi doar jumătate dintr-un transfer? Nu: schimbările trebuie să fie atomice."
+      }
+    },
+    {
+      "id": "data-11",
+      "en": {
+        "title": "Data quality, sources and privacy",
+        "plain": "Good data needs clear meaning, correct collection, validation and traceable sources. Minimise personal data and separate uncertain values from verified facts.",
+        "example": "A survey with duplicate rows or unknown collection dates can mislead even when its spreadsheet looks neat.",
+        "steps": [
+          "Check origin and consent",
+          "Validate completeness and duplicates",
+          "Document limits and protect people"
+        ],
+        "terms": [
+          [
+            "Validation",
+            "Checking that data meets expected rules"
+          ],
+          [
+            "Provenance",
+            "The documented origin and history of data"
+          ],
+          [
+            "Data minimisation",
+            "Collecting only what is actually necessary"
+          ]
+        ],
+        "myth": "Does a beautiful chart make inaccurate data trustworthy? No: appearance does not repair the source."
+      },
+      "ro": {
+        "title": "Calitatea datelor, proveniență și confidențialitate",
+        "plain": "Datele bune au sens clar, colectare corectă, validare și surse verificabile. Minimizezi datele personale și separi incertitudinea de faptele confirmate.",
+        "example": "Un sondaj cu rânduri duplicate ori date necunoscute ale colectării poate induce în eroare, chiar într-un tabel frumos.",
+        "steps": [
+          "Verifici sursa și acordul",
+          "Validezi lipsurile și duplicatele",
+          "Documentezi limitele și protejezi oamenii"
+        ],
+        "terms": [
+          [
+            "Validare",
+            "Verificarea regulilor de calitate a datelor"
+          ],
+          [
+            "Proveniență",
+            "Originea și istoricul documentat al datelor"
+          ],
+          [
+            "Minimizarea datelor",
+            "Colectarea doar a ceea ce este necesar"
+          ]
+        ],
+        "myth": "Face un grafic frumos ca datele inexacte să devină credibile? Nu: aspectul nu repară sursa."
+      }
+    },
+    {
+      "id": "data-12",
+      "en": {
+        "title": "Batch, streams, caching and freshness",
+        "plain": "Batch processing groups many records into jobs; streams handle events as they arrive. Caching reuses prior results, but old results may be wrong when reality changes.",
+        "example": "A weekly report fits batch processing; live bus arrivals need fresh events, not a cached schedule from yesterday.",
+        "steps": [
+          "Choose batch or stream",
+          "Measure how recent data must be",
+          "Refresh caches when needed"
+        ],
+        "terms": [
+          [
+            "Batch",
+            "A group of records processed together"
+          ],
+          [
+            "Stream",
+            "Events processed as they arrive"
+          ],
+          [
+            "Cache",
+            "A fast copy of previously obtained data"
+          ]
+        ],
+        "myth": "Is the fastest cached answer always correct? No: freshness matters for changing facts."
+      },
+      "ro": {
+        "title": "Loturi, fluxuri, cache și prospețimea datelor",
+        "plain": "Procesarea pe loturi grupează înregistrări; fluxurile tratează evenimentele pe măsură ce sosesc. Cache-ul refolosește rezultate, dar acestea pot deveni învechite.",
+        "example": "Un raport săptămânal se potrivește cu loturile; sosirile autobuzelor cer evenimente proaspete, nu orarul de ieri.",
+        "steps": [
+          "Alegi lot ori flux",
+          "Stabilești cât de actuale trebuie să fie datele",
+          "Actualizezi cache-ul la nevoie"
+        ],
+        "terms": [
+          [
+            "Lot (batch)",
+            "Grup de înregistrări prelucrate împreună"
+          ],
+          [
+            "Flux (stream)",
+            "Evenimente tratate pe măsură ce sosesc"
+          ],
+          [
+            "Cache",
+            "Copie rapidă a unor date obținute anterior"
+          ]
+        ],
+        "myth": "Este mereu corect răspunsul rapid din cache? Nu: datele în schimbare cer prospețime."
+      }
+    },
+    {
+      "id": "data-13",
+      "en": {
+        "title": "AI datasets, embeddings and retrieval",
+        "plain": "AI systems learn from examples or retrieve relevant records. Embeddings are numerical representations used to compare meaning, not proof that a claim is true.",
+        "example": "A document search can find similar paragraphs using vectors; it must still check the source and whether facts are current.",
+        "steps": [
+          "Prepare representative data",
+          "Compare similarity or train",
+          "Check evidence, bias and freshness"
+        ],
+        "terms": [
+          [
+            "Dataset",
+            "A collection of examples used for a task"
+          ],
+          [
+            "Embedding",
+            "A numerical vector representing some features of content"
+          ],
+          [
+            "Retrieval",
+            "Finding relevant information before answering"
+          ]
+        ],
+        "myth": "Does a high similarity score prove a statement is true? No: similarity is not verification."
+      },
+      "ro": {
+        "title": "Seturi de date AI, vectori și regăsire",
+        "plain": "Sistemele de inteligență artificială (AI) învață din exemple sau caută documente relevante. Embeddingurile sunt reprezentări numerice ale conținutului, nu dovezi de adevăr.",
+        "example": "Căutarea în documente poate găsi pasaje asemănătoare prin vectori; sursa și actualitatea faptelor trebuie totuși verificate.",
+        "steps": [
+          "Pregătești date reprezentative",
+          "Compari asemănări sau antrenezi",
+          "Verifici dovezile, erorile și actualitatea"
+        ],
+        "terms": [
+          [
+            "Set de date",
+            "Colecție de exemple folosite pentru o sarcină"
+          ],
+          [
+            "Embedding (vector)",
+            "Reprezentare numerică a unor proprietăți ale conținutului"
+          ],
+          [
+            "Regăsire",
+            "Căutarea informațiilor relevante înainte de răspuns"
+          ]
+        ],
+        "myth": "Dovedește un scor mare de asemănare că afirmația e adevărată? Nu: asemănarea nu este verificare."
+      }
+    }
+  ]
+}
