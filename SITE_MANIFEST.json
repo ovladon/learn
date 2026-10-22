@@ -6,11 +6,12 @@
     "Data centers & AI infrastructure",
     "Modern computing & AI — from zero to the frontier",
     "The Invisible Systems — how the internet really works",
-    "Programming languages: how they think"
+    "Programming languages: how they think",
+    "Data, types and structures — from zero"
   ],
-  "topics": 78,
-  "individual_pdf": 156,
-  "pages_per_language": 78,
+  "topics": 92,
+  "individual_pdf": 184,
+  "pages_per_language": 92,
   "files": [
     {
       "id": "fund-00",
@@ -323,6 +324,62 @@
     {
       "id": "lang-15",
       "url": "https://ovladon.github.io/learn/#lang-15"
+    },
+    {
+      "id": "data-00",
+      "url": "https://ovladon.github.io/learn/#data-00"
+    },
+    {
+      "id": "data-01",
+      "url": "https://ovladon.github.io/learn/#data-01"
+    },
+    {
+      "id": "data-02",
+      "url": "https://ovladon.github.io/learn/#data-02"
+    },
+    {
+      "id": "data-03",
+      "url": "https://ovladon.github.io/learn/#data-03"
+    },
+    {
+      "id": "data-04",
+      "url": "https://ovladon.github.io/learn/#data-04"
+    },
+    {
+      "id": "data-05",
+      "url": "https://ovladon.github.io/learn/#data-05"
+    },
+    {
+      "id": "data-06",
+      "url": "https://ovladon.github.io/learn/#data-06"
+    },
+    {
+      "id": "data-07",
+      "url": "https://ovladon.github.io/learn/#data-07"
+    },
+    {
+      "id": "data-08",
+      "url": "https://ovladon.github.io/learn/#data-08"
+    },
+    {
+      "id": "data-09",
+      "url": "https://ovladon.github.io/learn/#data-09"
+    },
+    {
+      "id": "data-10",
+      "url": "https://ovladon.github.io/learn/#data-10"
+    },
+    {
+      "id": "data-11",
+      "url": "https://ovladon.github.io/learn/#data-11"
+    },
+    {
+      "id": "data-12",
+      "url": "https://ovladon.github.io/learn/#data-12"
+    },
+    {
+      "id": "data-13",
+      "url": "https://ovladon.github.io/learn/#data-13"
     }
   ],
   "author": "Vlad Belciug",
