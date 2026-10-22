@@ -24,3 +24,10 @@ A topic is **not marked as self-sufficient** until a beginner can correctly expl
 ## Current status
 
 The website provides a topic-specific zero-start reading guide for each of the 78 topics, in English and Romanian, immediately above its embedded infographic. **This does not prove that the 156 original single-page PDFs are fully self-sufficient.** They remain a revision backlog; prioritise programming-language examples and infrastructure terminology.
+
+## Fast Start site-wide rollout (2026-10-22)
+
+- All topics have a static indexable explanation in each language, plain-language orientation, an example, and topic-specific terms.
+- All editions can be exported as a multi-page, accessible text PDF: explanation first; original A4 visual after. A4 cheat-sheet originals are retained as separate source documents for speed and compatibility.
+- The student interface highlights the quick answer and provides shareable permanent topic pages, not just file links.
+- **Outstanding editorial requirement:** review each explanation and infographic together for all prerequisites, correctness, beginner comprehension and nested jargon. Automated structural checks alone do not satisfy criterion 12.

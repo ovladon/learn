@@ -90,3 +90,13 @@ The [LEARN website](https://ovladon.github.io/learn/) now has a dedicated **Read
 Each reading page begins with a bespoke everyday-language explanation of the topic, a simple concrete example, and a vocabulary guide defining the main ideas and prerequisites. The 78 bilingual notes are versioned in `learner-notes.js`. This is an **accessibility and learning layer**, not a claim that every underlying one-page PDF is now fully self-contained: the standalone infographics still require individual educational review and, where needed, rewriting to fit the same strict editorial standard. See [BEGINNER_STANDARD.md](BEGINNER_STANDARD.md).
 
 The learner's online reading page is `lesson.html?id=LANGUAGE-INDEPENDENT-LESSON-ID&lang=en` (or `lang=ro`). Previously printed QR codes pointing to `#lesson-id` still reach the corresponding lesson card on the original site.
+
+## LEARN Fast Start — read and understand before the jargon
+
+Every one of the **78 topics** now has a bilingual, directly shareable HTML explanation at `topics/<lesson-id>-en.html` and `topics/<lesson-id>-ro.html`. Each page has a plain-language explanation, an everyday example, topic-specific vocabulary, the original one-page infographic in an online PDF viewer, a simple comprehension check, and links to the original and the new explained PDF edition. There are **156 printable explained editions** in the published `beginner/` folder, with an introduction followed by the original infographic; original one-page URLs remain unchanged.
+
+The page cards lead to the shareable lessons, show a one-sentence answer, and make the beginner edition the default PDF download. The generated `sitemap.xml` lists the accessible HTML lessons; no signup, analytics, uploads or outside scripts are used. The generator source is `tools/build_faststart.py` and runs in the existing owner-only GitHub Pages workflow.
+
+**Accuracy boundary:** the automated audit confirms the presence of both languages, definitions, examples, PDF documents and links. It cannot establish true conceptual self-sufficiency or technical correctness. The original sheets and guides still require human beginner testing and editorial review, per [BEGINNER_STANDARD.md](BEGINNER_STANDARD.md); never label them as independently pedagogically certified. The [BEGINNER_AUDIT.json](https://ovladon.github.io/learn/BEGINNER_AUDIT.json) build report lists every guide and its status.
+
+For discoverability, students may link directly to pages and download the material free for individual study. This does not change copyright ownership or allow visitors to publish.

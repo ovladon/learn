@@ -29,7 +29,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site
-          for f in lesson.html lesson.css lesson.js learner-notes.js index.html system-map.html interactive-lab.html interactive-lab.css interactive-lab.js app.js catalog.js style.css favicon.svg robots.txt .nojekyll SECURITY.md SITE_MANIFEST.json RELEASE_INFO.json; do
+          for f in BEGINNER_STANDARD.md lesson.html lesson.css lesson.js learner-notes.js index.html system-map.html interactive-lab.html interactive-lab.css interactive-lab.js app.js catalog.js style.css favicon.svg robots.txt .nojekyll SECURITY.md SITE_MANIFEST.json RELEASE_INFO.json; do
             test -f "$f"
             cp "$f" _site/
           done
@@ -64,6 +64,17 @@ jobs:
           refs=re.findall(r"""['"]((?:materials|collections|previews|assets)/[^'"]+)['"]""",catalog)
           assert not [r for r in refs if r not in files]
           PYVALIDATE
+      - name: Build Fast Start lessons and explained PDF editions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m venv /tmp/learn-faststart-env
+          /tmp/learn-faststart-env/bin/pip install --disable-pip-version-check 'reportlab==4.4.9' 'pypdf==5.9.0'
+          /tmp/learn-faststart-env/bin/python tools/build_faststart.py --site _site
+          test "$(find _site/topics -maxdepth 1 -name '*.html' | wc -l)" -eq 157
+          test "$(find _site/beginner -maxdepth 1 -name '*.pdf' | wc -l)" -eq 156
+          test -s _site/sitemap.xml
+          test -s _site/BEGINNER_AUDIT.json
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload static site

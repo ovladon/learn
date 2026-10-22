@@ -24,7 +24,7 @@
     "Programming languages: how they think"
   ],
   "site_url": "https://ovladon.github.io/learn/",
-  "current_release": "2026-10-22 programming languages chapter 06",
+  "current_release": "2026-10-22 Fast Start: 156 self-contained introductory reading editions, 156 static lesson pages and shareable explanations",
   "subject_tracks": 6,
   "chapter_four_pdfs": 24,
   "chapter_four_booklets": 2,
@@ -34,5 +34,7 @@
   "interactive_lab_simulations": 4,
   "interactive_lab_available": true,
   "chapter_six_pdfs": 30,
-  "chapter_six_booklets": 2
+  "chapter_six_booklets": 2,
+  "beginner_editions": 156,
+  "readable_static_pages": 156
 }
