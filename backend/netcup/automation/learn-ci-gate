@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+# Root-owned forced-command gate for one GitHub Actions SSH key. DO NOT run from the repository checkout.
+set -Eeuo pipefail
+export PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+umask 077
+command_text="${SSH_ORIGINAL_COMMAND:-}"
+case "$command_text" in
+  inspect)
+    echo 'LEARN/Netcup audit (read-only)'
+    /usr/bin/free -h
+    /usr/bin/df -h /
+    /usr/bin/docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.RunningFor}}'
+    if [[ -f /root/wisdom-extractor/deploy/Caddyfile ]]; then
+      if /usr/bin/grep -Fq 'handle_path /learn-quest/*' /root/wisdom-extractor/deploy/Caddyfile; then
+        echo 'LEARN Caddy route: found'
+      else
+        echo 'LEARN Caddy route: not installed'
+      fi
+    else
+      echo 'Production Caddyfile: location not confirmed'
+    fi
+    if [[ -f /etc/learn-quest/learn.env ]]; then
+      echo 'LEARN environment file: present (content NOT shown)'
+    else
+      echo 'LEARN environment file: not installed'
+    fi
+    /usr/bin/docker inspect --format '{{range $key,$_ := .NetworkSettings.Networks}}Caddy network: {{$key}}{{println}}{{end}}' deploy-caddy-1 2>/dev/null || true
+    ;;
+  deploy\ [0-9a-f]*)
+    rev="${command_text#deploy }"
+    if [[ ! "$rev" =~ ^[0-9a-f]{40}$ ]]; then echo 'Invalid commit SHA'; exit 2; fi
+    if [[ ! -f /etc/learn-quest/learn.env ]]; then echo 'LEARN env missing; deployment stopped'; exit 3; fi
+    if [[ ! -f /root/wisdom-extractor/deploy/Caddyfile ]]; then echo 'Production Caddyfile not found; deployment stopped'; exit 3; fi
+    if ! /usr/bin/grep -Fq 'handle_path /learn-quest/*' /root/wisdom-extractor/deploy/Caddyfile; then
+      echo 'LEARN route not present in production Caddyfile; deployment stopped'; exit 3
+    fi
+    target='/opt/learn-ci-checkout'
+    if [[ ! -d "$target/.git" ]]; then
+      /usr/bin/git clone --no-checkout --filter=blob:none https://github.com/ovladon/learn.git "$target"
+    fi
+    /usr/bin/git -C "$target" remote set-url origin https://github.com/ovladon/learn.git
+    /usr/bin/git -C "$target" fetch --no-tags origin main
+    /usr/bin/git -C "$target" cat-file -e "${rev}^{commit}"
+    /usr/bin/git -C "$target" merge-base --is-ancestor "$rev" refs/remotes/origin/main || { echo 'Commit not on main'; exit 4; }
+    /usr/bin/git -C "$target" reset --hard "$rev"
+    compose="$target/backend/netcup/compose.yaml"
+    /usr/bin/docker compose -p learn_quest_gateway --env-file /etc/learn-quest/learn.env -f "$compose" config --quiet
+    /usr/bin/docker compose -p learn_quest_gateway --env-file /etc/learn-quest/learn.env -f "$compose" up -d --build --no-deps learn_quest
+    cid="$(/usr/bin/docker compose -p learn_quest_gateway --env-file /etc/learn-quest/learn.env -f "$compose" ps -q learn_quest)"
+    [[ -n "$cid" ]] || { echo 'No running LEARN gateway container'; exit 5; }
+    ok=0
+    for attempt in 1 2 3 4 5; do
+      if /usr/bin/docker exec "$cid" node -e 'fetch("http://127.0.0.1:8080/health").then(async r => {if(!r.ok || !(await r.json()).ok) process.exit(1); console.log("LEARN health: OK")}).catch(() => process.exit(1))'; then ok=1; break; fi
+      /usr/bin/sleep 2
+    done
+    [[ "$ok" == 1 ]] || { echo 'LEARN gateway failed readiness check'; exit 5; }
+    echo "LEARN gateway commit: $rev"
+    ;;
+  *)
+    echo 'Denied: only inspect and deploy <40-hex-SHA> are permitted.' >&2
+    exit 126
+    ;;
+esac

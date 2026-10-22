@@ -1,0 +1,47 @@
+name: Netcup LEARN Gateway
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: 'Allowed operation (deploy requires server-side secrets and an existing Caddy route)'
+        required: true
+        default: inspect
+        type: choice
+        options: [inspect, deploy]
+permissions:
+  contents: read
+concurrency:
+  group: learn-netcup-gateway
+  cancel-in-progress: false
+jobs:
+  gateway:
+    if: github.repository == 'ovladon/learn' && github.actor == 'ovladon' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify gateway logic
+        run: node --test backend/netcup/server.test.mjs
+      - name: Call Netcup restricted SSH gate
+        env:
+          LEARN_SSH_KEY: ${{ secrets.LEARN_NETCUP_SSH_KEY }}
+          LEARN_KNOWN_HOSTS: ${{ secrets.LEARN_NETCUP_KNOWN_HOSTS }}
+          REQUESTED_OP: ${{ inputs.operation }}
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          : "${LEARN_SSH_KEY:?Missing LEARN_NETCUP_SSH_KEY GitHub Actions secret}"
+          : "${LEARN_KNOWN_HOSTS:?Missing LEARN_NETCUP_KNOWN_HOSTS GitHub Actions secret}"
+          install -d -m 700 "$HOME/.ssh"
+          umask 077
+          printf '%s\n' "$LEARN_SSH_KEY" > "$HOME/.ssh/learn_ci"
+          printf '%s\n' "$LEARN_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          case "$REQUESTED_OP" in
+            inspect) op='inspect' ;;
+            deploy) op="deploy $GITHUB_SHA" ;;
+            *) exit 3 ;;
+          esac
+          ssh -T -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes \
+            -o ConnectTimeout=10 -i "$HOME/.ssh/learn_ci" \
+            root@annotate.wisdomextractor.com "$op"
+          rm -f "$HOME/.ssh/learn_ci"
