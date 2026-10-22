@@ -17,7 +17,7 @@ LEARN is my permanent, free-to-read visual teaching library. I write, select and
 | **04 Modern computing & AI — from zero to the frontier** | **12** | **24** |
 | 05 The Invisible Systems | 12 | 24 |
 | **06 Programming Languages: how they think** | **15** | **30** |
-| **Total** | **78** | **156** |
+| **07 Data, types and structures — from zero** | **14** | **28** |\n| **Total** | **92** | **184** |
 
 Chapter 04 has 12 visual lessons, two complete 12-page PDF booklets, bilingual previews and a permanent QR link on each stand-alone PDF. Students can optionally explore each idea alone; classroom participation is not required. Every standalone lesson defines AI as Artificial Intelligence (English) or Inteligență Artificială (Romanian), and does not assume earlier lessons have been read.
 
@@ -25,11 +25,23 @@ Chapter 04 has 12 visual lessons, two complete 12-page PDF booklets, bilingual p
 
 Topics: inside a language model; attention versus memory; training versus inference; scaling services to many users; request flow from phone to model; multiple agents; tool use and permissions; concurrency; costs; evaluation; prompt injection; the programmer of 2030.
 
+## Chapter 07 — Data, types and structures
+
+**[Begin chapter 07](https://ovladon.github.io/learn/#data-00)** · [English A4 booklet](https://ovladon.github.io/learn/collections/data-en.pdf) · [Broșură A4 în română](https://ovladon.github.io/learn/collections/data-ro.pdf).
+
+Fourteen concepts in beginner order: data and information; binary representation and UTF-8; types and missing values; CSV/JSON; arrays and linked lists; stacks/queues; sets/maps/hash tables; trees/heaps; graphs; search/sort/Big-O; SQL and transactions; quality/provenance/privacy; batches/streams/cache; AI datasets/embeddings/retrieval. Each topic has an A4 bilingual sheet with a QR link, a standalone plain-language online explanation, three Quest challenges and a beginner-edition PDF.
+
+The canonical Chapter 07 curriculum is in `curriculum/data-chapter.json`. GitHub Pages builds its 28 PDF sheets, two booklets, 14 previews, pages, primers and topic-specific Quests deterministically using `tools/build_data_chapter.py`. This is **build-time generation**, so the generated binaries are hosted in the published site artifact rather than checked into `materials/data` in Git. Existing chapters remain unchanged.
+
+## LEARN Quest — privacy-first learning-quality feedback
+
+Quest results remain local by default. After answering, a student may explicitly choose to share only the topic identifier, language, three correctness flags and a predefined confusion category. The payload is schema-validated and immediately aggregated via existing Netcup + isolated Neon infrastructure; no account, free-text response or individual history is stored. Telemetry can be refused without affecting lessons. `LEARN Feedback Smoke` checks the public gateway daily, and LEARN Quality Watch checks for verified problems and mature anonymous bottlenecks (>=30 answers per question). Automated suggestions require educational review; the system never silently rewrites published lessons. Technical details: [LEARNING_QUALITY_LOOP.md](LEARNING_QUALITY_LOOP.md).
+
 ## Learning materials and permanent links
 
 - Browse all subject tracks on the [LEARN website](https://ovladon.github.io/learn/). The website contains search, subject filtering, bilingual labels, PDFs and a back-to-top button.
 - The individual files are kept in `materials/<chapter>/`, previews in `previews/`, collected booklets in `collections/` and the searchable index in `catalog.js`.
-- Students can scan the QR in the top-right corner of each A4 PDF. Please preserve all `#fund-XX`, `#ai-XX`, `#dc-XX`, and `#front-XX` links permanently, including when replacing posters.
+- Students can scan the QR in the top-right corner of each A4 PDF. Please preserve the permanent topic links across all seven tracks (including `#data-XX`), including when replacing posters.
 - A static GitHub Pages action publishes checked-in files after updates. It has `contents: read` and a publisher guard for GitHub owner `@ovladon`.
 
 ## Ownership and usage
