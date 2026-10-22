@@ -1,0 +1,29 @@
+services:
+  learn_quest:
+    build: .
+    restart: unless-stopped
+    environment:
+      - NEON_FUNCTION_URL=${NEON_FUNCTION_URL:?Set NEON_FUNCTION_URL}
+      - ORIGIN_SECRET=${ORIGIN_SECRET:?Set ORIGIN_SECRET}
+      - MINUTE_LIMIT=60
+      - DAILY_LIMIT=5000
+      - MAX_CONCURRENT=4
+      - PORT=8080
+    read_only: true
+    user: "10001:10001"
+    cpus: "0.25"
+    mem_limit: 96m
+    pids_limit: 64
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    expose: ["8080"]
+    networks: [caddy_net]
+    logging:
+      driver: json-file
+      options:
+        max-size: "1m"
+        max-file: "2"
+networks:
+  caddy_net:
+    external: true
+    name: ${CADDY_NETWORK:?Set CADDY_NETWORK to the existing Caddy Docker network}
