@@ -19,7 +19,7 @@ CREATE OR REPLACE FUNCTION public.learn_record_quest(p_topic text, p_lang text, 
 AS $function$
 DECLARE v_total INTEGER; v_topic INTEGER; v_flag TEXT;
 BEGIN
-IF p_topic !~ '^(fund|ai|dc|front|invis|lang)-[0-9]{2}$'
+IF p_topic !~ '^(fund|ai|dc|front|invis|lang|data)-[0-9]{2}$'
   OR p_lang NOT IN ('en','ro') OR p_confusion NOT IN ('term','example','diagram','too_fast','other','none','not_selected')
   OR p_variant NOT IN ('original') OR p_c1 IS NULL OR p_c2 IS NULL OR p_c3 IS NULL
   THEN RETURN 'invalid'; END IF;
