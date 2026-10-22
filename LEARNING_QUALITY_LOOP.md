@@ -1,3 +1,12 @@
+## Technical implementation update — 2026-10-22
+
+- Created a **separate** Neon feedback project in Frankfurt; no Vercel app or cost added.
+- Neon Function `learnfeedback` deployment completed. Public health route; private `/ingest` and `/diagnostics` require a server-only secret, never shipped to visitors.
+- Atomic, opt-in-only anonymous aggregation schema is deployed: 5,000 accepted submissions/day global, 300/topic/day and rolling 28-day diagnostic/suggested-revision views. Project consumption quotas are configured.
+- **Blocked activation:** no connected protected edge/Worker and no verified live HTTPS ingestion test. GitHub Pages Quest **does not transmit results automatically**. Do not expose credentials to bypass this boundary.
+- No real submissions have been collected and no educational text has been auto-rewritten.
+- Implementation and release prerequisites: [backend/neon/learnfeedback/README.md](backend/neon/learnfeedback/README.md).
+
 # LEARN — Autonomous Learning Quality Loop
 
 ## Goal
