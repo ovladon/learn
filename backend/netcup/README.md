@@ -1,4 +1,4 @@
-# LEARN Quest gateway on existing Netcup VPS (prepared; NOT LIVE)
+# LEARN Quest gateway on existing Netcup VPS (LIVE — 2026-10-22)
 
 **Purpose:** reuse the server already hosting Wisdom Extractor; avoid Cloudflare and Vercel. This folder is public **source code only**. Never commit filled `.env`, secret values or VPS backups. Deploy as a separate Docker service on the existing Caddy Docker network. Site remains on GitHub Pages and data remains in separate Neon `learn-feedback`.
 
@@ -10,7 +10,7 @@
 - Keep `ORIGIN_SECRET` identical to that in the already-deployed Neon Function. **The Neon Function expects `X-Origin-Secret`; the unused Cloudflare example incorrectly uses `X-Secret`.**
 - When the gateway is down, LEARN lessons and games remain usable, but anonymous results are not submitted.
 
-## Before deployment
+## First-time bootstrap (already completed in production)
 1. Review the existing VPS Caddy container and `Caddyfile`; do not reset the server's local production file with the repository's example, which uses placeholder hostnames.
 2. Check resources with `ssh root@annotate.wisdomextractor.com 'free -h; df -h /; docker stats --no-stream'` and identify the Caddy network:
    `docker inspect -f '{{range $name,$v := .NetworkSettings.Networks}}{{println $name}}{{end}}' $(cd /root/wisdom-extractor/deploy && docker compose ps -q caddy)`.
@@ -31,10 +31,16 @@ handle {
 
    If you already have a plain `reverse_proxy mobile:8600`, replace it with the catch-all `handle` block to prevent precedence surprises. Verify with `docker compose exec caddy caddy validate --config /etc/caddy/Caddyfile` and reload with `docker compose exec caddy caddy reload --config /etc/caddy/Caddyfile` from `/root/wisdom-extractor/deploy`. **Back up the Caddyfile first**.
 7. Verify `GET https://annotate.wisdomextractor.com/learn-quest/health` (200); preflight to `/learn-quest/ingest` from allowed and disallowed origins; invalid payload 400; valid opted-in test result 200; repeat/limit 429, and Neon aggregation increments exactly once per accepted game. Use a disposable database branch for test data if possible; otherwise clearly mark and remove test counts before computing learning metrics.
-8. **Only after live verification**, enable frontend opt-in by setting the *public URL only* in `quest-config.js` to `https://annotate.wisdomextractor.com/learn-quest/ingest`, redeploy GitHub Pages and verify the user-facing path. No secret in browser.
+8. **Completed:** the public URL only was enabled in `quest-config.js`, validated using a real opted-in Quest submission and published to GitHub Pages. Never put a secret in the browser.
 
 ## Developer test
 `node --test backend/netcup/server.test.mjs` from repo root. No third-party Node modules required.
 
 ## Operational caution
 Existing Wisdom Extractor production may have custom, uncommitted Caddy config. Do not run `git reset --hard` there or deploy the example Caddyfile. If the Netcup server is resource-constrained or receives high attack traffic, use an isolated paid managed edge instead of risking the main app. This is a no-new-subscription proposal, not a promise of unlimited free capacity.
+
+## Routine operation (no new subscription)
+
+GitHub Actions workflow `Netcup LEARN Gateway` now runs tests and automatically deploys *only this gateway container* for owner-authored changes to its server/compose/Docker/CI files on `main`. It uses a restricted root forced-command SSH key installed in the original Netcup setup; it does **not** modify Wisdom Extractor containers or Caddy. `LEARN Feedback Smoke` checks public reachability and access control daily. `LEARN Quality Watch` checks meaningful GitHub/Neon anomalies, respecting a >=30-response floor for pedagogical inferences. The original Caddy production file is backed up on Netcup.
+
+**Backend version:** Neon function `learnfeedback` #3 and Netcup gateway both accept `data-00` to `data-13` topic IDs as well as the six pre-existing prefixes. Cost is included in existing Netcup infrastructure and the Neon free-tier quota under present load; accepted-event caps do not protect from all infrastructure costs.
