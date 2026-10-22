@@ -29,7 +29,7 @@ function validPayload(obj) {
   const fields = Object.keys(obj).sort().join(',');
   if (fields !== 'confusion,correct,language,schema,topic_id,variant') return false;
   if (obj.schema !== 1 || typeof obj.topic_id !== 'string' ||
-      !/^(fund|ai|dc|front|invis|lang)-\d{2}$/.test(obj.topic_id)) return false;
+      !/^(fund|ai|dc|front|invis|lang|data)-\d{2}$/.test(obj.topic_id)) return false;
   if (!['ro','en'].includes(obj.language) || obj.variant !== 'original') return false;
   if (!Array.isArray(obj.correct) || obj.correct.length !== 3 ||
       !obj.correct.every(x => typeof x === 'boolean')) return false;
