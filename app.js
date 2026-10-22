@@ -13,10 +13,10 @@ function label(en,ro){return language==='en'?en:ro;}
 function cardHtml(d){
   const title=label(d.title_en,d.title_ro), other=label(d.title_ro,d.title_en), desc=label(d.desc_en,d.desc_ro);
   return `<article class="card ${esc(d.category)}" id="${esc(d.id)}">
-    <a class="thumb" href="${esc(d['pdf_'+language])}" aria-label="${esc(title)} - PDF"><img loading="lazy" src="${esc(d.preview)}" alt="${esc(title)} infographic preview"></a>
+    <a class="thumb" href="lesson.html?id=${encodeURIComponent(d.id)}&lang=${language}" aria-label="${esc(label('Read online: ','Citește online: ')+title)}"><img loading="lazy" src="${esc(d.preview)}" alt="${esc(title)} infographic preview"></a>
     <div class="card-body"><div class="card-id">${esc(d.category.toUpperCase())} / ${esc(d.id.split('-').pop())}</div>
     <h4>${esc(title)}</h4><div class="romanian-title" lang="${language==='en'?'ro':'en'}">${esc(other)}</div>
-    <p>${esc(desc)}</p><div class="dlrow"><a href="${esc(d.pdf_en)}" download>EN · PDF ↓</a><a href="${esc(d.pdf_ro)}" download>RO · PDF ↓</a></div></div>
+    <p>${esc(desc)}</p><div class="online-row"><a class="read-online" href="lesson.html?id=${encodeURIComponent(d.id)}&lang=${language}">${esc(label('Read online ↗','Citește online ↗'))}</a></div><div class="dlrow"><a href="${esc(d.pdf_en)}" download>EN · PDF ↓</a><a href="${esc(d.pdf_ro)}" download>RO · PDF ↓</a></div></div>
   </article>`;
 }
 function filterHtml(){

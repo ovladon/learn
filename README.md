@@ -82,3 +82,11 @@ SQL is declarative query language; Bash is a shell scripting language. HTML (Hyp
 [Programming Languages](https://ovladon.github.io/learn/#lang-01) · [English booklet](https://ovladon.github.io/learn/collections/languages-en.pdf) · [Broșură română](https://ovladon.github.io/learn/collections/languages-ro.pdf) · [English A3 map](https://ovladon.github.io/learn/collections/language-map-a3-en.pdf) · [Harta A3 română](https://ovladon.github.io/learn/collections/language-map-a3-ro.pdf).
 
 The author alone publishes this free teaching library. Visitors can read and download; there are no external uploads. See [USAGE.md](USAGE.md) and [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Read every infographic online — and begin from zero
+
+The [LEARN website](https://ovladon.github.io/learn/) now has a dedicated **Read online / Citește online** link on every one of its 78 lesson cards. The original PDF is embedded in a responsive reading page (no download required in browsers supporting inline PDF viewing); a browser-image preview and an **Open PDF** alternative are also available. **Download PDF** remains optional. The student can switch English/Romanian on the reading page. No logins, forms, user uploads, analytics, or external scripts are added.
+
+Each reading page begins with a bespoke everyday-language explanation of the topic, a simple concrete example, and a vocabulary guide defining the main ideas and prerequisites. The 78 bilingual notes are versioned in `learner-notes.js`. This is an **accessibility and learning layer**, not a claim that every underlying one-page PDF is now fully self-contained: the standalone infographics still require individual educational review and, where needed, rewriting to fit the same strict editorial standard. See [BEGINNER_STANDARD.md](BEGINNER_STANDARD.md).
+
+The learner's online reading page is `lesson.html?id=LANGUAGE-INDEPENDENT-LESSON-ID&lang=en` (or `lang=ro`). Previously printed QR codes pointing to `#lesson-id` still reach the corresponding lesson card on the original site.

@@ -44,3 +44,6 @@
 
 /* Chapter 06 - programming languages */
 .language-action{background:#DDD5FF;color:#23385B;border:1px solid #B3A1EC}.language-action:hover{background:#EAE5FF}.languages-feature{margin:38px auto 12px}.languages-feature-text{background:linear-gradient(110deg,#E9F5F3,#F4F3FF);border:1px solid #D5E5E7;border-radius:23px;padding:29px 34px}.languages-feature h2{font-size:clamp(25px,3.5vw,41px);margin:9px 0 12px;letter-spacing:-.04em;line-height:1.15;color:#133448}.languages-feature p{max-width:790px;font-size:14px;color:#415C6E;line-height:1.65;margin:0}.language-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:21px}.language-links .btn{font-size:12px;padding:10px 14px}.btn.soft-on-light{border:1px solid #9FBFCF;color:#24536A;background:white}@media(max-width:720px){.languages-feature{margin:22px auto 0}.languages-feature-text{padding:22px 20px}}
+
+/* Always offer online reading separately from optional downloading. */
+.online-row{margin:-2px 0 10px}.read-online{display:block;text-align:center;text-decoration:none;background:#174b5a;color:#fff;font-size:13px;letter-spacing:.01em;font-weight:850;border-radius:10px;padding:11px 8px}.read-online:hover{background:#24717c}.read-online:focus-visible{outline:3px solid #f3a82d;outline-offset:3px}

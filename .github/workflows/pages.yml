@@ -29,7 +29,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site
-          for f in index.html system-map.html interactive-lab.html interactive-lab.css interactive-lab.js app.js catalog.js style.css favicon.svg robots.txt .nojekyll SECURITY.md SITE_MANIFEST.json RELEASE_INFO.json; do
+          for f in lesson.html lesson.css lesson.js learner-notes.js index.html system-map.html interactive-lab.html interactive-lab.css interactive-lab.js app.js catalog.js style.css favicon.svg robots.txt .nojekyll SECURITY.md SITE_MANIFEST.json RELEASE_INFO.json; do
             test -f "$f"
             cp "$f" _site/
           done
@@ -51,6 +51,7 @@ jobs:
           assert len(list((root/'previews').glob('lang-*.webp')))==15,'Expected 15 language previews'
           assert all((root/'collections'/f'languages-{l}.pdf').is_file() for l in ('en','ro'))
           assert all((root/'collections'/f'language-map-a3-{l}.pdf').is_file() for l in ('en','ro'))
+          assert (root/'lesson.html').is_file() and (root/'learner-notes.js').is_file()
           assert (root/'system-map.html').is_file()
           for f in ('interactive-lab.html','interactive-lab.css','interactive-lab.js'):
               assert (root/f).is_file()

@@ -1,0 +1,30 @@
+/* The reader is an offline-capable, document-first, accessible LEARN page. */
+.reader-main{padding-top:42px;padding-bottom:70px;max-width:1110px}
+.reader-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.reader-heading h1{color:#0b283d;font-size:clamp(32px,5vw,51px);line-height:1.13;margin:8px 0 8px;letter-spacing:-.04em}
+.reader-desc{font-size:17px;color:#446177;max-width:740px;margin:0}
+.reader-linkset{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.reader-action{border:1px solid #c5dce4;border-radius:9px;background:white;padding:10px 14px;text-decoration:none;color:#135467;font-weight:750;font-size:13px}
+.reader-action:hover{background:#e8f9f2}.reader-action:focus-visible{outline:3px solid #ffbf4f;outline-offset:3px}
+.reader-orientation{border:1px solid #cee2e5;border-radius:20px;margin-top:28px;padding:clamp(20px,3vw,36px);background:linear-gradient(130deg,#ecf9f3,#f4f8ff)}
+.reader-eyebrow{color:#18746b;font-size:11px;letter-spacing:.15em;font-weight:850}
+.reader-orientation h2{margin:8px 0 8px;font-size:clamp(25px,3vw,31px);letter-spacing:-.03em}
+.reader-plain{font-size:18px;font-weight:700;color:#123b45;max-width:880px;line-height:1.52}
+.reader-example{background:white;padding:14px 18px;border-radius:12px;border-left:4px solid #23a78e;font-size:15px;line-height:1.65}
+.reader-orientation h3{font-size:18px;margin:28px 0 10px}
+.reader-vocab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 14px;margin:0}
+.reader-vocab>div{padding:13px 16px;background:#fff;border:1px solid #d7e8e5;border-radius:10px}
+.reader-vocab dt{font-weight:800;color:#104d5b;font-size:14px}
+.reader-vocab dd{font-size:13px;line-height:1.55;color:#3d5567;margin:4px 0 0}
+.reader-tiny{font-size:12px;color:#597285;line-height:1.6;margin:16px 0 0}
+.reader-sheet-section{margin-top:35px}.reader-sheet-header{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:4px 12px}
+.reader-sheet-header h2{font-size:23px;margin:0}.reader-sheet-header p{font-size:13px;color:#62788a;margin:4px 0 12px}
+.reader-pdf-shell{height:min(95vh,1180px);min-height:520px;background:#dbe4e8;border-radius:14px;overflow:hidden;box-shadow:0 8px 32px #102a3525;border:1px solid #b5d3de}
+#reader-pdf{width:100%;height:100%;border:0;background:#e8eef1}
+.reader-fallback{margin-top:14px;background:#fff;padding:14px 18px;border:1px solid #d4e3e7;border-radius:12px}
+.reader-fallback summary{cursor:pointer;font-weight:800;color:#215d66}.reader-fallback img{width:100%;height:auto;max-width:850px;display:block;margin:18px auto;border:1px solid #e2ebec}
+.reader-bottom-nav{display:flex;justify-content:space-between;gap:12px;margin-top:26px}.reader-bottom-nav a{padding:12px 15px;background:#eef5f6;border-radius:10px;text-decoration:none;font-weight:750;color:#1e5d70}.reader-bottom-nav a[hidden]{display:none}
+.reader-rights{color:#688093;font-size:12px;margin-top:35px}#reader-error{padding:26px;background:#fff1e9;border:1px solid #e0bba6;border-radius:13px}
+@media(max-width:800px){.reader-vocab{grid-template-columns:1fr}.reader-pdf-shell{height:78vh;min-height:420px}}
+@media(max-width:600px){.reader-main{padding-top:24px}.reader-heading h1{font-size:29px}.reader-plain{font-size:16px}.reader-pdf-shell{height:68vh;min-height:360px}.topbar nav{display:flex;gap:10px;font-size:11px}.topbar nav a[href="interactive-lab.html"]{display:none}}
+@media print{.sitehead,.reader-linkset,.reader-bottom-nav,.reader-fallback{display:none!important}.reader-pdf-shell{height:1050px}.reader-orientation{break-inside:avoid}}
