@@ -66,7 +66,7 @@ This chapter teaches durable computing mechanisms, not predictions of a particul
 
 The conceptual nine-stage map connects user intent, devices, internet routing, applications, data centers, AI models, agents, tools and real-world outcomes. The interactive edition can distinguish a typical non-AI web path from an AI-agent path. Each station opens an existing LEARN lesson; the diagrams do not claim every request follows all nine stages.
 
-**Updated total: 5 subject chapters, 63 topics, 126 individual A4 infographics, plus four printable A3/A4 system-map posters.** Older QR URLs remain unchanged.
+**Updated total: 7 subject chapters, 92 topics, 184 individual A4 sheets, 184 explained PDF editions and four printable system-map posters.** Existing QR URLs remain unchanged.
 
 Editorial policy: one concept per sheet; acronyms explained; accurate limits, risks and uses; optional individual exercise; English/Romanian; QR links; no external uploads or collaborations. The materials are freely available for individual study, rights retained by Vlad Belciug. See USAGE.md.
 
@@ -97,15 +97,15 @@ The author alone publishes this free teaching library. Visitors can read and dow
 
 ## Read every infographic online — and begin from zero
 
-The [LEARN website](https://ovladon.github.io/learn/) now has a dedicated **Read online / Citește online** link on every one of its 78 lesson cards. The original PDF is embedded in a responsive reading page (no download required in browsers supporting inline PDF viewing); a browser-image preview and an **Open PDF** alternative are also available. **Download PDF** remains optional. The student can switch English/Romanian on the reading page. No logins, forms, user uploads, analytics, or external scripts are added.
+The [LEARN website](https://ovladon.github.io/learn/) now has a dedicated **Read online / Citește online** link on all 92 lesson cards. The original PDF is embedded in a responsive reading page (no download required in browsers supporting inline PDF viewing); a browser-image preview and an **Open PDF** alternative are also available. **Download PDF** remains optional. The student can switch English/Romanian on the reading page. No logins or file uploads; optional anonymous aggregate Quest feedback is sent only by explicit opt-in.
 
-Each reading page begins with a bespoke everyday-language explanation of the topic, a simple concrete example, and a vocabulary guide defining the main ideas and prerequisites. The 78 bilingual notes are versioned in `learner-notes.js`. This is an **accessibility and learning layer**, not a claim that every underlying one-page PDF is now fully self-contained: the standalone infographics still require individual educational review and, where needed, rewriting to fit the same strict editorial standard. See [BEGINNER_STANDARD.md](BEGINNER_STANDARD.md).
+Each reading page begins with a bespoke everyday-language explanation of the topic, a simple concrete example, and a vocabulary guide defining the main ideas and prerequisites. The original 78 bilingual notes are versioned in `learner-notes.js`; Chapter 07 additions are generated at build time from `curriculum/data-chapter.json`. This is an **accessibility and learning layer**, not a claim that every underlying one-page PDF is now fully self-contained: the standalone infographics still require individual educational review and, where needed, rewriting to fit the same strict editorial standard. See [BEGINNER_STANDARD.md](BEGINNER_STANDARD.md).
 
 The learner's online reading page is `lesson.html?id=LANGUAGE-INDEPENDENT-LESSON-ID&lang=en` (or `lang=ro`). Previously printed QR codes pointing to `#lesson-id` still reach the corresponding lesson card on the original site.
 
 ## LEARN Fast Start — read and understand before the jargon
 
-Every one of the **78 topics** now has a bilingual, directly shareable HTML explanation at `topics/<lesson-id>-en.html` and `topics/<lesson-id>-ro.html`. Each page has a plain-language explanation, an everyday example, topic-specific vocabulary, the original one-page infographic in an online PDF viewer, a simple comprehension check, and links to the original and the new explained PDF edition. There are **156 printable explained editions** in the published `beginner/` folder, with an introduction followed by the original infographic; original one-page URLs remain unchanged.
+Every one of the **92 topics** has a bilingual, directly shareable HTML explanation at `topics/<lesson-id>-en.html` and `topics/<lesson-id>-ro.html`. Each page has a plain-language explanation, an everyday example, topic-specific vocabulary, the original one-page infographic in an online PDF viewer, a simple comprehension check, and links to the original and the new explained PDF edition. There are **184 printable explained editions** in the published `beginner/` folder, with an introduction followed by the original infographic; original one-page URLs remain unchanged.
 
 The page cards lead to the shareable lessons, show a one-sentence answer, and make the beginner edition the default PDF download. The generated `sitemap.xml` lists the accessible HTML lessons; no signup, analytics, uploads or outside scripts are used. The generator source is `tools/build_faststart.py` and runs in the existing owner-only GitHub Pages workflow.
 
@@ -115,9 +115,9 @@ For discoverability, students may link directly to pages and download the materi
 
 ## LEARN Quest — 3 clues per topic (October 2026)
 
-Every one of the 78 lessons has a voluntary bilingual three-step challenge at `quest.html?id=TOPIC-ID&lang=ro` (or `en`): real-world example, vocabulary, and a topic-specific misconception. **The website does not grade students or record identities.** Results remain in local browser storage. The last step invites feedback with an explicit consent checkbox; feedback is copied for the student to choose whether to send, **not silently uploaded**. There is currently no server-side feedback collector; do not claim the author receives automatic statistics. See [PEDAGOGICAL_AUDIT.md](PEDAGOGICAL_AUDIT.md) for audit limitations. The quiz questions are educational checks, **not** validated psychometric measures.
+Every one of the 92 lessons has a voluntary bilingual three-step Quest at `quest.html?id=TOPIC-ID&lang=ro` (or `en`): a concrete scenario, a vocabulary check and a misconception check. The website does not grade students or record identities. Results remain local unless the student explicitly opts in at the end; in that case only the topic, language, three correctness flags and a fixed confusion category are sent to Netcup and aggregated by Neon. There is no student account or raw response history. The quiz questions are educational checks, not validated psychometric measures.
 
-The lesson page generator in `tools/build_faststart.py` adds the game link to every one of the 156 language-specific lesson pages. Previously printed QR IDs remain stable and lead to topic cards with a game CTA.
+The lesson page generator in `tools/build_faststart.py` adds the game link to every one of the 184 language-specific lesson pages. Previously printed QR IDs remain stable and lead to topic cards with a game CTA.
 
 ## LEARN Quest privacy-first feedback rollout (2026-10-22)
 The private backend exists on Neon, but students **do not submit statistics automatically** and anonymous collection remains disabled until a protected, rate-limited HTTPS proxy is deployed and tested. Quest now hides its feedback submission controls when disabled, removing the old manual copy/email workflow. The configured endpoint is currently empty in `quest-config.js`. Do not put a database password or the Neon Function server secret in any browser-facing file. See `backend/neon/learnfeedback/README.md`.
