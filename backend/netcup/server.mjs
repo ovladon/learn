@@ -9,7 +9,7 @@ function valid(x) {
   return x && typeof x === 'object' && !Array.isArray(x) &&
     Object.keys(x).sort().join(',') === 'confusion,correct,language,schema,topic_id,variant' &&
     x.schema === 1 && typeof x.topic_id === 'string' &&
-    /^(fund|ai|dc|front|invis|lang)-\d{2}$/.test(x.topic_id) &&
+    /^(fund|ai|dc|front|invis|lang|data)-\d{2}$/.test(x.topic_id) &&
     LANGS.has(x.language) && x.variant === 'original' &&
     Array.isArray(x.correct) && x.correct.length === 3 &&
     x.correct.every(v => typeof v === 'boolean') &&
