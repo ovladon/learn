@@ -59,8 +59,8 @@ def make_sheet(path: Path, lesson: dict, lang: str):
         for line in lines:
             c.drawString(x,y,line);y-=leading
         return y
-    y=block(title,38,h-68,"DataBold",15.6,"#ffffff",w-76,20,2)-10
-    y=block(obj["plain"],38,y,"DataRegular",10.5,"#102d40",w-76,16,5)-18
+    block(title,38,h-68,"DataBold",15.6,"#ffffff",w-76,20,2)
+    y=block(obj["plain"],38,h-121,"DataRegular",10.5,"#102d40",w-76,16,5)-18
     c.setFillColor(HexColor("#e9f8f3"));c.roundRect(30,y-78,w-60,86,12,fill=1,stroke=0)
     c.setFont("DataBold",10);c.setFillColor(HexColor("#085e57"))
     c.drawString(42,y-9,"EXAMPLE" if lang=="en" else "EXEMPLU")
