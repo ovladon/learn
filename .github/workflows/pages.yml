@@ -29,7 +29,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site
-          for f in BEGINNER_STANDARD.md lesson.html lesson.css lesson.js learner-notes.js quest.html quest.css quest.js quest-bank.js PEDAGOGICAL_AUDIT.md index.html system-map.html interactive-lab.html interactive-lab.css interactive-lab.js app.js catalog.js style.css favicon.svg robots.txt .nojekyll SECURITY.md SITE_MANIFEST.json RELEASE_INFO.json; do
+          for f in BEGINNER_STANDARD.md lesson.html lesson.css lesson.js learner-notes.js quest.html quest.css quest.js quest-bank.js quest-config.js PEDAGOGICAL_AUDIT.md index.html system-map.html interactive-lab.html interactive-lab.css interactive-lab.js app.js catalog.js style.css favicon.svg robots.txt .nojekyll SECURITY.md SITE_MANIFEST.json RELEASE_INFO.json; do
             test -f "$f"
             cp "$f" _site/
           done
