@@ -1,0 +1,50 @@
+name: LEARN Feedback Smoke
+on:
+  push:
+    paths:
+      - '.github/workflows/learn-feedback-smoke.yml'
+      - 'quest-config.js'
+      - 'backend/netcup/**'
+  workflow_dispatch:
+  schedule:
+    - cron: '14 7 * * *'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Verify public feedback gateway (read-only / invalid payload only)
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          ROOT="https://annotate.wisdomextractor.com/learn-quest"
+          CODE=$(curl --retry 2 --retry-delay 2 --retry-connrefused -sS -m 20 -o /tmp/learn-health.json -w '%{http_code}' "$ROOT/health")
+          test "$CODE" = 200
+          python3 - <<'PY'
+          import json
+          assert json.load(open('/tmp/learn-health.json')) == {'ok': True}
+          print('Public gateway health: 200 OK')
+          PY
+          CODE=$(curl -sS -m 20 -o /tmp/learn-preflight.txt -D /tmp/learn-preflight.headers -w '%{http_code}' \
+            -X OPTIONS -H 'Origin: https://ovladon.github.io' \
+            -H 'Access-Control-Request-Method: POST' "$ROOT/ingest")
+          test "$CODE" = 204
+          grep -qi '^access-control-allow-origin: https://ovladon.github.io' /tmp/learn-preflight.headers
+          echo "Allowed-origin preflight: 204 OK"
+          CODE=$(curl -sS -m 20 -o /tmp/learn-denied.txt -w '%{http_code}' \
+            -X OPTIONS -H 'Origin: https://unauthorized.example' "$ROOT/ingest")
+          test "$CODE" = 403
+          echo "Disallowed-origin preflight: 403 OK"
+          CODE=$(curl -sS -m 20 -o /tmp/learn-invalid.txt -w '%{http_code}' \
+            -H 'Origin: https://ovladon.github.io' -H 'Content-Type: application/json' \
+            -d '{"schema":1}' "$ROOT/ingest")
+          test "$CODE" = 400
+          echo "Invalid schema rejected: 400 OK"
+          CODE=$(curl -sS -m 20 -o /tmp/learn-native-denied.txt -w '%{http_code}' \
+            -X POST -H 'Content-Type: application/json' -d '{"schema":1}' \
+            'https://br-lucky-sun-b9lhjzlx-learnfeedback.compute.c-7.eu-central-1.aws.neon.tech/ingest')
+          test "$CODE" = 401
+          echo "Neon native URL protected: 401 OK"
+          echo "No valid student result sent; statistics unaffected."
