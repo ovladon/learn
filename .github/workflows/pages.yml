@@ -29,7 +29,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site
-          for f in BEGINNER_STANDARD.md lesson.html lesson.css lesson.js learner-notes.js index.html system-map.html interactive-lab.html interactive-lab.css interactive-lab.js app.js catalog.js style.css favicon.svg robots.txt .nojekyll SECURITY.md SITE_MANIFEST.json RELEASE_INFO.json; do
+          for f in BEGINNER_STANDARD.md lesson.html lesson.css lesson.js learner-notes.js quest.html quest.css quest.js quest-bank.js PEDAGOGICAL_AUDIT.md index.html system-map.html interactive-lab.html interactive-lab.css interactive-lab.js app.js catalog.js style.css favicon.svg robots.txt .nojekyll SECURITY.md SITE_MANIFEST.json RELEASE_INFO.json; do
             test -f "$f"
             cp "$f" _site/
           done
@@ -75,6 +75,31 @@ jobs:
           test "$(find _site/beginner -maxdepth 1 -name '*.pdf' | wc -l)" -eq 156
           test -s _site/sitemap.xml
           test -s _site/BEGINNER_AUDIT.json
+      - name: Verify topic-specific LEARN Quest bank
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check _site/quest.js
+          node --check _site/quest-bank.js
+          python3 - <<'PYGAME'
+          import json,re,pathlib
+          root=pathlib.Path('_site')
+          bank=(root/'quest-bank.js').read_text(encoding='utf8')
+          bank=json.loads(bank.split('window.LEARN_QUEST_BANK =',1)[1].strip().rstrip(';'))
+          catalog=(root/'catalog.js').read_text(encoding='utf8')
+          cats=json.loads(catalog.split('window.LEARN_CATALOG =',1)[1].strip().rstrip(';'))
+          assert len(bank)==len(cats)==78
+          assert set(bank)=={x['id'] for x in cats}
+          for id,q in bank.items():
+            for lang in ('en','ro'):
+              rounds=q[lang]['stages']
+              assert len(rounds)==3
+              for round in rounds:
+                assert 0<=round['correct']<len(round['answers'])
+                assert len(set(round['answers']))==len(round['answers'])
+          print('156 bilingual topic games validated')
+          PYGAME
+          test -s _site/quest.html
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload static site

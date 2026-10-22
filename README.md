@@ -100,3 +100,9 @@ The page cards lead to the shareable lessons, show a one-sentence answer, and ma
 **Accuracy boundary:** the automated audit confirms the presence of both languages, definitions, examples, PDF documents and links. It cannot establish true conceptual self-sufficiency or technical correctness. The original sheets and guides still require human beginner testing and editorial review, per [BEGINNER_STANDARD.md](BEGINNER_STANDARD.md); never label them as independently pedagogically certified. The [BEGINNER_AUDIT.json](https://ovladon.github.io/learn/BEGINNER_AUDIT.json) build report lists every guide and its status.
 
 For discoverability, students may link directly to pages and download the material free for individual study. This does not change copyright ownership or allow visitors to publish.
+
+## LEARN Quest — 3 clues per topic (October 2026)
+
+Every one of the 78 lessons has a voluntary bilingual three-step challenge at `quest.html?id=TOPIC-ID&lang=ro` (or `en`): real-world example, vocabulary, and a topic-specific misconception. **The website does not grade students or record identities.** Results remain in local browser storage. The last step invites feedback with an explicit consent checkbox; feedback is copied for the student to choose whether to send, **not silently uploaded**. There is currently no server-side feedback collector; do not claim the author receives automatic statistics. See [PEDAGOGICAL_AUDIT.md](PEDAGOGICAL_AUDIT.md) for audit limitations. The quiz questions are educational checks, **not** validated psychometric measures.
+
+The lesson page generator in `tools/build_faststart.py` adds the game link to every one of the 156 language-specific lesson pages. Previously printed QR IDs remain stable and lead to topic cards with a game CTA.

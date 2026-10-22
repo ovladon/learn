@@ -21,6 +21,7 @@ function cardHtml(d){
     <div class="card-body"><div class="card-id">${esc(d.category.toUpperCase())} / ${esc(d.id.split('-').pop())}</div>
     <h4>${esc(title)}</h4><div class="romanian-title" lang="${language==='en'?'ro':'en'}">${esc(other)}</div>
     <p class="short-desc">${esc(desc)}</p><p class="card-quick-answer">${esc(quick)}</p>
+    <div class="quest-row"><a class="quest-entry" href="quest.html?id=${esc(d.id)}&lang=${language}">${esc(label('Play 3 clues · 1 minute →','Joacă 3 indicii · 1 minut →'))}</a></div>
     <div class="online-row"><a class="read-online" href="${online}">${esc(label('Understand it now →','Înțelege acum →'))}</a><button class="share-lesson" type="button" data-id="${esc(d.id)}" aria-label="${esc(label('Copy lesson link','Copiază linkul lecției'))}">${esc(label('Share ↗','Distribuie ↗'))}</button></div>
     <div class="dlrow"><a href="beginner/${esc(d.id)}-en.pdf" download>EN · ${esc(label('Explained PDF','PDF explicat'))} ↓</a><a href="beginner/${esc(d.id)}-ro.pdf" download>RO · ${esc(label('Explained PDF','PDF explicat'))} ↓</a></div></div>
   </article>`;

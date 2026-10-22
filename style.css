@@ -56,3 +56,8 @@
 .online-row .share-lesson{padding:10px 12px;border:1px solid #c8dade;border-radius:10px;background:#fff;font-size:12px;color:#3b6671;font-weight:800;min-height:42px}
 .online-row .share-lesson:focus-visible{outline:3px solid orange;outline-offset:2px}
 @media(max-width:720px){.fast-promise{font-size:13px}}
+
+/* LEARN Quest: playful, voluntary, not graded. */
+.quest-feature{display:grid;grid-template-columns:170px 1fr;gap:36px;margin-top:25px;margin-bottom:40px;align-items:center;background:linear-gradient(135deg,#132c45,#123d42);border-radius:23px;padding-top:32px;padding-bottom:32px;color:white}
+.quest-feature .kicker{color:#a6f2d0}.quest-feature h2{font-size:clamp(25px,3vw,39px);margin:10px 0;letter-spacing:-.04em}.quest-feature p{color:#d1e9e8;max-width:56ch}.quest-feature-flag{font-size:78px;color:#abeed5;display:flex;align-items:center;justify-content:center;flex-direction:column;font-weight:950;line-height:1}.quest-feature-flag span{font-size:16px;display:inline;padding:0 6px}.quest-feature .btn.primary{display:inline-flex}.quest-row{margin:9px 0}.quest-entry{display:block;background:#eaf9f3;border:1px solid #9ddfc7;color:#064f42!important;font-weight:850;border-radius:11px;padding:10px 11px;text-align:center;text-decoration:none;font-size:12px}.quest-entry:hover{background:#c8f2e2}.quest-entry:focus-visible{outline:3px solid orange;outline-offset:3px}
+@media(max-width:720px){.quest-feature{grid-template-columns:1fr;gap:12px;margin-left:12px;margin-right:12px}.quest-feature-flag{font-size:36px;flex-direction:row}}
