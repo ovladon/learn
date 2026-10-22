@@ -70,11 +70,15 @@ jobs:
           set -euo pipefail
           python3 -m venv /tmp/learn-faststart-env
           /tmp/learn-faststart-env/bin/pip install --disable-pip-version-check 'reportlab==4.4.9' 'pypdf==5.9.0'
+          /tmp/learn-faststart-env/bin/python tools/build_data_chapter.py --site _site
           /tmp/learn-faststart-env/bin/python tools/build_faststart.py --site _site
-          test "$(find _site/topics -maxdepth 1 -name '*.html' | wc -l)" -eq 157
-          test "$(find _site/beginner -maxdepth 1 -name '*.pdf' | wc -l)" -eq 156
+          test "$(find _site/topics -maxdepth 1 -name '*.html' | wc -l)" -eq 185
+          test "$(find _site/beginner -maxdepth 1 -name '*.pdf' | wc -l)" -eq 184
           test -s _site/sitemap.xml
           test -s _site/BEGINNER_AUDIT.json
+          test "$(find _site/materials/data -name 'data-*.pdf' | wc -l)" -eq 28
+          test -s _site/collections/data-en.pdf
+          test -s _site/collections/data-ro.pdf
       - name: Verify topic-specific LEARN Quest bank
         shell: bash
         run: |
@@ -88,7 +92,7 @@ jobs:
           bank=json.loads(bank.split('window.LEARN_QUEST_BANK =',1)[1].strip().rstrip(';'))
           catalog=(root/'catalog.js').read_text(encoding='utf8')
           cats=json.loads(catalog.split('window.LEARN_CATALOG =',1)[1].strip().rstrip(';'))
-          assert len(bank)==len(cats)==78
+          assert len(bank)==len(cats)==92
           assert set(bank)=={x['id'] for x in cats}
           for id,q in bank.items():
             for lang in ('en','ro'):
@@ -97,7 +101,7 @@ jobs:
               for round in rounds:
                 assert 0<=round['correct']<len(round['answers'])
                 assert len(set(round['answers']))==len(round['answers'])
-          print('156 bilingual topic games validated')
+          print('184 bilingual topic games validated')
           PYGAME
           test -s _site/quest.html
       - name: Configure GitHub Pages
