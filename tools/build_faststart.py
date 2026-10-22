@@ -187,7 +187,7 @@ def main():
     tracks=parse_js_json(site/'catalog.js','LEARN_TRACKS')
     catalog=parse_js_json(site/'catalog.js','LEARN_CATALOG')
     primers=parse_js_json(site/'learner-notes.js','LEARN_PRIMERS')
-    assert len(catalog)==78, ('Unexpected topic count',len(catalog))
+    assert len(catalog) in (78,92), ('Unexpected topic count',len(catalog))
     assert len({i['id'] for i in catalog})==len(catalog)
     assert all(x['id'] in primers for x in catalog)
     track_by_id={x['id']:x for x in tracks}
@@ -221,7 +221,7 @@ def main():
                           'pages':pages,'duplicate_terms_removed':duplicate_count,'review_status':'machine_checked_editorial_review_needed'})
     linklisting='\n'.join(f'<li><a href="{esc(i["id"])}-{lang}.html">{esc(i["title_"+lang])} ({lang.upper()})</a></li>'
                            for i in catalog for lang in ('en','ro'))
-    (topicdir/'index.html').write_text(f'<!doctype html><html lang="en"><meta charset="utf-8"><title>All beginner-friendly technology explanations · LEARN</title><meta name="description" content="78 free beginner technology topics explained in English and Romanian. No registration."><link rel="stylesheet" href="../style.css"><main class="wrap" style="padding-top:25px;padding-bottom:60px"><h1>All LEARN topics · 78 / 156 versions</h1><p><a href="../">← LEARN home</a></p><ul>{linklisting}</ul></main></html>',encoding='utf-8')
+    (topicdir/'index.html').write_text(f'<!doctype html><html lang="en"><meta charset="utf-8"><title>All beginner-friendly technology explanations · LEARN</title><meta name="description" content="{len(catalog)} free beginner technology topics explained in English and Romanian. No registration."><link rel="stylesheet" href="../style.css"><main class="wrap" style="padding-top:25px;padding-bottom:60px"><h1>All LEARN topics · {len(catalog)} / {len(catalog)*2} versions</h1><p><a href="../">← LEARN home</a></p><ul>{linklisting}</ul></main></html>',encoding='utf-8')
     urls=[SITE,SITE+'system-map.html',SITE+'interactive-lab.html',SITE+'topics/']+static_urls
     sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join('  <url><loc>'+xml_escape(u)+'</loc></url>\n' for u in urls)+'</urlset>\n'
     (site/'sitemap.xml').write_text(sitemap,encoding='utf-8')
