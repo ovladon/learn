@@ -111,6 +111,38 @@ jobs:
           print('184 bilingual topic games validated')
           PYGAME
           test -s _site/quest.html
+      - name: Verify full beginner portfolio delivery
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PYCHECK'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import re
+          site=Path('_site')
+          for lang in ('ro','en'):
+              s=(site/f'portfolio-guide-{lang}.html').read_text(encoding='utf8')
+              assert all(f'data-step="{n:02d}"' in s for n in range(23)), ('missing checkpoint',lang)
+              assert all(x in s for x in ('github.io','portfolio-qr.html','downloads/student-portfolio-starter.zip')),lang
+              assert len(s)>28000,(lang,len(s))
+          landing=(site/'index.html').read_text(encoding='utf8')
+          assert 'id="career"' in landing and 'portfolio-guide-ro.html' in landing
+          assert 'portfolio-guide-en.html' in landing
+          qr=(site/'portfolio-qr.html').read_text(encoding='utf8')
+          assert 'career/vendor/qrcode.js' in qr and 'portfolio-qr.js' in qr
+          with ZipFile(site/'downloads/student-portfolio-starter.zip') as z:
+              assert set(z.namelist())=={'index.html','READ_ME_FIRST.txt'}
+              inner=z.read('index.html')
+              assert b'<!doctype html>' in inner and b'EXAMPLE' in inner
+          print('Portfolio tutorial: 23 interactive checkpoints × 2 languages, links, starter ZIP: PASS')
+          PYCHECK
+          node - <<'NODECHECK'
+          const assert=require('node:assert/strict');
+          const qr=require('./_site/career/vendor/qrcode.js');
+          const code=qr(0,'M');code.addData('https://student123.github.io/','Byte');code.make();
+          assert(code.getModuleCount()>=21);assert(typeof code.isDark(0,0)==='boolean');
+          console.log('Offline QR algorithm: PASS');
+          NODECHECK
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload static site
