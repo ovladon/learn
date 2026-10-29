@@ -253,7 +253,7 @@ Am verificat rezultatele prin [testele tale].
 5. Revino la portofoliu: pentru început, înlocuiește următorul card de exemplu cu noul proiect. Când ai mai mult de trei, poți copia un întreg bloc `<article class="card"> ... </article>` între celelalte carduri — fără să ștergi `</div>` din final.
 6. Salvează și verifică toate linkurile.
 
-**Ce faci cu 40 de teme?** Nu pune 40 de carduri egale pe prima pagină. Arată cele mai bune 3–6; oferă un link către profilul tău GitHub pentru arhiva completă și actualizează selecția în fiecare semestru.
+**Cum apar TOATE temele în portofoliu, fără muncă repetată?** Șablonul are o secțiune **All my coursework · full archive** (arhiva tuturor lucrărilor). În `index.html`, caută textul `[REPLACE THIS LINK WITH MY PUBLIC GITHUB REPOSITORIES]` și înlocuiește adresa `https://github.com/` a acelui link cu `https://github.com/NUMELE-TAU?tab=repositories`. Faci această schimbare **o singură dată**. De fiecare dată când creezi un nou repository public pentru o temă, el devine accesibil din arhiva GitHub a profilului; repo-urile private nu sunt vizibile unui angajator. Pe pagina principală păstrezi doar cele mai bune 3–6 proiecte, ca vitrină.
 
 **Regulă de aur:** nu publica un link care duce la `404`, un repo gol sau la un exemplu neînlocuit.
 
