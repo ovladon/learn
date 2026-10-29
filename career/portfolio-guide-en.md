@@ -171,7 +171,7 @@ The portfolio is your front door; a **separate repo for each worthwhile project*
 2. Give the work a descriptive name, such as `lab-01-queue-simulator`, not `final-homework-final2`.
 3. Choose **Public** only if you own the work and are permitted to publish it. Otherwise use a private repository and share only a permitted description or public demonstration.
 4. Select **Add a README file**. GitHub shows `README.md` at the top of the repo.
-5. Open `README.md), click the pencil and replace the sample text with the project guide in step 12.
+5. Open `README.md`, click the pencil and replace the sample text with the project guide in step 12.
 6. Commit the README change.
 7. Use **Add file → Upload files** to upload your actual source files (`main.py`, `app.js`, `index.html`, etc.), plus only non-sensitive examples.
 8. Test the uploaded work; explain the prerequisites and exact run instructions in README so another person can reproduce it.
@@ -227,7 +227,7 @@ I verified results by [list your actual tests].
 ## 13. Link that project to your portfolio
 
 1. In your project repository, copy the full URL from the browser address bar, for example `https://github.com/ANA/lab-01-queue-simulator`.
-2. Return to your personal website repo `ANA.github.io`; open `index.html); click the pencil.
+2. Return to your personal website repo `ANA.github.io`; open `index.html`; click the pencil.
 3. Search for `Project 01 · A data structure in action` and replace the example title.
 4. Edit the three short paragraphs beneath it: **Problem**, **What I built**, and **What I learned**.
 5. Find its link, starting with `<a href="https://github.com/" ...>`. Replace **only the URL inside the `href` quotes** with the full address of your project. **`href`** means the destination of a link.
