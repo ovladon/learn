@@ -45,7 +45,7 @@ def make_page(text, lang):
         if not re.match(r"\d\d",number):return header
         label=("Marchează pasul ca terminat" if lang=="ro" else "Mark this step complete")
         return header+f'<button class="mark-done" data-step="{html.escape(number)}" type="button" aria-pressed="false">{label}</button>'
-    content=re.sub(r'<h2 id="[^"]+">\s*(\d\d)[^.]*?</h2>',addbutton,content)
+    content=re.sub(r'<h2 id="[^"]+">\s*(\d\d).*?</h2>',addbutton,content)
     printtext="Tipărește / Salvează ca PDF" if lang=="ro" else "Print / Save as PDF"
     other="en" if lang=="ro" else "ro"
     linklabel="English" if lang=="ro" else "Română"
