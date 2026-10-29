@@ -249,7 +249,7 @@ For each worthwhile homework:
 5. If the work deserves a card on the portfolio homepage, replace the next example project card. To add more than three cards, carefully copy a complete `<article class="card"> ... </article>` block and place it among the existing cards; don't remove the surrounding `</div>` tag.
 6. Commit and click every new link.
 
-**What about dozens of assignments?** Keep the best 3–6 prominently featured on the homepage and let your GitHub profile act as a broader archive. Review the featured selection each semester.
+**How do ALL assignments remain accessible without editing the homepage every week?** The starter includes an **All my coursework · full archive** section. In `index.html`, find `[REPLACE THIS LINK WITH MY PUBLIC GITHUB REPOSITORIES]` and replace that link's `https://github.com/` destination with `https://github.com/YOUR-USERNAME?tab=repositories`. You do this **once**. Each new public homework repository then becomes discoverable through your GitHub repository archive; private repositories remain invisible to visitors. Keep only your strongest 3–6 projects featured on the homepage.
 
 **Checkpoint:** every featured project has its own genuine code and explanation.
 
