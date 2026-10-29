@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Student portfolio: projects, learning progress, and contact.">
+<meta name="theme-color" content="#0d2035">
+<title>[YOUR NAME] — Student portfolio</title>
+<style>
+:root{color-scheme:light;--ink:#112a3e;--teal:#086e67;--paper:#f4f8fa;--line:#d5e1e6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--paper)}
+a{color:#05645f}a:focus-visible,button:focus-visible{outline:3px solid #e78d24;outline-offset:3px}.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;padding:10px;background:#fff;z-index:9}.wrap{max-width:1000px;margin:auto;padding:0 23px}
+header{background:#0d2035;color:#f7fffb}header nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:15px;padding-bottom:15px}header a{color:#e5fff5;text-decoration:none}nav .links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
+.hero{padding:72px 0 85px;background:radial-gradient(circle at 85% 20%,#185b6e,#0d2035 62%);color:#fff}.tag{font-size:13px;text-transform:uppercase;letter-spacing:.13em;color:#97f2d2;font-weight:800}.hero h1{font-size:clamp(39px,7vw,70px);line-height:1.1;letter-spacing:-.045em;max-width:780px;margin:16px 0}.hero p{max-width:640px;font-size:19px;color:#d5e7ed}
+.button{display:inline-block;border-radius:12px;padding:12px 18px;background:#b9f0da;color:#0b3437;text-decoration:none;font-weight:800;margin-top:10px}
+section.content{padding:45px 0}h2{font-size:clamp(24px,4vw,35px);margin:0 0 10px}p{max-width:76ch}.intro{background:white;border:1px solid var(--line);padding:25px;border-radius:18px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:24px}.card{border:1px solid var(--line);border-radius:18px;background:#fff;padding:23px;box-shadow:0 10px 25px #1434490a}
+.card h3{font-size:19px;margin:0 0 9px}.card small{display:inline-block;background:#e6f5ef;color:#0d6455;padding:3px 8px;border-radius:7px;font-weight:800}
+.card p{color:#3f5b66}.card a{font-weight:800}.note{font-size:13px;color:#4c6574}
+ul{padding-left:23px}li{margin-bottom:7px}.contact{background:#e4f4ee;padding:38px;border-radius:18px}
+footer{margin-top:50px;background:#0d2035;color:#d8e9ee;padding:26px 0;font-size:14px}
+@media(max-width:620px){.hero{padding:45px 0 56px}header nav{align-items:flex-start}.contact{padding:23px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{header,footer,.button{display:none!important}.hero{background:white;color:#112a3e;padding:12px 0}.hero p{color:#112a3e}.card,.intro,.contact{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to my work</a>
+<header><nav class="wrap"><a href="#top"><strong>[YOUR NAME]</strong></a><div class="links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav></header>
+<main id="main">
+<section class="hero" id="top"><div class="wrap">
+<div class="tag">Student · Learning through projects</div>
+<h1>Hi, I'm [YOUR NAME].<br>I build things and explain how they work.</h1>
+<p>I'm studying [YOUR FIELD]. Here you can see projects I have actually worked on, what I learned and what I want to build next.</p>
+<a class="button" href="#projects">Explore my work ↓</a>
+</div></section>
+<section class="content wrap" id="about"><div class="intro"><h2>About me</h2>
+<p>I'm a [FIRST/SECOND/THIRD]-year student interested in [TOPIC 1], [TOPIC 2] and [TOPIC 3]. I like learning by solving concrete problems and documenting the process. This site grows with every project.</p>
+<p class="note">Edit these sentences in GitHub. Never publish student ID numbers, passwords, private addresses, class rosters or private assignment data.</p></div></section>
+<section class="content wrap" id="projects"><h2>Selected projects</h2><p>Each card explains the problem, the solution and the evidence. Replace the examples below with your own work as you progress.</p>
+<div class="cards">
+<article class="card"><small>EXAMPLE — REPLACE ME</small><h3>Project 01 · A data structure in action</h3>
+<p><strong>Problem:</strong> I needed to store and find items efficiently.</p>
+<p><strong>What I built:</strong> A program that uses a list, queue or dictionary.</p>
+<p><strong>What I learned:</strong> My design choices change what operations are easy.</p>
+<p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">Replace this with my code repository ↗</a></p></article>
+<article class="card"><small>EXAMPLE — REPLACE ME</small><h3>Project 02 · A small web page</h3>
+<p><strong>Problem:</strong> I wanted information to be readable on phones and computers.</p>
+<p><strong>What I built:</strong> A page with structured content and a responsive layout.</p>
+<p><strong>What I learned:</strong> Clear navigation and accessible labels matter.</p>
+<p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">Replace this with my code repository ↗</a></p></article>
+<article class="card"><small>EXAMPLE — REPLACE ME</small><h3>Project 03 · My first useful script</h3>
+<p><strong>Problem:</strong> I repeated the same small task many times.</p>
+<p><strong>What I built:</strong> A script that automates the steps.</p>
+<p><strong>What I learned:</strong> I need to handle invalid input and explain limitations.</p>
+<p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">Replace this with my code repository ↗</a></p></article>
+</div></section>
+<section class="content wrap" id="skills"><h2>Skills I'm developing</h2>
+<ul><li>[LANGUAGE / TOOL] — [what I can demonstrably do with it]</li>
+<li>[LANGUAGE / TOOL] — [a link or project showing evidence]</li>
+<li>Documentation — describing objectives, tests, limitations and next steps</li></ul>
+<p class="note">Describe what you can show, not what you hope an employer will assume.</p></section>
+<section class="content wrap" id="contact"><div class="contact"><h2>Let's connect</h2>
+<p>For collaboration or internship questions, use my public GitHub profile. You can optionally add a professional email address later.</p>
+<p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">[REPLACE WITH YOUR GITHUB PROFILE] ↗</a></p>
+<p class="note">No public form means no backend to maintain. Do not add a personal telephone number or home address.</p></div></section>
+</main><footer><div class="wrap">© <span id="year">2026</span> [YOUR NAME] · Built with HTML and CSS · Hosted with GitHub Pages</div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
